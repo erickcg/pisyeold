@@ -1,0 +1,20 @@
+Diagramas de secuencias
+Diagramas de colaboracion
+Diagramas de actividad (automatico)
+Diagrama de estado (no necesario construir)
+
+Diseno
+Definicion de base de datos y documentacion -> 27 
+
+
+--Implementacion 
+construccion
+Documentacion de casos de prueba.
+
+
+12 de noviembre --> presentaicon formal
+
+25,presentaciones
+26, 
+27,
+28 de novimebre > examen final 8am 3203
