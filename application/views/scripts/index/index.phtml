@@ -1,45 +1,30 @@
-<style>
-    a:link,
-    a:visited
-    {
-        color: #0398CA;
-    }
-
-    span#zf-name
-    {
-        color: #91BE3F;
-    }
-
-    div#welcome
-    {
-        width:  600px;
-        height: 400px;
-        overflow: hidden;
-        margin: 0 auto;
-    }
-
-    h1
-    {
-        text-align: center;
-    }
-
-    div#more-information
-    {
-        height: 100%;
-    }
-</style>
-<div id="welcome">
-    <h1>Bienvenido a <span id="zf-name">Historial</span></h1>
-
-    <h3>Componentes de arquitectura<br></h3>
-    <ul>
-        <li>Control de Acceso</li>
-        <li>Control de alumnos: Altas</li>
-        <li>Control de grupos: Altas</li>
-        <li>Reportes: Individual y general</li>
-    </ul>
-
-    <div id="more-information">
-        <p><img style="float:right;" src="http://framework.zend.com/images/PoweredBy_ZF_4LightBG.png" /></p>
-    </div>
+<div class="large-6 push-6 center columns">
+    <form action="login.html" method="POST">
+        <fieldset>
+            <legend>Log in</legend>
+            <div class="row">
+                <div class="large-10 columns">
+                    <label>Usuario</label>
+                    <input type="text" placeholder="Usuario">
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-10 columns">
+                    <div class="row collapse">
+                        <label>Constrase&ntilde;a</label>
+                        <div class="small-8 columns">
+                            <input type="text" placeholder="Contrase&ntilde;a">
+                        </div>
+                        <div class="small-4 columns">
+                            <input type="submit" class="button prefix" value="Log in" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="large-6 pull-6 columns">
+    <img src="img/logohistorialerick.png" />
+    <p></p>
 </div>

@@ -18,3 +18,9 @@ Documentacion de casos de prueba.
 26, 
 27,
 28 de novimebre > examen final 8am 3203
+
+Nodos
+--Representan recursos de computo sobre los que se pueden distribuir los artefactos. 
+
+dispositivos, entornos ejecutables
+"Device"

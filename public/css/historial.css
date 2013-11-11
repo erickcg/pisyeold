@@ -1,0 +1,20 @@
+body {
+	background-color: #1DADB5;
+}
+
+#header {
+	background-color: #454136;
+	color: #fff;
+}
+
+#header h2 {
+	color: #fff;
+}
+
+#content {
+	background-color: #FFF6CC;
+}
+
+#footer {
+	background-color: #E3D39F;
+}
