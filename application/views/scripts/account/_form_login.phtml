@@ -1,0 +1,22 @@
+<form id="login" action="<?= $this->element->getAction(); ?>"
+method="<?= $this->element->getMethod(); ?>">
+<div class="row">
+                <div class="large-10 columns">
+                    <label>Usuario</label>
+<?= $this->element->email; ?>
+</div>
+            </div>
+            <div class="row">
+                <div class="large-10 columns">
+                    <div class="row collapse">
+                        <label>Constrase&ntilde;a</label>
+                        <div class="small-8 columns">
+<?= $this->element->pswd; ?>
+ </div>
+                        <div class="small-4 columns">
+<?= $this->element->submit; ?>
+</div>
+                    </div>
+                </div>
+            </div>
+</form>
