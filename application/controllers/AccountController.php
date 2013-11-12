@@ -13,7 +13,12 @@ class AccountController extends Zend_Controller_Action
         // action body
     }
 
-    public function loginAction() {
+    public function loginAction()
+    {
+        //setting different layout for the no authorized
+        $this->_helper->layout->setLayout('noauth');
+
+        
         $db = Zend_Db_Table::getDefaultAdapter();
 
         $loginForm = new Application_Model_FormLogin();
@@ -28,7 +33,6 @@ class AccountController extends Zend_Controller_Action
                 $adapter->setTableName('User');
                 $adapter->setIdentityColumn('user');
                 $adapter->setCredentialColumn('password');
-                echo "entre;";
      
                 $adapter->setIdentity($loginForm->getValue('username'));
                 $adapter->setCredential($loginForm->getValue('password'));
@@ -42,50 +46,20 @@ class AccountController extends Zend_Controller_Action
                     return;
                 }
             }
-        }else {
-            $this->view->form = $loginForm;
         }
 
-        
+        $this->view->form = $loginForm; 
     }
+
+    public function logoutAction()
+    {  
+        //setting different layout for the no authorized
+        $this->_helper->layout->setLayout('noauth');
+
+        Zend_Auth::getInstance()->clearIdentity();
+        $this->_helper->flashMessenger->addMessage('You are logged out of your account');
+        $this->_helper->redirector('login', 'account');
+    }
+
+
 }
-
-    // public function otherAction()
-    // {
-    //     $form = new Application_Model_FormLogin();
-
-    //  // Has the login form been posted?
-    //  if ($this->getRequest()->isPost()) {
-
-    //      // If the submitted data is valid, attempt to authenticate the user
-    //      if ($form->isValid($this->_request->getPost())) {
-
-    //              // Did the user successfully login?
-    //              if ($this->_authenticate($this->_request->getPost())) {
-
-    //                      $account = $this->em->getRepository('Entities\Account')->findOneByEmail($form->getValue('email'));
-
-    //                      // Save the account to the database
-    //                      $this->em->persist($account);
-    //                      $this->em->flush();
-
-    //                      // Generate the flash message and redirect the user
-    //                      $this->_helper->flashMessenger->addMessage(Zend_Registry::get('config')->messages->login->successful);
-    //                         return $this->_helper->redirector('index', 'index');
-    //              }
-    //              else {
-    //                 $this->view->errors["form"] = array(Zend_Registry::get('config')->messages->login->failed);
-    //              }
-
-    //      } 
-    //      else {
-    //         $this->view->errors = $form->getErrors();
-    //      }
-
-    //  }
-    // $this->view->form = $form;
-
-    // }
-
-
-

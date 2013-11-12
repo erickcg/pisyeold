@@ -15,7 +15,7 @@ class IndexController extends Zend_Controller_Action
     	if ($auth->hasIdentity()) {
 		$identity = $auth->getIdentity();
 		if (isset($identity)) {
-			printf("Welcome back, %s", $identity);
+			$this->view->idDisplay = "Welcome back, " . $identity . ", <a href='/account/logout'>logout</a>";
 		}
 	}
 	else {

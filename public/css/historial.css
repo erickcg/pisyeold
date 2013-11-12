@@ -2,6 +2,10 @@ body {
 	background-color: #1DADB5;
 }
 
+#content h2, h3, img{
+	float: left;
+}
+
 #header {
 	background-color: #454136;
 	color: #fff;
@@ -17,4 +21,8 @@ body {
 
 #footer {
 	background-color: #E3D39F;
+}
+
+#content .row {
+	padding-top: 5%;
 }
