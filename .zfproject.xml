@@ -41,6 +41,10 @@
       </layoutsDirectory>
       <modelsDirectory>
         <modelFile modelName="FormLogin"/>
+        <modelFile modelName="FormDatosPersonales"/>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="AlumnoDetalle"/>
+        </dbTableDirectory>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

@@ -20,12 +20,47 @@ class AlumnoController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        
+        $form = new Application_Model_FormDatosPersonales();
+	
+
+	if ($this->getRequest()->isPost()) {
+
+		// If the submitted data is valid, attempt to authenticate the user
+            	if ($form->isValid($this->_request->getPost())) {
+		    	$AlumnoDetalle = new Application_Model_DbTable_AlumnoDetalle();
+			$data = array(
+				'nombre' => $form->getValue('nombre'),
+				'apaterno' => $form->getValue('apaterno'),
+				'amaterno' => $form->getValue('amaterno'),
+				'fechanacimiento' => $form->getValue('anio').$form->getValue('mes').$form->getValue('dia'),
+				'sexo' => $form->getValue('sexo'),
+				'numhermanos' => $form->getValue('numhermanos'),
+				'lugarfamilia' => $form->getValue('lugarfam'),
+				'diagnostico' => $form->getValue('diagnostico'),
+				'tiposangre' => $form->getValue('tiposangre'),
+				'nombrepadre' => $form->getValue('nombrepadre'),
+				'nombremadre' => $form->getValue('nombremadre'),
+				'domicilio' => $form->getValue('domicilio')
+			);
+			$AlumnoDetalle->insert($data);
+
+			$this->_redirect('/Alumno/contactos');
+                    	return;
+		}
+	}
+
+	$this->view->form = $form;
     }
 
     public function contactosAction()
     {
-        // action body
+    	$form = new Application_Model_FormDatosPersonales();
+	$this->view->form = $form;
+
+	
+        if ($this->getRequest()->isPost()) {
+		$apaterno = $this->getRequest()->getPost('apaterno');
+	}
     }
 
     public function medicosAction()

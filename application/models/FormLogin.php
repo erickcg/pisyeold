@@ -12,16 +12,18 @@ class Application_Model_FormLogin extends Zend_Form
 		 $username = new Zend_Form_Element_Text('username');
 		 $username->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Ususario')
+		 	->setRequired(true)
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		 $password = new Zend_Form_Element_Password('password');
 		 $password->setAttrib('size', 35)
-		 ->setAttrib('placeholder', 'Contraseña');
+			 ->setRequired(true)
+			 ->setAttrib('placeholder', 'Contraseña');
 
 		 $submit = new Zend_Form_Element_Submit('submit');
 		 $submit->setLabel('Login')
-		 ->setAttrib('class', 'button prefix');
+		 	->setAttrib('class', 'button prefix');
 
 		 $this->setDecorators( array( array('ViewScript', array('viewScript' => '/account/_form_login.phtml'))));
 
