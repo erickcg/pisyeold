@@ -16,6 +16,22 @@
           <actionMethod actionName="login"/>
           <actionMethod actionName="logout"/>
         </controllerFile>
+        <controllerFile controllerName="Alumno">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="contactos"/>
+          <actionMethod actionName="medicos"/>
+          <actionMethod actionName="antecedentes"/>
+          <actionMethod actionName="prenatales"/>
+          <actionMethod actionName="perinatales"/>
+          <actionMethod actionName="posnatales"/>
+          <actionMethod actionName="hereditario"/>
+        </controllerFile>
+        <controllerFile controllerName="Grupo">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Reporte">
+          <actionMethod actionName="index"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory>
@@ -44,6 +60,36 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Account">
             <viewScriptFile forActionName="logout"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Grupo">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Reporte">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="contactos"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="medicos"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="antecedentes"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="prenatales"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="perinatales"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="posnatales"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="hereditario"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
