@@ -9,6 +9,35 @@
 
   <?php echo $this->headLink()->appendStylesheet('/css/foundation.css')->appendStylesheet('/css/historial.css'); ?>
   <?php //echo $this->headScript()->appendFile( "/js/vendor/custom.modernizr.js", $type = 'text/javascript' ); ?>
+<script>
+function showResult(str)
+{
+if (str.length==0)
+  { 
+  document.getElementById("livesearch").innerHTML="";
+  document.getElementById("livesearch").style.border="0px";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+    document.getElementById("livesearch").style.border="1px solid #000";
+    }
+  }
+xmlhttp.open("GET","/alumno/livesearch/?q="+str,true);
+xmlhttp.send();
+}
+</script>
 
 </head>
 <body>
@@ -19,7 +48,7 @@
           <a href="/"><img src="/img/logoblancop.png" /></a>
         </div>
         <div class="large-10 small-5 columns">
-          <h2>Historial Cl&iacute;nico Pysie</h2>
+          <h2>Historial Cl&iacute;nico Pisye</h2>
           <p>Bienvenido</p>
         </div>
       </div>
@@ -54,17 +83,19 @@
               <form>
                 <div class="row collapse">
                   <div class="small-8 columns">
-                    <input type="text" placeholder="Buscar Alumno">
+                    <input type="text" placeholder="Buscar Alumno" onkeyup="showResult(this.value)">
+
                   </div>
                   <div class="small-4 columns">
                     <a href="#" class="button">Buscar</a>
                   </div>
-                </div>
+                </div>    
               </form>
             </li>
           </ul>
         </section>
       </nav>
+      <div id="livesearch" ></div>
     </div>
   </div>
   <div id="content" class="row">

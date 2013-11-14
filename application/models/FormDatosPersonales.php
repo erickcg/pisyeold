@@ -93,6 +93,29 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
+		$seguro = new Zend_Form_Element_Text('seguro');
+		$seguro->setAttrib('size', 35)
+		 	->setAttrib('placeholder', 'Empresa de Seguro de gastos medicos')
+			->removeDecorator('label')
+			->removeDecorator('htmlTag');
+
+		$poliza = new Zend_Form_Element_Text('poliza');
+		$poliza->setAttrib('size', 35)
+		 	->setAttrib('placeholder', 'Poliza')
+			->removeDecorator('label')
+			->removeDecorator('htmlTag');
+
+		$rehab = new Zend_Form_Element_Text('rehab');
+		$rehab->setAttrib('size', 35)
+		 	->setAttrib('placeholder', 'Si no hay rehabilitacion del aprendizaje, dejar en blanco')
+			->removeDecorator('label')
+			->removeDecorator('htmlTag');
+
+		$apoyopsico = new Zend_Form_Element_Text('apoyopsico');
+		$apoyopsico->setAttrib('size', 35)
+		 	->setAttrib('placeholder', 'Si no hay apoyo psicologico, dejar en blanco')
+			->removeDecorator('label')
+			->removeDecorator('htmlTag');
 
 		 $submit = new Zend_Form_Element_Submit('submit');
 		 $submit->setLabel('Siguiente->')
@@ -100,6 +123,7 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 
 		 $this->setDecorators( array( array('ViewScript', array('viewScript' => '/alumno/_form_datospersonales.phtml'))));
 
-		 $this->addElements(array($nombre, $apaterno, $amaterno, $sexo, $dia, $mes, $anio, $numhermanos, $lugarfam, $diagnostico, $tiposangre, $nombrepadre, $nombremadre, $domicilio, $submit));
+		 $this->addElements(array($nombre, $apaterno, $amaterno, $sexo, $dia, $mes, $anio, $numhermanos, 
+		 	$lugarfam, $diagnostico, $tiposangre, $nombrepadre, $nombremadre, $domicilio, $seguro, $poliza, $rehab, $apoyopsico, $submit));
 	 }
 }

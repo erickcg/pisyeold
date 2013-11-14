@@ -26,3 +26,8 @@ body {
 .recien {
 	margin-left: 3%;
 }
+
+#livesearch {
+	z-index: 1000;
+	background-color: #fff;
+}

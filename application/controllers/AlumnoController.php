@@ -22,29 +22,68 @@ class AlumnoController extends Zend_Controller_Action
     {
         $form = new Application_Model_FormDatosPersonales();
 	
-
+        $this->view->hola = $this->_request->getParam('hola');
 	if ($this->getRequest()->isPost()) {
 
 		// If the submitted data is valid, attempt to authenticate the user
             	if ($form->isValid($this->_request->getPost())) {
-		    	$AlumnoDetalle = new Application_Model_DbTable_AlumnoDetalle();
+		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
 			$data = array(
 				'nombre' => $form->getValue('nombre'),
 				'apaterno' => $form->getValue('apaterno'),
 				'amaterno' => $form->getValue('amaterno'),
-				'fechanacimiento' => $form->getValue('anio').$form->getValue('mes').$form->getValue('dia'),
-				'sexo' => $form->getValue('sexo'),
-				'numhermanos' => $form->getValue('numhermanos'),
-				'lugarfamilia' => $form->getValue('lugarfam'),
-				'diagnostico' => $form->getValue('diagnostico'),
-				'tiposangre' => $form->getValue('tiposangre'),
-				'nombrepadre' => $form->getValue('nombrepadre'),
-				'nombremadre' => $form->getValue('nombremadre'),
-				'domicilio' => $form->getValue('domicilio')
+				'fechanacimiento' => $form->getValue('anio').'-'.$form->getValue('mes').'-'.$form->getValue('dia'),
+				'sexo' => $form->getValue('sexo')
 			);
-			$AlumnoDetalle->insert($data);
 
-			$this->_redirect('/Alumno/contactos');
+			//Valores que pueden ser NULL y deben ser respetados
+			if($form->getValue('diagnostico') != ''){
+				$data['diagnostico'] = $form->getValue('diagnostico');
+			}
+
+			if($form->getValue('numhermanos') != ''){
+				$data['numhermanos'] = $form->getValue('numhermanos');
+			}
+
+			if($form->getValue('lugarfam') != ''){
+				$data['lugarfamilia'] = $form->getValue('lugarfam');
+			}
+
+			if($form->getValue('tiposangre') != ''){
+				$data['tiposangre'] = $form->getValue('tiposangre');
+			}
+
+			if($form->getValue('nombrepadre') != ''){
+				$data['nombrepadre'] = $form->getValue('nombrepadre');
+			}
+
+			if($form->getValue('nombremadre') != ''){
+				$data['nombremadre'] = $form->getValue('nombremadre');
+			}
+
+			if($form->getValue('domicilio') != ''){
+				$data['domicilio'] = $form->getValue('domicilio');
+			}
+
+			if($form->getValue('seguro') != ''){
+				$data['seguro'] = $form->getValue('seguro');
+				$data['poliza'] = $form->getValue('poliza');
+			}
+
+			if($form->getValue('rehab') != ''){
+				$data['rehab'] = $form->getValue('rehab');
+			}
+
+			if($form->getValue('apoyopsico') != ''){
+				$data['apoyopsico'] = $form->getValue('apoyopsico');
+			}
+
+			$db->insert('AlumnoDetalle', $data);
+
+			$id = $db->lastInsertId();
+
+			$this->_redirect('/Alumno/antecedentes/id/' . $id);
                     	return;
 		}
 	}
@@ -54,13 +93,7 @@ class AlumnoController extends Zend_Controller_Action
 
     public function contactosAction()
     {
-    	$form = new Application_Model_FormDatosPersonales();
-	$this->view->form = $form;
-
-	
-        if ($this->getRequest()->isPost()) {
-		$apaterno = $this->getRequest()->getPost('apaterno');
-	}
+        
     }
 
     public function medicosAction()
@@ -70,31 +103,98 @@ class AlumnoController extends Zend_Controller_Action
 
     public function antecedentesAction()
     {
-        // action body
+        $this->view->id = $this->_request->getParam('id');
     }
 
     public function prenatalesAction()
     {
-        // action body
+        $this->view->id = $this->_request->getParam('id');
     }
 
     public function perinatalesAction()
     {
-        // action body
+        $this->view->id = $this->_request->getParam('id');
     }
 
     public function posnatalesAction()
     {
-        // action body
+        $this->view->id = $this->_request->getParam('id');
     }
 
     public function hereditarioAction()
+    {
+        $this->view->id = $this->_request->getParam('id');
+    }
+
+    public function livesearchAction()
+    {
+    	$this->_helper->layout()->disableLayout();
+		 Zend_Controller_Front::getInstance()
+		 ->setParam('noViewRenderer', true);
+        $xmlDoc=new DOMDocument();
+	$xmlDoc->load("../application/views/scripts/alumni.xml");
+
+	$x=$xmlDoc->getElementsByTagName('link');
+
+	//get the q parameter from URL
+	$q=$_GET["q"];
+	
+	//lookup all links from the xml file if length of q>0
+	if (strlen($q)>0)
+	{
+	$hint="";
+	for($i=0; $i<($x->length); $i++)
+	  {
+	  $y=$x->item($i)->getElementsByTagName('title');
+	  $z=$x->item($i)->getElementsByTagName('url');
+	  if ($y->item(0)->nodeType==1)
+	    {
+	    //find a link matching the search text
+	    if (stristr($y->item(0)->childNodes->item(0)->nodeValue,$q))
+	      {
+	      if ($hint=="")
+	        {
+	        $hint="<a href='" . 
+	        $z->item(0)->childNodes->item(0)->nodeValue . 
+	        "' target='_blank'>" . 
+	        $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
+	        }
+	      else
+	        {
+	        $hint=$hint . "<br /><a href='" . 
+	        $z->item(0)->childNodes->item(0)->nodeValue . 
+	        "' target='_blank'>" . 
+	        $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
+	        }
+	      }
+	    }
+	  }
+	}
+
+	// Set output to "no suggestion" if no hint were found
+	// or to the correct values
+	if ($hint=="")
+	  {
+	  $response="no suggestion";
+	  }
+	else
+	  {
+	  $response=$hint;
+	  }
+
+	//output the response
+	echo $response;
+    }
+
+    public function medicinasAction()
     {
         // action body
     }
 
 
 }
+
+
 
 
 

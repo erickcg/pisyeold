@@ -25,6 +25,7 @@
           <actionMethod actionName="perinatales"/>
           <actionMethod actionName="posnatales"/>
           <actionMethod actionName="hereditario"/>
+          <actionMethod actionName="medicinas"/>
         </controllerFile>
         <controllerFile controllerName="Grupo">
           <actionMethod actionName="index"/>
@@ -45,6 +46,7 @@
         <dbTableDirectory>
           <dbTableFile dbTableName="AlumnoDetalle"/>
         </dbTableDirectory>
+        <modelFile modelName="FormAntecedentes"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
@@ -94,6 +96,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Alumno">
             <viewScriptFile forActionName="hereditario"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="medicinas"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
