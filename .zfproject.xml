@@ -53,6 +53,8 @@
         <modelFile modelName="FormPerinatales"/>
         <modelFile modelName="FormPosnatales"/>
         <modelFile modelName="FormHereditario"/>
+        <modelFile modelName="FormContacto"/>
+        <modelFile modelName="FormId"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

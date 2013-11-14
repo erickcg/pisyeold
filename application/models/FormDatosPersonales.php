@@ -7,7 +7,7 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('datospersonales');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno');
+		 $this->setAction('/Alumno/datos');
 
 		 $nombre = new Zend_Form_Element_Text('nombre');
 		 $nombre->setAttrib('size', 35)

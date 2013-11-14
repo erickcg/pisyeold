@@ -20,79 +20,50 @@ class AlumnoController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $form = new Application_Model_FormDatosPersonales();
-	
-	if ($this->getRequest()->isPost()) {
-
-		// If the submitted data is valid, attempt to authenticate the user
-            	if ($form->isValid($this->_request->getPost())) {
-		    	$db = Zend_Db_Table::getDefaultAdapter();
-		    	
-			$data = array(
-				'nombre' => $form->getValue('nombre'),
-				'apaterno' => $form->getValue('apaterno'),
-				'amaterno' => $form->getValue('amaterno'),
-				'fechanacimiento' => $form->getValue('anio').'-'.$form->getValue('mes').'-'.$form->getValue('dia'),
-				'sexo' => $form->getValue('sexo')
-			);
-
-			//Valores que pueden ser NULL y deben ser respetados
-			if($form->getValue('diagnostico') != ''){
-				$data['diagnostico'] = $form->getValue('diagnostico');
-			}
-
-			if($form->getValue('numhermanos') != ''){
-				$data['numhermanos'] = $form->getValue('numhermanos');
-			}
-
-			if($form->getValue('lugarfam') != ''){
-				$data['lugarfamilia'] = $form->getValue('lugarfam');
-			}
-
-			if($form->getValue('tiposangre') != ''){
-				$data['tiposangre'] = $form->getValue('tiposangre');
-			}
-
-			if($form->getValue('nombrepadre') != ''){
-				$data['nombrepadre'] = $form->getValue('nombrepadre');
-			}
-
-			if($form->getValue('nombremadre') != ''){
-				$data['nombremadre'] = $form->getValue('nombremadre');
-			}
-
-			if($form->getValue('domicilio') != ''){
-				$data['domicilio'] = $form->getValue('domicilio');
-			}
-
-			if($form->getValue('seguro') != ''){
-				$data['seguro'] = $form->getValue('seguro');
-				$data['poliza'] = $form->getValue('poliza');
-			}
-
-			if($form->getValue('rehab') != ''){
-				$data['rehab'] = $form->getValue('rehab');
-			}
-
-			if($form->getValue('apoyopsico') != ''){
-				$data['apoyopsico'] = $form->getValue('apoyopsico');
-			}
-
-			$db->insert('AlumnoDetalle', $data);
-
-			$id = $db->lastInsertId();
-
-			$this->_redirect('/Alumno/antecedentes/id/' . $id);
-                    	return;
-		}
-	}
-
-	$this->view->form = $form;
+        
     }
 
     public function contactosAction()
     {
-        
+
+        $form = new Application_Model_FormContacto();
+
+        if ($this->getRequest()->isPost()) {
+
+            	if ($form->isValid($this->_request->getPost())) {
+			
+		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
+			$data = array(
+				'nombre' => $form->getValue('nombre'),
+				'idAlumno' => $this->_request->getPost('idalumno')
+			);
+
+			//Valores que pueden ser NULL y deben ser respetados
+			if($form->getValue('telcasa') != ''){
+				$data['telcasa'] = $form->getValue('telcasa');
+			}
+
+			if($form->getValue('teloficina') != ''){
+				$data['teloficina'] = $form->getValue('teloficina');
+			}
+
+			if($form->getValue('telcelular') != ''){
+				$data['telcelular'] = $form->getValue('telcelular');
+			}
+			$this->view->mensaje = "<h3>Contacto guardado</h3>";
+
+			$db->insert('Contacto', $data);
+		}
+	}
+	$db = Zend_Db_Table_Abstract::getDefaultAdapter();
+	$options = $db->fetchPairs( $db->select()->from('AlumnoDetalle', array('id', 'nombre'))->order('nombre ASC'), 'id');
+		
+	$status = new Zend_Form_Element_Select('idalumno');
+	$status->AddMultiOptions($options);
+
+	$form->addElement($status);
+	$this->view->form = $form;
     }
 
     public function medicosAction()
@@ -433,7 +404,74 @@ class AlumnoController extends Zend_Controller_Action
 
     public function datosAction()
     {
-        // action body
+        $form = new Application_Model_FormDatosPersonales();
+	
+	if ($this->getRequest()->isPost()) {
+
+		// If the submitted data is valid, attempt to authenticate the user
+            	if ($form->isValid($this->_request->getPost())) {
+		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
+			$data = array(
+				'nombre' => $form->getValue('nombre'),
+				'apaterno' => $form->getValue('apaterno'),
+				'amaterno' => $form->getValue('amaterno'),
+				'fechanacimiento' => $form->getValue('anio').'-'.$form->getValue('mes').'-'.$form->getValue('dia'),
+				'sexo' => $form->getValue('sexo')
+			);
+
+			//Valores que pueden ser NULL y deben ser respetados
+			if($form->getValue('diagnostico') != ''){
+				$data['diagnostico'] = $form->getValue('diagnostico');
+			}
+
+			if($form->getValue('numhermanos') != ''){
+				$data['numhermanos'] = $form->getValue('numhermanos');
+			}
+
+			if($form->getValue('lugarfam') != ''){
+				$data['lugarfamilia'] = $form->getValue('lugarfam');
+			}
+
+			if($form->getValue('tiposangre') != ''){
+				$data['tiposangre'] = $form->getValue('tiposangre');
+			}
+
+			if($form->getValue('nombrepadre') != ''){
+				$data['nombrepadre'] = $form->getValue('nombrepadre');
+			}
+
+			if($form->getValue('nombremadre') != ''){
+				$data['nombremadre'] = $form->getValue('nombremadre');
+			}
+
+			if($form->getValue('domicilio') != ''){
+				$data['domicilio'] = $form->getValue('domicilio');
+			}
+
+			if($form->getValue('seguro') != ''){
+				$data['seguro'] = $form->getValue('seguro');
+				$data['poliza'] = $form->getValue('poliza');
+			}
+
+			if($form->getValue('rehab') != ''){
+				$data['rehab'] = $form->getValue('rehab');
+			}
+
+			if($form->getValue('apoyopsico') != ''){
+				$data['apoyopsico'] = $form->getValue('apoyopsico');
+			}
+
+			$db->insert('AlumnoDetalle', $data);
+
+			$id = $db->lastInsertId();
+
+			$this->_redirect('/Alumno/antecedentes/id/' . $id);
+                    	return;
+		}
+	}
+
+	$this->view->form = $form;
     }
 
 

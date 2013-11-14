@@ -1,7 +1,78 @@
 <div class="large-8 push-4 columns">
-        <?php foreach($this->query AS $result) {
-                    echo  $result['nombre'] ." <br > " ;
-            } ?>
+    <?= $this->form; ?>
+    <div class="section-container auto vertical-tabs" data-section="vertical-tabs">
+      <section class="active">
+        <p class="title" data-section-title><a href="#panel1">Datos Personales</a></p>
+        <div class="content" data-section-content>
+          Nombre:  <?= $this->query['nombre'] ?> <br>
+          Apellido Paterno: <?= $this->query['apaterno'] ?>
+          <br>Apellido Materno: <?= $this->query['amaterno'] ?>
+
+         <br> Fecha de nacimiento: <?= $this->query['dia'] ?> -<?= $this->query['mes'] ?> - <?= $this->query['anio'] ?>
+         <br> No. de hermanos:<?= $this->query['nohermanos'] ?>
+         <br> Lugar que ocupa en la familia el alumno:<?= $this->query['lugarfamilia'] ?>
+        <br>  Diagnóstico establecido del alumno:<?= $this->query['diagnostico'] ?>
+          <?php if($this->query['seguro'] == '')
+                    echo '<br>No cuenta con seguro de gastos medicos';
+                else
+                    echo "<br>Seguro:".$this->query['seguro'] ."<br>Poliza: ".$this->query['poliza'];?>
+            <br>Nombre del padre:<?= $this->query['nombrepadre'] ?>
+            <br>Nombre de la madre:<?= $this->query['nombremadre'] ?>
+            <br>Domicilio:<?= $this->query['domicilio'] ?>
+            <?php if($this->query['rehab'] == '')
+                    echo '<br>No lleva una reahilitación del aprendizaje';
+                else
+                    echo "<br>Rehabilitación del aprendizaje:".$this->query['seguro'];?>
+            <?php if($this->query['apoyopsico'] == '')
+                    echo '<br>No tiene apoyo psicológico';
+                else
+                    echo "<br>Apoyo psicológico:".$this->query['apoyopsico'];?>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel2">Antecedentes de embarazo</a></p>
+        <div class="content" data-section-content>
+          <br>Embarazo planeado:<?= $this->query['embarazoplaneado'] ?> 
+          <br>Tipo de embarazo:<?= $this->query['embarazoriesgoso'] ?>
+          <?php if($this->query['amenazaaborto'] == '')
+                    echo '<br>No hubo amenaza de aborto';
+                else
+                    echo "<br>Amenaza de aborto:".$this->query['amenazaaborto'];?>
+          <?php if($this->query['amenazaprematuro'] == '')
+                    echo '<br>No hubo amenaza de nacimiento prematuro';
+                else
+                    echo "<br>Amenaza de nacimiento prematuro:".$this->query['amenazaprematuro'];?>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel3">Prenatales</a></p>
+        <div class="content" data-section-content>
+          <p>Content of section 2.</p>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel4">Perinatales</a></p>
+        <div class="content" data-section-content>
+          <p>Content of section 2.</p>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel5">Posnatales</a></p>
+        <div class="content" data-section-content>
+          <p>Content of section 2.</p>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel6">Factores hereditarios</a></p>
+        <div class="content" data-section-content>
+          <p>Content of section 2.</p>
+        </div>
+      </section>
+    </div>
 </div>
 <div class="large-4 pull-8 columns">
     <div class="row">
