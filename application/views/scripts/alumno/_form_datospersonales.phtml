@@ -1,25 +1,39 @@
 <fieldset>
 	<legend>Datos personales</legend>
-	<form id="login" action="<?= $this->element->getAction(); ?>"
+	<form data-abide action="<?= $this->element->getAction(); ?>"
 	method="<?= $this->element->getMethod(); ?>">
+	<div class="name-field">
 		Nombre<br />
 		<?= $this->element->nombre; ?>
-
+		<small class="error">Requerido</small>
+	</div>
+	<div class="field">
 		Apellido Patrno<br />
 		<?= $this->element->apaterno; ?>
-
+		<small class="error">Requerido</small>
+	</div>
+	<div class="field">
 		Apellido Materno<br />
 		<?= $this->element->amaterno; ?>
+		<small class="error">Requerido</small>
+	</div>
 		<fieldset>
 			<legend>Fecha de nacimiento</legend>
-			D&iacute;a<br />
-			<?= $this->element->dia; ?>
-
-			Mes<br />
-			<?= $this->element->mes; ?>
-
-			A&ntilde;o<br />
-			<?= $this->element->anio; ?>
+			<div class="field">
+				D&iacute;a<br />
+				<?= $this->element->dia; ?>
+				<small class="error">Requerido, deber ser un numero</small>
+			</div>
+			<div class="field">
+				Mes<br />
+				<?= $this->element->mes; ?>
+				<small class="error">Requerido, deber ser un numero</small>
+			</div>
+			<div class="field">
+				A&ntilde;o<br />
+				<?= $this->element->anio; ?>
+				<small class="error">Requerido, deber ser un numero</small>
+			</div>
 		</fieldset>
 		Sexo<br />
 		<?= $this->element->sexo; ?>
@@ -57,7 +71,6 @@
 		¿Recibe apoyo psicol&oacute;gico? (Si no, dejar en blanco)<br />
 		<?= $this->element->apoyopsico; ?>
 
-		<?= $this->hola ?>
 		<span style="float: right;">
 			<?= $this->element->submit; ?>
 		</span>

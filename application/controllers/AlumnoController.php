@@ -22,7 +22,6 @@ class AlumnoController extends Zend_Controller_Action
     {
         $form = new Application_Model_FormDatosPersonales();
 	
-        $this->view->hola = $this->_request->getParam('hola');
 	if ($this->getRequest()->isPost()) {
 
 		// If the submitted data is valid, attempt to authenticate the user
@@ -103,27 +102,125 @@ class AlumnoController extends Zend_Controller_Action
 
     public function antecedentesAction()
     {
-        $this->view->id = $this->_request->getParam('id');
+        $id = $this->_request->getParam('id');
+
+        $form = new Application_Model_FormAntecedentes();
+
+        if ($this->getRequest()->isPost()) {
+
+		// If the submitted data is valid, attempt to authenticate the user
+            	if ($form->isValid($this->_request->getPost())) {
+			
+		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
+			$data = array(
+				'embarazoriesgoso' => $form->getValue('embarazoriesgoso'),
+				'embarazoplaneado' => $form->getValue('embarazoplaneado')
+			);
+
+			//Valores que pueden ser NULL y deben ser respetados
+			if($form->getValue('amenazaaborto') != ''){
+				$data['amenazaaborto'] = $form->getValue('amenazaaborto');
+			}
+
+			if($form->getValue('amenazaprematuro') != ''){
+				$data['amenazaprematuro'] = $form->getValue('amenazaprematuro');
+			}
+
+			if($form->getValue('contactoenfermedad') != ''){
+				$data['contactoenfermedad'] = $form->getValue('contactoenfermedad');
+			}
+
+			if($form->getValue('accidenteembarazo') != ''){
+				$data['accidenteembarazo'] = $form->getValue('accidenteembarazo');
+			}
+			
+			$id = $this->_request->getPost('id');
+
+			$db->update('AlumnoDetalle', $data, 'id = '. $id );
+
+
+
+			//$db->insert('AlumnoDetalle', $data);
+
+			//$this->_redirect('/Alumno/prenatales/id/' . $id);
+                    	return;
+		}
+	}
+
+	$hidden = new Zend_Form_Element_Hidden('id');
+	$hidden->setValue($id);
+	$form->addElement($hidden);
+	$this->view->form = $form;
     }
 
     public function prenatalesAction()
     {
-        $this->view->id = $this->_request->getParam('id');
+        $id = $this->_request->getParam('id');
+
+        $form = new Application_Model_FormAntecedentes();
+
+        if ($this->getRequest()->isPost()) {
+
+		// If the submitted data is valid, attempt to authenticate the user
+            	if ($form->isValid($this->_request->getPost())) {
+			
+		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
+			$data = array(
+				'embarazoriesgoso' => $form->getValue('embarazoriesgoso'),
+				'embarazoplaneado' => $form->getValue('embarazoplaneado')
+			);
+
+			//Valores que pueden ser NULL y deben ser respetados
+			if($form->getValue('amenazaaborto') != ''){
+				$data['amenazaaborto'] = $form->getValue('amenazaaborto');
+			}
+
+			if($form->getValue('amenazaprematuro') != ''){
+				$data['amenazaprematuro'] = $form->getValue('amenazaprematuro');
+			}
+
+			if($form->getValue('contactoenfermedad') != ''){
+				$data['contactoenfermedad'] = $form->getValue('contactoenfermedad');
+			}
+
+			if($form->getValue('accidenteembarazo') != ''){
+				$data['accidenteembarazo'] = $form->getValue('accidenteembarazo');
+			}
+			
+			$id = $this->_request->getPost('id');
+
+			$db->update('AlumnoDetalle', $data, 'id = '. $id );
+
+
+
+			//$db->insert('AlumnoDetalle', $data);
+
+			//$this->_redirect('/Alumno/prenatales/id/' . $id);
+                    	return;
+		}
+	}
+
+	$hidden = new Zend_Form_Element_Hidden('id');
+	$hidden->setValue($id);
+	$form->addElement($hidden);
+	$this->view->form = $form;
     }
 
     public function perinatalesAction()
     {
-        $this->view->id = $this->_request->getParam('id');
+       $id = $this->_request->getParam('id');
     }
 
     public function posnatalesAction()
     {
-        $this->view->id = $this->_request->getParam('id');
+        $id = $this->_request->getParam('id');
     }
 
     public function hereditarioAction()
     {
-        $this->view->id = $this->_request->getParam('id');
+        $id = $this->_request->getParam('id');
     }
 
     public function livesearchAction()

@@ -1,63 +1,27 @@
 <fieldset>
 	<legend>Datos personales</legend>
-	<form id="login" action="<?= $this->element->getAction(); ?>"
+	<form action="<?= $this->element->getAction(); ?>"
 	method="<?= $this->element->getMethod(); ?>">
-		Nombre<br />
-		<?= $this->element->nombre; ?>
+		¿Embarazo planeado?<br />
+		<?= $this->element->embarazoplaneado; ?>
 
-		Apellido Patrno<br />
-		<?= $this->element->apaterno; ?>
+		¿El embarazo fue de alto riesgo?<br />
+		<?= $this->element->embarazoriesgoso; ?>
 
-		Apellido Materno<br />
-		<?= $this->element->amaterno; ?>
-		<fieldset>
-			<legend>Fecha de nacimiento</legend>
-			D&iacute;a<br />
-			<?= $this->element->dia; ?>
+		¿Hubo amenaza de aborto? (Si no, dejar en blanco)<br />
+		<?= $this->element->amenazaaborto; ?>
 
-			Mes<br />
-			<?= $this->element->mes; ?>
+		¿Hubo amenaza de parto prematuro? (Si no, dejar en blanco)<br />
+		<?= $this->element->amenazaprematuro; ?>
 
-			A&ntilde;o<br />
-			<?= $this->element->anio; ?>
-		</fieldset>
-		Sexo<br />
-		<?= $this->element->sexo; ?>
+		¿Tuvo la madre contacto con alguna persona con alguna enfermedad? (Si no, dejar en blanco)<br />
+		<?= $this->element->contactoenfermedad; ?>
 
-		Numero de hermanos<br />
-		<?= $this->element->numhermanos; ?>
+		¿La madre sufri&oacute; alg&uacute;n accidente durante el embarazo? (Si no, dejar en blanco)<br />
+		<?= $this->element->accidenteembarazo; ?>
 
-		Lugar en la familia<br />
-		<?= $this->element->lugarfam; ?>
+		<?= $this->element->id; ?>
 
-		Diagn&oacute;stico<br />
-		<?= $this->element->diagnostico; ?>
-
-		Tipo de sangre<br />
-		<?= $this->element->tiposangre; ?>
-
-		Nombre del padre<br />
-		<?= $this->element->nombrepadre; ?>
-
-		nNombre de la madre<br />
-		<?= $this->element->nombremadre; ?>
-
-		Domicilio<br />
-		<?= $this->element->domicilio; ?>
-
-		Seguro<br />
-		<?= $this->element->seguro; ?>
-
-		Poliza<br />
-		<?= $this->element->poliza; ?>
-
-		¿Recibe rehabilitaci&oacute;n del Aprenizaje? (Si no, dejar en blanco)<br />
-		<?= $this->element->rehab; ?>
-
-		¿Recibe apoyo psicol&oacute;gico? (Si no, dejar en blanco)<br />
-		<?= $this->element->apoyopsico; ?>
-
-		<?= $this->hola ?>
 		<span style="float: right;">
 			<?= $this->element->submit; ?>
 		</span>

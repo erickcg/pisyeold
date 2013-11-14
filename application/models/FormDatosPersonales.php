@@ -12,18 +12,24 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 		 $nombre = new Zend_Form_Element_Text('nombre');
 		 $nombre->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Nombre')
+		 	->setAttrib('required','')
+		 	->setAttrib('pattern','alpha_numeric')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$apaterno = new Zend_Form_Element_Text('apaterno');
 		$apaterno->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Apellido paterno')
+		 	->setAttrib('required','')
+		 	->setAttrib('pattern','alpha_numeric')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$amaterno = new Zend_Form_Element_Text('amaterno');
 		$amaterno->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Apellido materno')
+		 	->setAttrib('required','')
+		 	->setAttrib('pattern','alpha_numeric')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
@@ -36,6 +42,8 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 	        $dia = new Zend_Form_Element_Text('dia');
 		$dia->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Dia')
+		 	->setAttrib('required','')
+		 	->setAttrib('pattern','integer')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
@@ -43,11 +51,15 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 		$mes->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Mes-ejemplo: 5')
 			->removeDecorator('label')
+			->setAttrib('required','')
+		 	->setAttrib('pattern','integer')
 			->removeDecorator('htmlTag');
 
 		$anio = new Zend_Form_Element_Text('anio');
 		$anio->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Año')
+		 	->setAttrib('required','')
+		 	->setAttrib('pattern','integer')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

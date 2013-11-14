@@ -47,6 +47,7 @@
           <dbTableFile dbTableName="AlumnoDetalle"/>
         </dbTableDirectory>
         <modelFile modelName="FormAntecedentes"/>
+        <modelFile modelName="FormPrenatales"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_FormDatosPersonales extends Zend_Form
+class Application_Model_FormAntecedentes extends Zend_Form
 {
 	public function __construct($options = null)
 	{
@@ -18,26 +18,22 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 	                ->setValue("s");
 
 	        $amenazaaborto = new Zend_Form_Element_Text('amenazaaborto');
-		$amenazaaborto->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'Si no hubo amenaza de aborto, dejar en blanco')
+		$amenazaaborto->setAttrib('placeholder', 'Si no hubo amenaza de aborto, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$amenazaprematuro = new Zend_Form_Element_Text('amenazaprematuro');
-		$amenazaprematuro->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'Si no hubo amenaza de parto prematuro, dejar en blanco')
+		$amenazaprematuro->setAttrib('placeholder', 'Si no hubo amenaza de parto prematuro, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$contactoenfermedad = new Zend_Form_Element_Text('contactoenfermedad');
-		$contactoenfermedad->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'Si no contacto con alguna persona enferma, dejar en blanco')
+		$contactoenfermedad->setAttrib('placeholder', 'Si no contacto con alguna persona enferma, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$accidenteembarazo = new Zend_Form_Element_Text('accidenteembarazo');
-		$accidenteembarazo->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'Si no hubo accidente durante el embarazo, dejar en blanco')
+		$accidenteembarazo->setAttrib('placeholder', 'Si no hubo accidente durante el embarazo, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
@@ -48,6 +44,6 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 
 		 $this->setDecorators( array( array('ViewScript', array('viewScript' => '/alumno/_form_antecedentes.phtml'))));
 
-		 $this->addElements(array($embarazoplaneado, $tipoembarazo, $amenazaaborto, $amenazaprematuro, $contactoenfermedad, $accidenteembarazo, $submit));
+		 $this->addElements(array($embarazoplaneado, $embarazoriesgoso, $tipoembarazo, $amenazaaborto, $amenazaprematuro, $contactoenfermedad, $accidenteembarazo, $submit));
 	 }
 }
