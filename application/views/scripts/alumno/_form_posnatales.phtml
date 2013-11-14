@@ -1,0 +1,48 @@
+<fieldset>
+	<legend>Datos Hereditarios</legend>
+	<form action="<?= $this->element->getAction(); ?>"
+	method="<?= $this->element->getMethod(); ?>">
+
+		¿Lloro al nacer?<br />
+		<?= $this->element->lloro; ?>
+
+		Lo dieron de alta junto con su madre<br />
+		<?= $this->element->altamama; ?>
+
+		Requirió de cuidados intensivos<br />
+		<?= $this->element->cuidadosintensivos; ?>
+
+		Presentó problemas en su alimentación (si no hay, dejar en blanco)<br />
+		<?= $this->element->problemasalimentacion; ?>
+
+		Traumatismos o accidentes (si no hay, dejar en blanco)<br />
+		<?= $this->element->traumatismos; ?>
+
+		<p><b>Durante los primeros 24 meses de vida, el alumno presento alguna enfermedad de las condiciones:</b></p>
+
+		Infecciones que afecten el área neurológica (si no hay, dejar en blanco)<br />
+		<?= $this->element->infeccionneuro; ?>
+
+		Alergias (si no hay, dejar en blanco)<br />
+		<?= $this->element->alergias; ?>
+
+		Convulsiones (si no hay, dejar en blanco)<br />
+		<?= $this->element->convulsiones; ?>
+
+		Audición (si no hay, dejar en blanco)<br />
+		<?= $this->element->audicion; ?>
+
+		Visión (si no hay, dejar en blanco)<br />
+		<?= $this->element->vision; ?>
+
+		Alguna otra condición que se tenga que conocer (si no hay, dejar en blanco)<br />
+		<?= $this->element->otros; ?>
+
+
+		<?= $this->element->id; ?>
+
+		<span style="float: right;">
+			<?= $this->element->submit; ?>
+		</span>
+	</form>
+</fieldset>

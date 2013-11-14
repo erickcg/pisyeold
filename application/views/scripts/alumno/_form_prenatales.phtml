@@ -1,0 +1,17 @@
+<fieldset>
+	<legend>Datos Prenatales</legend>
+	<form action="<?= $this->element->getAction(); ?>"
+	method="<?= $this->element->getMethod(); ?>">
+		¿Hubo enfermedad durante el embarazo?<br />
+		<?= $this->element->enfermedaddurante; ?>
+
+		¿La madre estuvo expuesta a sustancias toxicas?<br />
+		<?= $this->element->sustancias; ?>
+
+		<?= $this->element->id; ?>
+
+		<span style="float: right;">
+			<?= $this->element->submit; ?>
+		</span>
+	</form>
+</fieldset>

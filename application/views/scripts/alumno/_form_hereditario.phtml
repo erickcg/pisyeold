@@ -1,0 +1,30 @@
+<fieldset>
+	<legend>Datos Hereditarios</legend>
+	<form action="<?= $this->element->getAction(); ?>"
+	method="<?= $this->element->getMethod(); ?>">
+
+		<p>Familiares que presenten:</p>
+
+		Alguna alteracion en el lenguaje (si no hay, dejar en blanco)<br />
+		<?= $this->element->lenguaje; ?>
+
+		Algun tipo de retardo cognitivo o intelectual (si no hay, dejar en blanco)<br />
+		<?= $this->element->retardo; ?>
+
+		Que hayan presentado algun problema de aprendizaje (si no hay, dejar en blanco)<br />
+		<?= $this->element->problemaaprendizajehereditario; ?>
+
+		Alguna patologia cromosomica (si no hay, dejar en blanco)<br />
+		<?= $this->element->patologiacromosomica; ?>
+
+		Alguna patologia priquiatrica (si no hay, dejar en blanco)<br />
+		<?= $this->element->patologiapsiquiatrica; ?>
+
+
+		<?= $this->element->id; ?>
+
+		<span style="float: right;">
+			<?= $this->element->submit; ?>
+		</span>
+	</form>
+</fieldset>

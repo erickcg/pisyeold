@@ -139,11 +139,7 @@ class AlumnoController extends Zend_Controller_Action
 
 			$db->update('AlumnoDetalle', $data, 'id = '. $id );
 
-
-
-			//$db->insert('AlumnoDetalle', $data);
-
-			//$this->_redirect('/Alumno/prenatales/id/' . $id);
+			$this->_redirect('/Alumno/prenatales/id/' . $id);
                     	return;
 		}
 	}
@@ -158,7 +154,7 @@ class AlumnoController extends Zend_Controller_Action
     {
         $id = $this->_request->getParam('id');
 
-        $form = new Application_Model_FormAntecedentes();
+        $form = new Application_Model_FormPrenatales();
 
         if ($this->getRequest()->isPost()) {
 
@@ -166,38 +162,21 @@ class AlumnoController extends Zend_Controller_Action
             	if ($form->isValid($this->_request->getPost())) {
 			
 		    	$db = Zend_Db_Table::getDefaultAdapter();
-		    	
-			$data = array(
-				'embarazoriesgoso' => $form->getValue('embarazoriesgoso'),
-				'embarazoplaneado' => $form->getValue('embarazoplaneado')
-			);
 
 			//Valores que pueden ser NULL y deben ser respetados
-			if($form->getValue('amenazaaborto') != ''){
-				$data['amenazaaborto'] = $form->getValue('amenazaaborto');
+			if($form->getValue('enfermedaddurante') != ''){
+				$data['enfermedaddurante'] = $form->getValue('enfermedaddurante');
 			}
 
-			if($form->getValue('amenazaprematuro') != ''){
-				$data['amenazaprematuro'] = $form->getValue('amenazaprematuro');
-			}
-
-			if($form->getValue('contactoenfermedad') != ''){
-				$data['contactoenfermedad'] = $form->getValue('contactoenfermedad');
-			}
-
-			if($form->getValue('accidenteembarazo') != ''){
-				$data['accidenteembarazo'] = $form->getValue('accidenteembarazo');
+			if($form->getValue('sustancias') != ''){
+				$data['sustancias'] = $form->getValue('sustancias');
 			}
 			
 			$id = $this->_request->getPost('id');
 
 			$db->update('AlumnoDetalle', $data, 'id = '. $id );
 
-
-
-			//$db->insert('AlumnoDetalle', $data);
-
-			//$this->_redirect('/Alumno/prenatales/id/' . $id);
+			$this->_redirect('/Alumno/perinatales/id/' . $id);
                     	return;
 		}
 	}
@@ -211,16 +190,175 @@ class AlumnoController extends Zend_Controller_Action
     public function perinatalesAction()
     {
        $id = $this->_request->getParam('id');
+
+        $form = new Application_Model_FormPerinatales();
+
+        if ($this->getRequest()->isPost()) {
+
+		// If the submitted data is valid, attempt to authenticate the user
+            	if ($form->isValid($this->_request->getPost())) {
+			
+		    	$db = Zend_Db_Table::getDefaultAdapter();
+
+			$data = array(
+				'tiempo' => $form->getValue('tiempo'),
+				'nacimiento' => $form->getValue('nacimiento'),
+				'multiple' => $form->getValue('multiple'),
+				'tipodeparto' => $form->getValue('tipodeparto')
+			);
+
+			//Valores que pueden ser NULL y deben ser respetados
+			if($form->getValue('cesarea') != ''){
+				$data['cesarea'] = $form->getValue('cesarea');
+			}
+
+			if($form->getValue('anoxia') != ''){
+				$data['anoxia'] = $form->getValue('anoxia');
+			}
+
+			if($form->getValue('hipoxia') != ''){
+				$data['hipoxia'] = $form->getValue('hipoxia');
+			}
+
+			if($form->getValue('traumaobstetrico') != ''){
+				$data['traumaobstetrico'] = $form->getValue('traumaobstetrico');
+			}
+
+			if($form->getValue('sufrimientofetal') != ''){
+				$data['sufrimientofetal'] = $form->getValue('sufrimientofetal');
+			}
+			
+			$id = $this->_request->getPost('id');
+
+			$db->update('AlumnoDetalle', $data, 'id = '. $id );
+
+			$this->_redirect('/Alumno/posnatales/id/' . $id);
+                    	return;
+		}
+	}
+
+	$hidden = new Zend_Form_Element_Hidden('id');
+	$hidden->setValue($id);
+	$form->addElement($hidden);
+	$this->view->form = $form;
     }
 
     public function posnatalesAction()
     {
         $id = $this->_request->getParam('id');
+
+        $form = new Application_Model_FormPosnatales();
+
+        if ($this->getRequest()->isPost()) {
+
+		// If the submitted data is valid, attempt to authenticate the user
+            	if ($form->isValid($this->_request->getPost())) {
+			
+		    	$db = Zend_Db_Table::getDefaultAdapter();
+
+			$data = array(
+				'lloro' => $form->getValue('lloro'),
+				'altamama' => $form->getValue('altamama')
+			);
+
+			//Valores que pueden ser NULL y deben ser respetados
+			if($form->getValue('cuidadosintensivos') != ''){
+				$data['cuidadosintensivos'] = $form->getValue('cuidadosintensivos');
+			}
+
+			if($form->getValue('problemasalimentacion') != ''){
+				$data['problemasalimentacion'] = $form->getValue('problemasalimentacion');
+			}
+
+			if($form->getValue('traumatismos') != ''){
+				$data['traumatismos'] = $form->getValue('traumatismos');
+			}
+
+			if($form->getValue('infeccionneuro') != ''){
+				$data['infeccionneuro'] = $form->getValue('infeccionneuro');
+			}
+
+			if($form->getValue('alergias') != ''){
+				$data['alergias'] = $form->getValue('alergias');
+			}
+
+			if($form->getValue('convulsiones') != ''){
+				$data['convulsiones'] = $form->getValue('convulsiones');
+			}
+
+			if($form->getValue('audicion') != ''){
+				$data['audicion'] = $form->getValue('audicion');
+			}
+
+			if($form->getValue('vision') != ''){
+				$data['vision'] = $form->getValue('vision');
+			}
+
+			if($form->getValue('otros') != ''){
+				$data['otros'] = $form->getValue('otros');
+			}
+			
+			$id = $this->_request->getPost('id');
+
+			$db->update('AlumnoDetalle', $data, 'id = '. $id );
+
+			$this->_redirect('/Alumno/hereditario/id/' . $id);
+                    	return;
+		}
+	}
+
+	$hidden = new Zend_Form_Element_Hidden('id');
+	$hidden->setValue($id);
+	$form->addElement($hidden);
+	$this->view->form = $form;
     }
 
     public function hereditarioAction()
     {
         $id = $this->_request->getParam('id');
+
+        $form = new Application_Model_FormHereditario();
+
+        if ($this->getRequest()->isPost()) {
+
+		// If the submitted data is valid, attempt to authenticate the user
+            	if ($form->isValid($this->_request->getPost())) {
+			
+		    	$db = Zend_Db_Table::getDefaultAdapter();
+
+			if($form->getValue('lenguaje') != ''){
+				$data['lenguaje'] = $form->getValue('lenguaje');
+			}
+
+			if($form->getValue('retardo') != ''){
+				$data['retardo'] = $form->getValue('retardo');
+			}
+
+			if($form->getValue('problemaaprendizajehereditario') != ''){
+				$data['problemaaprendizajehereditario'] = $form->getValue('problemaaprendizajehereditario');
+			}
+
+			if($form->getValue('patologiacromosomica') != ''){
+				$data['patologiacromosomica'] = $form->getValue('patologiacromosomica');
+			}
+
+			if($form->getValue('patologiapsiquiatrica') != ''){
+				$data['patologiapsiquiatrica'] = $form->getValue('patologiapsiquiatrica');
+			}
+			
+			$id = $this->_request->getPost('id');
+
+			$db->update('AlumnoDetalle', $data, 'id = '. $id );
+
+			$this->_redirect('/Alumno/terminado');
+                    	return;
+		}
+	}
+
+	$hidden = new Zend_Form_Element_Hidden('id');
+	$hidden->setValue($id);
+	$form->addElement($hidden);
+	$this->view->form = $form;
     }
 
     public function livesearchAction()
@@ -288,8 +426,22 @@ class AlumnoController extends Zend_Controller_Action
         // action body
     }
 
+    public function terminadoAction()
+    {
+        // action body
+    }
+
+    public function datosAction()
+    {
+        // action body
+    }
+
 
 }
+
+
+
+
 
 
 

@@ -1,0 +1,38 @@
+<fieldset>
+	<legend>Datos Perinatales</legend>
+	<form action="<?= $this->element->getAction(); ?>"
+	method="<?= $this->element->getMethod(); ?>">
+		Nacimiento:<br />
+		<?= $this->element->nacimiento; ?>
+
+		Tiempo de parto:<br />
+		<?= $this->element->tiempo; ?>
+
+		Tipo de parto:<br />
+		<?= $this->element->tipodeparto; ?>
+
+		Nacimiento multiple:<br />
+		<?= $this->element->multiple; ?>
+
+		¿Hubo cesarea? (si no hubo, dejar en blanco)<br />
+		<?= $this->element->cesarea; ?>
+
+		¿Hubo anoxia? (si no hubo, dejar en blanco)<br />
+		<?= $this->element->anoxia; ?>
+
+		¿Hubo hipoxia? (si no hubo, dejar en blanco)<br />
+		<?= $this->element->hipoxia; ?>
+
+		¿Hubo sufrimiento fetal? (si no hubo, dejar en blanco)<br />
+		<?= $this->element->sufrimientofetal; ?>
+
+		¿Hubo sufrimiento traumao bstetrico? (si no hubo, dejar en blanco)<br />
+		<?= $this->element->traumaobstetrico; ?>
+
+		<?= $this->element->id; ?>
+
+		<span style="float: right;">
+			<?= $this->element->submit; ?>
+		</span>
+	</form>
+</fieldset>
