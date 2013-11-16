@@ -404,14 +404,17 @@ class AlumnoController extends Zend_Controller_Action
 
     public function datosAction()
     {
+    	//Id from get if we come from anoter place in the altaalumno process
+    	$id = $this->_request->getParam('id');
+
+	$db = Zend_Db_Table::getDefaultAdapter();
         $form = new Application_Model_FormDatosPersonales();
 	
 	if ($this->getRequest()->isPost()) {
 
 		// If the submitted data is valid, attempt to authenticate the user
             	if ($form->isValid($this->_request->getPost())) {
-		    	$db = Zend_Db_Table::getDefaultAdapter();
-		    	
+		    			    	
 			$data = array(
 				'nombre' => $form->getValue('nombre'),
 				'apaterno' => $form->getValue('apaterno'),
@@ -462,15 +465,53 @@ class AlumnoController extends Zend_Controller_Action
 				$data['apoyopsico'] = $form->getValue('apoyopsico');
 			}
 
-			$db->insert('AlumnoDetalle', $data);
+			$id = $this->_request->getPost('id');
 
-			$id = $db->lastInsertId();
+			if($id != ''){
+				$db->update('AlumnoDetalle', $data, 'id = '. $id );
+			} else {
+				$db->insert('AlumnoDetalle', $data);
+				$id = $db->lastInsertId();
+			}
 
 			$this->_redirect('/Alumno/antecedentes/id/' . $id);
                     	return;
 		}
 	}
+	if($id != '') {
+	        $query = $db->select()
+	                    ->from('AlumnoDetalle')->where('id = ?', $id); 
+	        $results = $db->fetchRow($query);
 
+	        $datafromdb = array(
+			'nombre' => $results['nombre'],
+			'apaterno' => $results['apaterno'],
+			'amaterno' => $results['amaterno'],
+			'sexo' => $results['sexo'],
+			'diagnostico' => $results['diagnostico'],
+			'numhermanos' => $results['numhermanos'],
+			'lugarfam' => $results['lugarfam'],
+			'tiposangre' => $results['tiposangre'],
+			'nombrepadre' => $results['nombrepadre'],
+			'nombremadre' => $results['nombremadre'],
+			'seguro' => $results['seguro'],
+			'poliza' => $results['poliza'],
+			'rehab' => $results['rehab'],
+			'apoyopsico' => $results['apoyopsico']
+		); 
+
+		$fecha = explode("-", $results['fechanacimiento']);	
+
+		$datafromdb['anio'] = $fecha[0];
+		$datafromdb['mes'] = $fecha[1];
+		$datafromdb['dia'] = $fecha[2];
+
+		$form->setDefaults($datafromdb);
+
+		$hidden = new Zend_Form_Element_Hidden('id');
+		$hidden->setValue($id);
+		$form->addElement($hidden);
+        }
 	$this->view->form = $form;
     }
 
