@@ -10,12 +10,10 @@ class Application_Model_FormAntecedentes extends Zend_Form
 		 $this->setAction('/Alumno/antecedentes');
 
 		$embarazoriesgoso = new Zend_Form_Element_Radio('embarazoriesgoso');
-		$embarazoriesgoso->setMultiOptions(array('s'=>'S', 'n'=>'N'))
-	                ->setValue("n");
+		$embarazoriesgoso->setMultiOptions(array('s'=>'Si', 'n'=>'No'));
 
 	        $embarazoplaneado = new Zend_Form_Element_Radio('embarazoplaneado');
-		$embarazoplaneado->setMultiOptions(array('s'=>'S', 'n'=>'N'))
-	                ->setValue("s");
+		$embarazoplaneado->setMultiOptions(array('s'=>'Si', 'n'=>'No'));
 
 	        $amenazaaborto = new Zend_Form_Element_Text('amenazaaborto');
 		$amenazaaborto->setAttrib('placeholder', 'Si no hubo amenaza de aborto, dejar en blanco')

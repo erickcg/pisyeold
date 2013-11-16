@@ -5,6 +5,7 @@ class AlumnoController extends Zend_Controller_Action
 
     public function init()
     {
+
         $auth = Zend_Auth::getInstance();
 
     	if ($auth->hasIdentity()) {
@@ -32,7 +33,7 @@ class AlumnoController extends Zend_Controller_Action
 
             	if ($form->isValid($this->_request->getPost())) {
 			
-		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
 		    	
 			$data = array(
 				'nombre' => $form->getValue('nombre'),
@@ -74,15 +75,13 @@ class AlumnoController extends Zend_Controller_Action
     public function antecedentesAction()
     {
         $id = $this->_request->getParam('id');
-
+        $db = Zend_Db_Table::getDefaultAdapter();
         $form = new Application_Model_FormAntecedentes();
 
         if ($this->getRequest()->isPost()) {
 
 		// If the submitted data is valid, attempt to authenticate the user
             	if ($form->isValid($this->_request->getPost())) {
-			
-		    	$db = Zend_Db_Table::getDefaultAdapter();
 		    	
 			$data = array(
 				'embarazoriesgoso' => $form->getValue('embarazoriesgoso'),
@@ -115,6 +114,23 @@ class AlumnoController extends Zend_Controller_Action
 		}
 	}
 
+	$this->view->idalumno = $id;
+
+	$query = $db->select()
+                    ->from('AlumnoDetalle')->where('id = ?', $id); 
+        $results = $db->fetchRow($query);
+
+        $datafromdb = array(
+		'embarazoriesgoso' => $results['embarazoriesgoso'],
+		'embarazoplaneado' => $results['embarazoplaneado'],
+		'amenazaaborto' => $results['amenazaaborto'],
+		'amenazaprematuro' => $results['amenazaprematuro'],
+		'contactoenfermedad' => $results['contactoenfermedad'],
+		'accidenteembarazo' => $results['accidenteembarazo']
+	); 
+
+	$form->setDefaults($datafromdb);
+
 	$hidden = new Zend_Form_Element_Hidden('id');
 	$hidden->setValue($id);
 	$form->addElement($hidden);
@@ -124,7 +140,7 @@ class AlumnoController extends Zend_Controller_Action
     public function prenatalesAction()
     {
         $id = $this->_request->getParam('id');
-
+        $db = Zend_Db_Table::getDefaultAdapter();
         $form = new Application_Model_FormPrenatales();
 
         if ($this->getRequest()->isPost()) {
@@ -132,7 +148,7 @@ class AlumnoController extends Zend_Controller_Action
 		// If the submitted data is valid, attempt to authenticate the user
             	if ($form->isValid($this->_request->getPost())) {
 			
-		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
 
 			//Valores que pueden ser NULL y deben ser respetados
 			if($form->getValue('enfermedaddurante') != ''){
@@ -152,6 +168,19 @@ class AlumnoController extends Zend_Controller_Action
 		}
 	}
 
+	$this->view->idalumno = $id;
+
+	$query = $db->select()
+                    ->from('AlumnoDetalle')->where('id = ?', $id); 
+        $results = $db->fetchRow($query);
+
+        $datafromdb = array(
+		'enfermedaddurante' => $results['enfermedaddurante'],
+		'sustancias' => $results['sustancias']
+	); 
+
+	$form->setDefaults($datafromdb);
+
 	$hidden = new Zend_Form_Element_Hidden('id');
 	$hidden->setValue($id);
 	$form->addElement($hidden);
@@ -160,8 +189,8 @@ class AlumnoController extends Zend_Controller_Action
 
     public function perinatalesAction()
     {
-       $id = $this->_request->getParam('id');
-
+        $id = $this->_request->getParam('id');
+        $db = Zend_Db_Table::getDefaultAdapter();
         $form = new Application_Model_FormPerinatales();
 
         if ($this->getRequest()->isPost()) {
@@ -169,7 +198,7 @@ class AlumnoController extends Zend_Controller_Action
 		// If the submitted data is valid, attempt to authenticate the user
             	if ($form->isValid($this->_request->getPost())) {
 			
-		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
 
 			$data = array(
 				'tiempo' => $form->getValue('tiempo'),
@@ -208,6 +237,26 @@ class AlumnoController extends Zend_Controller_Action
 		}
 	}
 
+	$this->view->idalumno = $id;
+
+	$query = $db->select()
+                    ->from('AlumnoDetalle')->where('id = ?', $id); 
+        $results = $db->fetchRow($query);
+
+        $datafromdb = array(
+		'tiempo' => $results['tiempo'],
+		'nacimiento' => $results['nacimiento'],
+		'multiple' => $results['multiple'],
+		'tipodeparto' => $results['tipodeparto'],
+		'cesarea' => $results['cesarea'],
+		'anoxia' => $results['anoxia'],
+		'hipoxia' => $results['hipoxia'],
+		'traumaobstetrico' => $results['traumaobstetrico'],
+		'sufrimientofetal' => $results['sufrimientofetal']
+	); 
+
+	$form->setDefaults($datafromdb);
+
 	$hidden = new Zend_Form_Element_Hidden('id');
 	$hidden->setValue($id);
 	$form->addElement($hidden);
@@ -217,7 +266,7 @@ class AlumnoController extends Zend_Controller_Action
     public function posnatalesAction()
     {
         $id = $this->_request->getParam('id');
-
+        $db = Zend_Db_Table::getDefaultAdapter();
         $form = new Application_Model_FormPosnatales();
 
         if ($this->getRequest()->isPost()) {
@@ -225,7 +274,7 @@ class AlumnoController extends Zend_Controller_Action
 		// If the submitted data is valid, attempt to authenticate the user
             	if ($form->isValid($this->_request->getPost())) {
 			
-		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
 
 			$data = array(
 				'lloro' => $form->getValue('lloro'),
@@ -278,6 +327,28 @@ class AlumnoController extends Zend_Controller_Action
 		}
 	}
 
+	$this->view->idalumno = $id;
+
+	$query = $db->select()
+                    ->from('AlumnoDetalle')->where('id = ?', $id); 
+        $results = $db->fetchRow($query);
+
+        $datafromdb = array(
+		'lloro' => $results['lloro'],
+		'altamama' => $results['altamama'],
+		'cuidadosintensivos' => $results['cuidadosintensivos'],
+		'infeccionneuro' => $results['infeccionneuro'],
+		'alergias' => $results['alergias'],
+		'problemasalimentacion' => $results['problemasalimentacion'],
+		'convulsiones' => $results['convulsiones'],
+		'audicion' => $results['audicion'],
+		'vision' => $results['vision'],
+		'otros' => $results['otros'],
+		'traumatismos' => $results['traumatismos']
+	); 
+
+	$form->setDefaults($datafromdb);
+
 	$hidden = new Zend_Form_Element_Hidden('id');
 	$hidden->setValue($id);
 	$form->addElement($hidden);
@@ -287,7 +358,7 @@ class AlumnoController extends Zend_Controller_Action
     public function hereditarioAction()
     {
         $id = $this->_request->getParam('id');
-
+        $db = Zend_Db_Table::getDefaultAdapter();
         $form = new Application_Model_FormHereditario();
 
         if ($this->getRequest()->isPost()) {
@@ -295,7 +366,7 @@ class AlumnoController extends Zend_Controller_Action
 		// If the submitted data is valid, attempt to authenticate the user
             	if ($form->isValid($this->_request->getPost())) {
 			
-		    	$db = Zend_Db_Table::getDefaultAdapter();
+		    	
 
 			if($form->getValue('lenguaje') != ''){
 				$data['lenguaje'] = $form->getValue('lenguaje');
@@ -325,6 +396,22 @@ class AlumnoController extends Zend_Controller_Action
                     	return;
 		}
 	}
+
+	$this->view->idalumno = $id;
+
+        $query = $db->select()
+                    ->from('AlumnoDetalle')->where('id = ?', $id); 
+        $results = $db->fetchRow($query);
+
+        $datafromdb = array(
+		'lenguaje' => $results['lenguaje'],
+		'retardo' => $results['retardo'],
+		'problemaaprendizajehereditario' => $results['problemaaprendizajehereditario'],
+		'patologiacromosomica' => $results['patologiacromosomica'],
+		'patologiapsiquiatrica' => $results['patologiapsiquiatrica']
+	); 
+
+	$form->setDefaults($datafromdb);
 
 	$hidden = new Zend_Form_Element_Hidden('id');
 	$hidden->setValue($id);
@@ -406,8 +493,7 @@ class AlumnoController extends Zend_Controller_Action
     {
     	//Id from get if we come from anoter place in the altaalumno process
     	$id = $this->_request->getParam('id');
-
-	$db = Zend_Db_Table::getDefaultAdapter();
+        $db = Zend_Db_Table::getDefaultAdapter();
         $form = new Application_Model_FormDatosPersonales();
 	
 	if ($this->getRequest()->isPost()) {
@@ -479,6 +565,9 @@ class AlumnoController extends Zend_Controller_Action
 		}
 	}
 	if($id != '') {
+
+	$this->view->idalumno = $id;
+
 	        $query = $db->select()
 	                    ->from('AlumnoDetalle')->where('id = ?', $id); 
 	        $results = $db->fetchRow($query);
