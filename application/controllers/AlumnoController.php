@@ -568,6 +568,13 @@ class AlumnoController extends Zend_Controller_Action
 
 	$this->view->idalumno = $id;
 
+	$this->view->antecedentes = ' href="/Alumno/antecedentes/id/'.$id.'" ';
+	$this->view->prenatales = ' href="/Alumno/prenatales/id/'.$id.'" ';
+	$this->view->perinatales = ' href="/Alumno/perinatales/id/'.$id.'" ';
+	$this->view->posnatales = ' href="/Alumno/posnatales/id/'.$id.'" ';
+	$this->view->hereditario = ' href="/Alumno/hereditario/id/'.$id.'" ';
+
+
 	        $query = $db->select()
 	                    ->from('AlumnoDetalle')->where('id = ?', $id); 
 	        $results = $db->fetchRow($query);
