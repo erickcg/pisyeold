@@ -447,14 +447,14 @@ class AlumnoController extends Zend_Controller_Action
 	      {
 	      if ($hint=="")
 	        {
-	        $hint="<a href='" . 
+	        $hint="<a class='omnibar' href='" . 
 	        $z->item(0)->childNodes->item(0)->nodeValue . 
 	        "' target='_blank'>" . 
 	        $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
 	        }
 	      else
 	        {
-	        $hint=$hint . "<br /><a href='" . 
+	        $hint=$hint . "<br /><a class='omnibar' href='" . 
 	        $z->item(0)->childNodes->item(0)->nodeValue . 
 	        "' target='_blank'>" . 
 	        $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
