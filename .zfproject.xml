@@ -55,6 +55,8 @@
         <modelFile modelName="FormHereditario"/>
         <modelFile modelName="FormContacto"/>
         <modelFile modelName="FormId"/>
+        <modelFile modelName="FormMedico"/>
+        <modelFile modelName="FormMedicina"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

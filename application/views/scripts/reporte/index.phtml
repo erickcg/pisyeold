@@ -11,22 +11,39 @@
          <br> Fecha de nacimiento: <?= $this->query['dia'] ?> -<?= $this->query['mes'] ?> - <?= $this->query['anio'] ?>
          <br> No. de hermanos:<?= $this->query['nohermanos'] ?>
          <br> Lugar que ocupa en la familia el alumno:<?= $this->query['lugarfamilia'] ?>
-        <br>  Diagnóstico establecido del alumno:<?= $this->query['diagnostico'] ?>
-          <?php if($this->query['seguro'] == '')
+         <br> Diagnóstico establecido del alumno:<?= $this->query['diagnostico'] ?>
+         <br> <?php if($this->query['seguro'] == '')
                     echo '<br>No cuenta con seguro de gastos medicos';
                 else
                     echo "<br>Seguro:".$this->query['seguro'] ."<br>Poliza: ".$this->query['poliza'];?>
             <br>Nombre del padre:<?= $this->query['nombrepadre'] ?>
             <br>Nombre de la madre:<?= $this->query['nombremadre'] ?>
             <br>Domicilio:<?= $this->query['domicilio'] ?>
-            <?php if($this->query['rehab'] == '')
+            <br><?php if($this->query['rehab'] == '')
                     echo '<br>No lleva una reahilitación del aprendizaje';
                 else
                     echo "<br>Rehabilitación del aprendizaje:".$this->query['seguro'];?>
-            <?php if($this->query['apoyopsico'] == '')
+            <br> <?php if($this->query['apoyopsico'] == '')
                     echo '<br>No tiene apoyo psicológico';
                 else
                     echo "<br>Apoyo psicológico:".$this->query['apoyopsico'];?>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel3">Contactos de emergencia</a></p>
+        <div class="content" data-section-content>
+          <?php foreach($this->contacto AS $contact) {
+              echo "Nombre:  ".$contact['nombre']."<br />";
+              echo "Teléfono casa:  ".$contact['telcasa']."<br />";
+              echo "Teléfono oficina:  ".$contact['teloficina']."<br />";
+              echo "Teléfono celular:  ".$contact['telcelular']."<br /><br />";
+              } ?>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel3">Doctores</a></p>
+        <div class="content" data-section-content>
+
         </div>
       </section>
       <section>
@@ -34,42 +51,132 @@
         <div class="content" data-section-content>
           <br>Embarazo planeado:<?= $this->query['embarazoplaneado'] ?> 
           <br>Tipo de embarazo:<?= $this->query['embarazoriesgoso'] ?>
-          <?php if($this->query['amenazaaborto'] == '')
+          <br><?php if($this->query['amenazaaborto'] == '')
                     echo '<br>No hubo amenaza de aborto';
                 else
                     echo "<br>Amenaza de aborto:".$this->query['amenazaaborto'];?>
-          <?php if($this->query['amenazaprematuro'] == '')
+          <br><?php if($this->query['amenazaprematuro'] == '')
                     echo '<br>No hubo amenaza de nacimiento prematuro';
                 else
                     echo "<br>Amenaza de nacimiento prematuro:".$this->query['amenazaprematuro'];?>
-          <br>
-          <br>
-          <br>
-          <br>
+          <br><?php if($this->query['contactoenfermedad'] == '')
+                    echo '<br>No hubo contacto con alguna persona con alguna enfermedad';
+                else
+                    echo "<br>Contacto con alguna persona con alguna enfermedad:".$this->query['contactoenfermedad'];?>
+          <br><?php if($this->query['accidenteembarazo'] == '')
+                    echo '<br>No se sufrió accidente durante el embarazo';
+                else
+                    echo "<br>Se sufrió el(los) siguiente(s) accidente(s) durante el embarazo:".$this->query['accidenteembarazo'];?>
         </div>
       </section>
       <section>
         <p class="title" data-section-title><a href="#panel3">Prenatales</a></p>
         <div class="content" data-section-content>
-          <p>Content of section 2.</p>
+          <?php if($this->query['enfermedaddurante'] == '')
+                    echo '<br>No hubo enfermedad durante el embarazo';
+                else
+                    echo "<br>Se sufrió el(los) siguiente(s) accidente(s) durante el embarazo:".$this->query['enfermedaddurante'];?>
+          <br><?php if($this->query['sustancias'] == '')
+                    echo '<br>La madre no estuvo expuesta a sustancias toxicas';
+                else
+                    echo "<br>La madre estuvo expuesta a las siguientes sustancias toxicas:".$this->query['sustancias'];?>
         </div>
       </section>
       <section>
         <p class="title" data-section-title><a href="#panel4">Perinatales</a></p>
         <div class="content" data-section-content>
-          <p>Content of section 2.</p>
+          <br>Nacimiento: <?= $this->query['nacimiento'] ?> 
+          <br>Tipo de nacimiento: <?= $this->query['tipodeparto'] ?>
+          <br>Tiempo de parto: <?= $this->query['tiempo'] ?>
+          <br>Nacimiento múltiple: <?= $this->query['multiple'] ?>
+          <br><?php if($this->query['cesarea'] == '')
+                    echo '<br>No hubo cesárea';
+                else
+                    echo "<br>La madre tuvo cesárea, los detalles fueron:".$this->query['cesarea'];?>
+          <br><?php if($this->query['anoxia'] == '')
+                    echo '<br>No hubo anóxia';
+                else
+                    echo "<br>Hubo Anóxia con los siguientes detalles:".$this->query['anoxia'];?>
+          <br><?php if($this->query['hipoxia'] == '')
+                    echo '<br>No hubo hipóxia';
+                else
+                    echo "<br>Hubo hipóxia con los siguientes detalles:".$this->query['hipoxia'];?>
+          <br><?php if($this->query['sufrimientofetal'] == '')
+                    echo '<br>No hubo sufrimiento fetal';
+                else
+                    echo "<br>Hubo sufrimiento fetal con los siguientes detalles:".$this->query['sufrimientofetal'];?>
+          <br><?php if($this->query['traumaobstetrico'] == '')
+                    echo '<br>No hubo trauma obstétrico';
+                else
+                    echo "<br>Hubo trauma obstétrico con los siguientes detalles:".$this->query['traumaobstetrico'];?>
         </div>
       </section>
       <section>
         <p class="title" data-section-title><a href="#panel5">Posnatales</a></p>
         <div class="content" data-section-content>
-          <p>Content of section 2.</p>
+          <br>Lloró al nacer: <?= $this->query['lloro'] ?> 
+          <br>Le dieron de alta junto a su madre: <?= $this->query['alta'] ?>
+          <br><?php if($this->query['cuidadosintensivos'] == '')
+                    echo '<br>No requirió de cuidados intensivos';
+                else
+                    echo "<br>Requirió de cuidados intensivos. Detalles: ".$this->query['cuidadosintensivos'];?>
+          <br><?php if($this->query['problemasalimentacion'] == '')
+                    echo '<br>No tuvo problemas de alimentación';
+                else
+                    echo "<br>Tuvo los siguientes problemas de alimentación: ".$this->query['problemasalimentacion'];?>
+          <br><?php if($this->query['traumatismos'] == '')
+                    echo '<br>No sufrió traumatismos';
+                else
+                    echo "<br>Sufrió los siguientes traumatismos:".$this->query['traumatismos'];?>
+          <br><?php if($this->query['infeccionneuro'] == '')
+                    echo '<br>No tuvo infecciones que afectaran el área neurológica';
+                else
+                    echo "<br>Tuvo las siguientes infecciones que afectaron el área neurológica: ".$this->query['infeccionneuro'];?>
+          <br><?php if($this->query['alergias'] == '')
+                    echo '<br>No tiene alergias ';
+                else
+                    echo "<br>Tiene las siguientes alergias: ".$this->query['alergias'];?>
+          <br><?php if($this->query['convulsiones'] == '')
+                    echo '<br>No sufre de convulsiones';
+                else
+                    echo "<br>Sufre de convulsiones con los siguientes detalles: ".$this->query['convulsiones'];?>
+          <br><?php if($this->query['audicion'] == '')
+                    echo '<br>No posee problemas de audición';
+                else
+                    echo "<br>Posee los siguientes problemas de audición: ".$this->query['audicion'];?>
+          <br><?php if($this->query['vision'] == '')
+                    echo '<br>No posee problemas de visión';
+                else
+                    echo "<br>Posee los siguientes problemas de visión: ".$this->query['vision'];?>
+          <br><?php if($this->query['otros'] == '')
+                    echo '<br>';
+                else
+                    echo "<br>Posee los siguientes problemas adicionales: ".$this->query['otros'];?>
         </div>
       </section>
       <section>
         <p class="title" data-section-title><a href="#panel6">Factores hereditarios</a></p>
         <div class="content" data-section-content>
-          <p>Content of section 2.</p>
+          <br><?php if($this->query['lenguaje'] == '')
+                    echo '<br> No hay registros de alteración en el lenguaje';
+                else
+                    echo "<br>Se registraron las alteraciones en el lenguaje siguientes: ".$this->query['lenguaje'];?>
+          <br><?php if($this->query['retardo'] == '')
+                    echo '<br>No hay registros de retardo cognitivo o intelectual';
+                else
+                    echo "<br>Se registraron los siguientes retardos cognitivos o intelectuales: ".$this->query['retardo'];?>
+          <br><?php if($this->query['problemaaprendizajehereditario'] == '')
+                    echo '<br>No hay registro de problemas de aprendizaje';
+                else
+                    echo "<br>Se poseen registro de los siguienes problemas de aprendizaje: ".$this->query['problemaaprendizajehereditario'];?>
+          <br><?php if($this->query['patologiacromosomica'] == '')
+                    echo '<br>No hay registro de alguna patología cromosómica';
+                else
+                    echo "<br>Se poseen las siguienes patologías cromosómicas: ".$this->query['patologiacromosomica'];?>
+          <br><?php if($this->query['patologiapsiquiatrica'] == '')
+                    echo '<br>No hay registro de patología psiquiátrica';
+                else
+                    echo "<br>Se registraron las siguientes patologías psiquiátrica: ".$this->query['patologiapsiquiatrica'];?>
         </div>
       </section>
     </div>

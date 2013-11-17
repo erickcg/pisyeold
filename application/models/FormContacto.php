@@ -21,7 +21,7 @@ class Application_Model_FormContacto extends Zend_Form
 		$telcasa->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Tel casa')
 		 	->setAttrib('required','')
-		 	->setAttrib('pattern','numeric')
+		 	->setAttrib('pattern','number')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

@@ -29,12 +29,19 @@ class ReporteController extends Zend_Controller_Action
 
                     $db = Zend_Db_Table::getDefaultAdapter();
 
+                    //Generales
                     $query = $db->select()
                                 ->from('AlumnoDetalle')->where('id = ?', $id);
-
                     $results = $db->fetchRow($query);
-
                     $this->view->query = $results;
+
+                    //Contactos de emergencia
+                    $query = $db->select()
+                                ->from('Contacto')->where('idAlumno = ?', $id);
+
+                    $contacto = $db->fetchAll($query);
+
+                    $this->view->contacto = $contacto;
             }
         }
       

@@ -33,7 +33,7 @@ class AlumnoController extends Zend_Controller_Action
 
             	if ($form->isValid($this->_request->getPost())) {
 			
-		    	
+		    	$db = Zend_Db_Table::getDefaultAdapter();
 		    	
 			$data = array(
 				'nombre' => $form->getValue('nombre'),
