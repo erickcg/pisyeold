@@ -20,13 +20,22 @@ class ReporteController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        
+    }
+
+    public function generalAction()
+    {
+        $id = $this->_request->getParam('id');
+
         $form = new Application_Model_FormId();
         if ($this->getRequest()->isPost()) {
 
                 if ($form->isValid($this->_request->getPost())) {
-            
+                    
                     $id = $this->_request->getPost('id');
-
+                }
+        }
+        if($id != ''){
                     $db = Zend_Db_Table::getDefaultAdapter();
 
                     //Generales
@@ -43,7 +52,7 @@ class ReporteController extends Zend_Controller_Action
 
                     $this->view->contacto = $contacto;
             }
-        }
+            
       
         $db = Zend_Db_Table_Abstract::getDefaultAdapter();
         $options = $db->fetchPairs( $db->select()->from('AlumnoDetalle', array('id', 'nombre'))->order('nombre ASC'), 'id');
@@ -54,5 +63,9 @@ class ReporteController extends Zend_Controller_Action
         $form->addElement($status);
         $this->view->form = $form;
     }
+
+
 }
+
+
 

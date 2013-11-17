@@ -558,7 +558,18 @@ class AlumnoController extends Zend_Controller_Action
 			} else {
 				$db->insert('AlumnoDetalle', $data);
 				$id = $db->lastInsertId();
+
+				//Add it to the XML
+				$xml = simplexml_load_file('../application/views/scripts/alumni.xml');
+
+			        $link = $xml->addChild('link'); 
+			        $link->addChild('title', $form->getValue('nombre').' '.$form->getValue('apaterno').' '.$form->getValue('amaterno')); 
+			        $link->addChild('url', '/Reporte/general/id/'.$id); 
+
+			        file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
 			}
+
+			
 
 			$this->_redirect('/Alumno/antecedentes/id/' . $id);
                     	return;

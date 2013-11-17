@@ -7,7 +7,7 @@ class Application_Model_FormId extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('id');
 		 $this->setMethod('post');
-		 $this->setAction('/Reporte');
+		 $this->setAction('/Reporte/general');
 
 		 $submit = new Zend_Form_Element_Submit('submit');
 		 $submit->setLabel('Escoger')
