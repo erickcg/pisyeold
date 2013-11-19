@@ -1,14 +1,7 @@
-body {
-	background-color: #fff;
-}
 
-#header {
-	background-color: #fff;
-	color: ##0080A5;
-}
 
 #header h2 {
-	color: ##0080A5;
+	color: #0080A5;
 }
 
 #content {
@@ -16,6 +9,7 @@ body {
 }
 
 #footer {
+	padding-top: 10px;
 	background-color: #E7E2DD;
 }
 
@@ -35,4 +29,39 @@ body {
 .omnibar{
 	color: #000;
 	font-size: 19px;
+}
+
+.recent, .login a{
+	color: #fff;
+	font-size: 19px;
+}
+
+.recent:hover, .login a:hover{
+	color: #fff;
+	font-size: 19px;
+	text-decoration: underline;
+}
+
+@media only screen and (min-width: 1000px) {
+	body {
+		background-color: #fff;
+		background-image:url('/img/background.png');
+	background-repeat:repeat-x;
+	}
+	#header {
+		background-color: #fff;
+		color: #0080A5;
+		background-image:url('/img/background.png');
+	background-repeat:repeat-x;
+	}
+}
+
+@media only screen and (max-width: 999px) {
+	body {
+		background-color: #fff;
+	}
+	#header {
+		background-color: #fff;
+		color: #0080A5;
+	}
 }

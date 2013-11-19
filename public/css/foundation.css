@@ -2920,10 +2920,10 @@ label.error {
     .top-bar.expanded .title-area {
       background: #0080A5; }
     .top-bar.expanded .toggle-topbar a {
-      color: #888888; }
+      color: #fff; }
       .top-bar.expanded .toggle-topbar a span {
-        -webkit-box-shadow: 0 10px 0 1px #888888, 0 16px 0 1px #888888, 0 22px 0 1px #888888;
-        box-shadow: 0 10px 0 1px #888888, 0 16px 0 1px #888888, 0 22px 0 1px #888888; }
+        -webkit-box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
+        box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff; }
 
 .top-bar-section {
   left: 0;

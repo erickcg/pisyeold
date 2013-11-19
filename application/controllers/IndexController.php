@@ -16,10 +16,7 @@ class IndexController extends Zend_Controller_Action
         else {
             $this->_helper->redirector('login', 'account');
         }
-    }
 
-    public function indexAction()
-    {
         $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
 
         $nombrelast = $xml->xpath('/pages/link[last()]/title');
@@ -33,6 +30,10 @@ class IndexController extends Zend_Controller_Action
 
         $this->view->nombre = $nombre[0];
         $this->view->url = $url[0];
+    }
+
+    public function indexAction()
+    {
     }
 
 }

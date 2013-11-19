@@ -45,7 +45,7 @@ xmlhttp.send();
     <div class="large-12 columns">
       <div class="row">
         <div class="large-2 small-7 columns">
-          <a href="/"><img src="/img/logoblancop.png" /></a>
+          <a href="/"><img src="/img/logonegrop.png" /></a>
         </div>
         <div class="large-10 small-5 columns">
           <h2>Historial Cl&iacute;nico Pisye</h2>
@@ -98,12 +98,35 @@ xmlhttp.send();
       </nav>
     </div>
   </div>
-  <div id="content" class="row">
+  <div style="margin-top:5px;" id="content" class="row">
     <?php echo $this->layout()->content ?>
+    <div style="margin-top: 32px;" class="large-4 pull-8 columns">
+    <div style="background-color: #008eb8;  color: #fff;" class="row login">
+        <div class="large-4 columns">
+            <img src="/img/usuario.png" />
+            </div>
+            <div class="large-8 columns">
+            <?php echo $this->idDisplay; ?>
+        </div>
+    </div>
+    <div style="background-color: #009bc9; margin-top:10px; color: #fff;" class="row">
+        <div class="large-12 small-12 columns">
+            <h3 style="color: #fff;">Recien ingresados</h3>
+        </div>
+            <div class="large-12 small-6 columns">
+                <blockquote>
+                <a class="recent" href="<?php echo $this->urllast; ?>"><?php echo $this->nombrelast; ?></a></blockquote>
+            </div>
+            <div class="large-12 small-6 columns">
+                <blockquote>
+                <a class="recent" href="<?php echo $this->url; ?>"><?php echo $this->nombre; ?></a></blockquote>
+            </div>
+      </div>
+    </div>
   </div>
-  <div id="footer" class="row">
-    <div class="large-3 small-8 small-centered columns">
-      <p>Erick Castillo de la Garza<img style="float:right;" src="http://framework.zend.com/images/PoweredBy_ZF_4LightBG.png" /></p>
+  <div id="footer"  class="row" style="max-width: 100% !important;">
+    <div class="large-12 small-12 small-centered columns">
+      <p>Erick Castillo de la Garza</p><img style="float:left;" src="/img/logoudem.png" /><img style="float:right;" src="/img/logopisye.png" />
     </div>
   </div>
   <script>

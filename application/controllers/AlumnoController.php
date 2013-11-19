@@ -17,6 +17,20 @@ class AlumnoController extends Zend_Controller_Action
 	else {
 		$this->_helper->redirector('login', 'account');
 	}
+
+	$xml = simplexml_load_file('../application/views/scripts/alumni.xml');
+
+        $nombrelast = $xml->xpath('/pages/link[last()]/title');
+        $urllast = $xml->xpath('/pages/link[last()]/url');
+
+        $this->view->nombrelast = $nombrelast[0];
+        $this->view->urllast = $urllast[0];
+
+        $nombre = $xml->xpath('/pages/link[last() -1]/title');
+        $url = $xml->xpath('/pages/link[last() -1 ]/url');
+
+        $this->view->nombre = $nombre[0];
+        $this->view->url = $url[0];
     }
 
     public function indexAction()
@@ -26,14 +40,14 @@ class AlumnoController extends Zend_Controller_Action
 
     public function contactosAction()
     {
-
+    	$id = $this->_request->getParam('id');
+    	$db = Zend_Db_Table::getDefaultAdapter();
         $form = new Application_Model_FormContacto();
 
         if ($this->getRequest()->isPost()) {
 
             	if ($form->isValid($this->_request->getPost())) {
 			
-		    	$db = Zend_Db_Table::getDefaultAdapter();
 		    	
 			$data = array(
 				'nombre' => $form->getValue('nombre'),
@@ -52,22 +66,35 @@ class AlumnoController extends Zend_Controller_Action
 			if($form->getValue('telcelular') != ''){
 				$data['telcelular'] = $form->getValue('telcelular');
 			}
-			$this->view->mensaje = "<h3>Contacto guardado</h3>";
+			$this->view->mensaje = "<div class='alert-box success'>Contacto guardado</div>";
 
 			$db->insert('Contacto', $data);
 		}
 	}
-	$db = Zend_Db_Table::getDefaultAdapter();
 
-        $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');
+	if($id != ''){
+		$options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->where('id = ?', $id), 'id');
+	        
+	        $status = new Zend_Form_Element_Select('idAlumno');
+	        foreach ($options as $options) {
+	            $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
+	        }
+
+		$form->addElement($status);
+		$this->view->form = $form;
+	} else{
+		$options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');
+	        
+	        $status = new Zend_Form_Element_Select('idAlumno');
+	        foreach ($options as $options) {
+	            $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
+	        }
+
+		$form->addElement($status);
+		$this->view->form = $form;
+	}
+
         
-        $status = new Zend_Form_Element_Select('idAlumno');
-        foreach ($options as $options) {
-            $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
-        }
-
-	$form->addElement($status);
-	$this->view->form = $form;
     }
 
     public function medicosAction()

@@ -11,7 +11,7 @@ class Application_Model_FormLogin extends Zend_Form
 
 		 $username = new Zend_Form_Element_Text('username');
 		 $username->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'Ususario')
+		 	->setAttrib('placeholder', 'Usuario')
 		 	->setRequired(true)
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
