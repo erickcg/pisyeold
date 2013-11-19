@@ -32,12 +32,16 @@
       <section>
         <p class="title" data-section-title><a href="#panel3">Contactos de emergencia</a></p>
         <div class="content" data-section-content>
-          <?php foreach($this->contacto AS $contact) {
-              echo "Nombre:  ".$contact['nombre']."<br />";
-              echo "Teléfono casa:  ".$contact['telcasa']."<br />";
-              echo "Teléfono oficina:  ".$contact['teloficina']."<br />";
-              echo "Teléfono celular:  ".$contact['telcelular']."<br /><br />";
-              } ?>
+          <?php 
+            if (!empty($this->contacto)){
+                    foreach($this->contacto AS $contact) {
+                      echo "Nombre:  ".$contact['nombre']."<br />";
+                      echo "Teléfono casa:  ".$contact['telcasa']."<br />";
+                      echo "Teléfono oficina:  ".$contact['teloficina']."<br />";
+                      echo "Teléfono celular:  ".$contact['telcelular']."<br /><br />";
+                    } 
+            }
+            ?>
         </div>
       </section>
       <section>

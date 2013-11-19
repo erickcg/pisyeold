@@ -27,7 +27,7 @@ class GrupoController extends Zend_Controller_Action
     //     $link->addChild('url', 'aloof'); 
 
     //     file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
-    // }
+    }
 
 
 }

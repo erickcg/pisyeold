@@ -32,7 +32,7 @@ class ReporteController extends Zend_Controller_Action
 
                 if ($form->isValid($this->_request->getPost())) {
                     
-                    $id = $this->_request->getPost('id');
+                    $id = $this->_request->getPost('idreporte');
                 }
         }
         if($id != ''){
@@ -54,11 +54,14 @@ class ReporteController extends Zend_Controller_Action
             }
             
       
-        $db = Zend_Db_Table_Abstract::getDefaultAdapter();
-        $options = $db->fetchPairs( $db->select()->from('AlumnoDetalle', array('id', 'nombre'))->order('nombre ASC'), 'id');
+        $db = Zend_Db_Table::getDefaultAdapter();
+
+        $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');
         
-        $status = new Zend_Form_Element_Select('id');
-        $status->AddMultiOptions($options);
+        $status = new Zend_Form_Element_Select('idreporte');
+        foreach ($options as $options) {
+            $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
+        }
 
         $form->addElement($status);
         $this->view->form = $form;

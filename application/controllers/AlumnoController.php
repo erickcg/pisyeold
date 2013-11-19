@@ -37,7 +37,7 @@ class AlumnoController extends Zend_Controller_Action
 		    	
 			$data = array(
 				'nombre' => $form->getValue('nombre'),
-				'idAlumno' => $this->_request->getPost('idalumno')
+				'idAlumno' => $this->_request->getPost('idAlumno')
 			);
 
 			//Valores que pueden ser NULL y deben ser respetados
@@ -57,11 +57,14 @@ class AlumnoController extends Zend_Controller_Action
 			$db->insert('Contacto', $data);
 		}
 	}
-	$db = Zend_Db_Table_Abstract::getDefaultAdapter();
-	$options = $db->fetchPairs( $db->select()->from('AlumnoDetalle', array('id', 'nombre'))->order('nombre ASC'), 'id');
-		
-	$status = new Zend_Form_Element_Select('idalumno');
-	$status->AddMultiOptions($options);
+	$db = Zend_Db_Table::getDefaultAdapter();
+
+        $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');
+        
+        $status = new Zend_Form_Element_Select('idAlumno');
+        foreach ($options as $options) {
+            $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
+        }
 
 	$form->addElement($status);
 	$this->view->form = $form;
@@ -449,14 +452,14 @@ class AlumnoController extends Zend_Controller_Action
 	        {
 	        $hint="<a class='omnibar' href='" . 
 	        $z->item(0)->childNodes->item(0)->nodeValue . 
-	        "' target='_blank'>" . 
+	        "' >" . 
 	        $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
 	        }
 	      else
 	        {
 	        $hint=$hint . "<br /><a class='omnibar' href='" . 
 	        $z->item(0)->childNodes->item(0)->nodeValue . 
-	        "' target='_blank'>" . 
+	        "' >" . 
 	        $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
 	        }
 	      }

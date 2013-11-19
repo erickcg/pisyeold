@@ -1,22 +1,22 @@
 body {
-	background-color: #1DADB5;
+	background-color: #fff;
 }
 
 #header {
-	background-color: #454136;
-	color: #fff;
+	background-color: #fff;
+	color: ##0080A5;
 }
 
 #header h2 {
-	color: #fff;
+	color: ##0080A5;
 }
 
 #content {
-	background-color: #FFF6CC;
+	background-color: #fff;
 }
 
 #footer {
-	background-color: #E3D39F;
+	background-color: #E7E2DD;
 }
 
 #content .row {
