@@ -28,6 +28,7 @@
           <actionMethod actionName="medicinas"/>
           <actionMethod actionName="terminado"/>
           <actionMethod actionName="datos"/>
+          <actionMethod actionName="modificar"/>
         </controllerFile>
         <controllerFile controllerName="Grupo">
           <actionMethod actionName="index"/>
@@ -119,6 +120,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Reporte">
             <viewScriptFile forActionName="general"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Alumno">
+            <viewScriptFile forActionName="modificar"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

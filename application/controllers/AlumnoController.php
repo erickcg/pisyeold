@@ -652,8 +652,15 @@ class AlumnoController extends Zend_Controller_Action
 	$this->view->form = $form;
     }
 
+    public function modificarAction()
+    {
+        // action body
+    }
+
 
 }
+
+
 
 
 
