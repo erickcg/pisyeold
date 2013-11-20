@@ -73,6 +73,7 @@ class ReporteController extends Zend_Controller_Action
         $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');
         
         $status = new Zend_Form_Element_Select('idreporte');
+        $status->setAttrib('onchange', 'this.form.submit()');
         foreach ($options as $options) {
             $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
         }

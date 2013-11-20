@@ -37,7 +37,7 @@ class Application_Model_FormAntecedentes extends Zend_Form
 
 
 		 $submit = new Zend_Form_Element_Submit('submit');
-		 $submit->setLabel('Siguiente->')
+		 $submit->setLabel('Guardar')
 		 	->setAttrib('class', 'button');
 
 		 $this->setDecorators( array( array('ViewScript', array('viewScript' => '/alumno/_form_antecedentes.phtml'))));

@@ -1,22 +1,22 @@
 <fieldset>
-	<legend>Contacto</legend>
+	<legend>Medicinas</legend>
 	<form data-abide action="<?= $this->element->getAction(); ?>"
 	method="<?= $this->element->getMethod(); ?>">
 		<div class="name-field">
-			Nombre del contacto<br />
+			Nombre de la medicina<br />
 			<?= $this->element->nombre; ?>
 			<small class="error">Requerido</small>
 		</div>
 		<div class="field">
-			Teléfono de casa<br />
-			<?= $this->element->telcasa; ?>
-			<small class="error">Requerido, deber ser un numero</small>
+			Fórmula<br />
+			<?= $this->element->formula; ?>
+			<small class="error">Requerido</small>
 		</div>
-		Teléfono de oficina<br />
-		<?= $this->element->teloficina; ?>
-
-		Teléfono de celular<br />
-		<?= $this->element->telcelular; ?>
+		<div class="field">
+			Frecuencia<br />
+			<?= $this->element->frecuencia; ?>
+			<small class="error">Requerido</small>
+		</div>
 
 		Alumno<br />
 		<?= $this->element->idAlumno; ?>

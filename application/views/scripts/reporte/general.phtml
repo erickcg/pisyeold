@@ -7,8 +7,15 @@
           Nombre:  <?= $this->query['nombre'] ?> <br>
           Apellido Paterno: <?= $this->query['apaterno'] ?>
           <br>Apellido Materno: <?= $this->query['amaterno'] ?>
+          <?php
 
-         <br> Fecha de nacimiento: <?= $this->query['dia'] ?> -<?= $this->query['mes'] ?> - <?= $this->query['anio'] ?>
+                $fecha = explode("-", $this->query['fechanacimiento']);     
+
+                $datafromdb['anio'] = $fecha[0];
+                $datafromdb['mes'] = $fecha[1];
+                $datafromdb['dia'] = $fecha[2];
+                 ?>
+         <br> Fecha de nacimiento: <?= $datafromdb['dia'] ?> - <?= $datafromdb['mes'] ?> - <?= $datafromdb['anio'] ?>
          <br> No. de hermanos:<?= $this->query['nohermanos'] ?>
          <br> Lugar que ocupa en la familia el alumno:<?= $this->query['lugarfamilia'] ?>
          <br> Diagnóstico establecido del alumno:<?= $this->query['diagnostico'] ?>

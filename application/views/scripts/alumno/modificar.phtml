@@ -1,4 +1,8 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Alumno</b> and script/action name <b>modificar</b></p>
+<div class="large-8 push-4 columns">
+	<h3>Modificar</h3>
+         <?= if (!empty($this->query)){
+                    foreach($this->query AS $query) {
+                      echo "<a href='Alumno/datos/id/".$query['id']."'>Nombre:  ".$query['nombre']."</a><br />";
+                    } 
+            } ?>
 </div>

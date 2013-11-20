@@ -51,7 +51,7 @@ class Application_Model_FormPerinatales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		 $submit = new Zend_Form_Element_Submit('submit');
-		 $submit->setLabel('Siguiente->')
+		 $submit->setLabel('Guardar')
 		 	->setAttrib('class', 'button');
 
 		 $this->setDecorators( array( array('ViewScript', array('viewScript' => '/alumno/_form_perinatales.phtml'))));
