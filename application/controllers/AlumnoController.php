@@ -748,7 +748,7 @@ class AlumnoController extends Zend_Controller_Action
             $db = Zend_Db_Table::getDefaultAdapter();
 
             $query = $db->select()
-                        ->from('AlumnoDetalle');
+                        ->from('AlumnoDetalle')->order('nombre ASC');
             $results = $db->fetchAll($query);
             $this->view->query = $results;
     }
