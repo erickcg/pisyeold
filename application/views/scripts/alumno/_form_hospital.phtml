@@ -1,0 +1,53 @@
+<fieldset>
+        <legend>Hospitalización</legend>
+        <form data-abide action="<?= $this->element->getAction(); ?>"
+        method="<?= $this->element->getMethod(); ?>">
+                <div class="name-field">
+                        Nombre de la hospital<br />
+                        <?= $this->element->hospital; ?>
+                        <small class="error">Requerido</small>
+                </div>
+                <fieldset>
+                        <legend>Fecha de ingreso</legend>
+                        <div class="field">
+                                D&iacute;a<br />
+                                <?= $this->element->dia; ?>
+                                <small class="error">Requerido, deber ser un numero</small>
+                        </div>
+                        <div class="field">
+                                Mes<br />
+                                <?= $this->element->mes; ?>
+                                <small class="error">Requerido, deber ser un numero</small>
+                        </div>
+                        <div class="field">
+                                A&ntilde;o<br />
+                                <?= $this->element->anio; ?>
+                                <small class="error">Requerido, deber ser un numero</small>
+                        </div>
+                </fieldset>
+                <div class="field">
+                        Tiempo internado<br />
+                        <?= $this->element->tiempo; ?>
+                        <small class="error">Requerido</small>
+                </div>
+                <div class="field">
+                        Causa<br />
+                        <?= $this->element->causa; ?>
+                        <small class="error">Requerido</small>
+                </div>
+                <div class="field">
+                        Detalles<br />
+                        <?= $this->element->detalles; ?>
+                        <small class="error">Requerido</small>
+                </div>
+
+                Alumno<br />
+                <?= $this->element->idAlumno; ?>
+
+                <?= $this->element->fromreportes; ?>
+
+                <span style="float: right;">
+                        <?= $this->element->submit; ?>
+                </span>
+        </form>
+</fieldset>

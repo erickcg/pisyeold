@@ -75,6 +75,12 @@ class ReporteController extends Zend_Controller_Action
                                 ->from('Medicina')->where('idAlumno = ?', $id);
                     $medicina = $db->fetchAll($query);
                     $this->view->medicina = $medicina;
+
+                    //Contactos de emergencia
+                    $query = $db->select()
+                                ->from('Hospitalizacion')->where('idAlumno = ?', $id);
+                    $hospital = $db->fetchAll($query);
+                    $this->view->hospital = $hospital;
             }
             
       

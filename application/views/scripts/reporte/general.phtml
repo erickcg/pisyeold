@@ -6,8 +6,9 @@
       <section class="active">
         <p class="title" data-section-title><a href="#panel1">Datos Personales</a></p>
         <div class="content" data-section-content>
-          Nombre:  <?= $this->query['nombre'] ?> <br>
-          Apellido Paterno: <?= $this->query['apaterno'] ?>
+          <strong><?= $this->query['nombre']." ".$this->query['apaterno']." ".$this->query['amaterno'] ?></strong>
+          <br>Nombre:  <?= $this->query['nombre'] ?> 
+          <br>Apellido Paterno: <?= $this->query['apaterno'] ?>
           <br>Apellido Materno: <?= $this->query['amaterno'] ?>
           <?php
 
@@ -88,6 +89,30 @@
             }
             ?>
             <a class="button" href="/Alumno/medicinas/id/<?php echo $this->id; ?>">Agregar Medicamento</a>
+        </div>
+      </section>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel9">Hospitalizaci&oacute;n</a></p>
+        <div class="content" data-section-content>
+          <?php 
+            if (!empty($this->hospital)){
+                    foreach($this->hospital AS $hospital) {
+                      echo "Hospital:  ".$hospital['hospital']."<br />";
+                      $fecha = explode("-", $hospital['fechaingreso']);     
+
+                      $datafromdb['anio'] = $fecha[0];
+                      $datafromdb['mes'] = $fecha[1];
+                      $datafromdb['dia'] = $fecha[2];
+
+                      echo "Fecha de ingreso:  ".$datafromdb['dia']."-".$datafromdb['mes']."-".$datafromdb['anio']."<br />";
+                      echo "Causa:  ".$hospital['causa']."<br />";
+                      echo "Detalles:  ".$hospital['detalles']."<br />";
+                      echo "Tiempo internado:  ".$hospital['tiempo']."<br /><br />";
+                    } 
+            }
+            ?>
+            <a class="button" href="/Alumno/hospital/id/<?php echo $this->id; ?>">Agregar Hospitalizaci&oacute;n</a>
         </div>
       </section>
       <section>

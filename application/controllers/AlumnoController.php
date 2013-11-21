@@ -778,8 +778,66 @@ class AlumnoController extends Zend_Controller_Action
             $this->view->query = $results;
     }
 
+    public function hospitalAction()
+    {
+        $id = $this->_request->getParam('id');
+        $db = Zend_Db_Table::getDefaultAdapter();
+        $form = new Application_Model_FormHospital();
+
+        if ($this->getRequest()->isPost()) {
+
+                if ($form->isValid($this->_request->getPost())) {
+                        
+                        
+                        $data = array(
+                                'hospital' => $form->getValue('hospital'),
+                                'detalles' => $form->getValue('detalles'),
+                                'causa' => $form->getValue('causa'),
+                                'tiempo' => $form->getValue('tiempo'),
+                                'fechaingreso' => $form->getValue('anio').'-'.$form->getValue('mes').'-'.$form->getValue('dia'),
+                                'idAlumno' => $this->_request->getPost('idAlumno')
+                        );
+                        $this->view->mensaje = "<div class='alert-box success'>Registro de hospitalización guardado</div>";
+
+                        $db->insert('Hospitalizacion', $data);
+
+                        if($this->_request->getPost('fromreportes') == 'yes'){
+                                $this->_redirect('/Reporte/general/id/' . $this->_request->getPost('idAlumno'));
+                                return;
+                        }
+                }
+        }
+
+        if($id != ''){
+                $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->where('id = ?', $id), 'id');
+                
+                $status = new Zend_Form_Element_Select('idAlumno');
+                foreach ($options as $options) {
+                    $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
+                }
+
+                $form->addElement($status);
+                $hidden = new Zend_Form_Element_Hidden('fromreportes');
+                $hidden->setValue('yes');
+                $form->addElement($hidden);
+                $this->view->form = $form;
+        } else{
+                $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');
+                
+                $status = new Zend_Form_Element_Select('idAlumno');
+                foreach ($options as $options) {
+                    $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
+                }
+
+                $form->addElement($status);
+                $this->view->form = $form;
+        }
+    }
+
 
 }
+
+
 
 
 
