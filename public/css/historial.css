@@ -50,6 +50,11 @@
 	margin: 0 auto;
 }
 
+.alta{
+	height: 42px;
+	width: 94px;
+}
+
 @media only screen and (min-width: 1000px) {
 	body {
 		background-color: #fff;
