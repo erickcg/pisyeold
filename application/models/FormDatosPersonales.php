@@ -34,7 +34,8 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$sexo = new Zend_Form_Element_Radio('sexo');
-		$sexo->setMultiOptions(array('m'=>'Masculino', 'f'=>'Femenino'));
+		$sexo->setMultiOptions(array('m'=>'Masculino', 'f'=>'Femenino'))
+			->setAttrib('required','');
 
 	        $dia = new Zend_Form_Element_Text('dia');
 		$dia->setAttrib('size', 35)

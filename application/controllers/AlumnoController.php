@@ -69,6 +69,11 @@ class AlumnoController extends Zend_Controller_Action
                         $this->view->mensaje = "<div class='alert-box success'>Contacto guardado</div>";
 
                         $db->insert('Contacto', $data);
+
+                        if($this->_request->getPost('fromreportes') == 'yes'){
+                                $this->_redirect('/Reporte/general/id/' . $this->_request->getPost('idAlumno'));
+                                return;
+                        }
                 }
         }
 
@@ -81,6 +86,9 @@ class AlumnoController extends Zend_Controller_Action
                 }
 
                 $form->addElement($status);
+                $hidden = new Zend_Form_Element_Hidden('fromreportes');
+                $hidden->setValue('yes');
+                $form->addElement($hidden);
                 $this->view->form = $form;
         } else{
                 $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');
@@ -91,6 +99,7 @@ class AlumnoController extends Zend_Controller_Action
                 }
 
                 $form->addElement($status);
+
                 $this->view->form = $form;
         }
 
@@ -122,9 +131,14 @@ class AlumnoController extends Zend_Controller_Action
                         if($form->getValue('telcelular') != ''){
                                 $data['telcelular'] = $form->getValue('telcelular');
                         }
-                        $this->view->mensaje = "<div class='alert-box success'>Contacto guardado</div>";
+                        $this->view->mensaje = "<div class='alert-box success'>Doctor guardado</div>";
 
                         $db->insert('Medico', $data);
+
+                        if($this->_request->getPost('fromreportes') == 'yes'){
+                                $this->_redirect('/Reporte/general/id/' . $this->_request->getPost('idAlumno'));
+                                return;
+                        }
                 }
         }
 
@@ -137,6 +151,9 @@ class AlumnoController extends Zend_Controller_Action
                 }
 
                 $form->addElement($status);
+                $hidden = new Zend_Form_Element_Hidden('fromreportes');
+                $hidden->setValue('yes');
+                $form->addElement($hidden);
                 $this->view->form = $form;
         } else{
                 $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');
@@ -562,7 +579,7 @@ class AlumnoController extends Zend_Controller_Action
     {
         $id = $this->_request->getParam('id');
         $db = Zend_Db_Table::getDefaultAdapter();
-        $form = new Application_Model_FormMedicinas();
+        $form = new Application_Model_FormMedicina();
 
         if ($this->getRequest()->isPost()) {
 
@@ -575,9 +592,14 @@ class AlumnoController extends Zend_Controller_Action
                                 'frecuencia' => $form->getValue('frecuencia'),
                                 'idAlumno' => $this->_request->getPost('idAlumno')
                         );
-                        $this->view->mensaje = "<div class='alert-box success'>Contacto guardado</div>";
+                        $this->view->mensaje = "<div class='alert-box success'>Medicamento guardado</div>";
 
                         $db->insert('Medicina', $data);
+
+                        if($this->_request->getPost('fromreportes') == 'yes'){
+                                $this->_redirect('/Reporte/general/id/' . $this->_request->getPost('idAlumno'));
+                                return;
+                        }
                 }
         }
 
@@ -590,6 +612,9 @@ class AlumnoController extends Zend_Controller_Action
                 }
 
                 $form->addElement($status);
+                $hidden = new Zend_Form_Element_Hidden('fromreportes');
+                $hidden->setValue('yes');
+                $form->addElement($hidden);
                 $this->view->form = $form;
         } else{
                 $options = $db->fetchAll( $db->select()->from('AlumnoDetalle', array('id', 'nombre', 'apaterno', 'amaterno'))->order('nombre ASC'), 'id');

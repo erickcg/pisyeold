@@ -23,7 +23,8 @@ class Application_Model_FormPerinatales extends Zend_Form
 	                ->setValue("eutocico");
 
 	        $multiple = new Zend_Form_Element_Radio('multiple');
-		$multiple->setMultiOptions(array('s'=>'Si', 'n'=>'No'));
+		$multiple->setMultiOptions(array('s'=>'Si', 'n'=>'No'))
+		->setAttrib('required','');
 
 		$cesarea = new Zend_Form_Element_Text('cesarea');
 		$cesarea->setAttrib('placeholder', 'Si no hubo cesarea, dejar en blanco')

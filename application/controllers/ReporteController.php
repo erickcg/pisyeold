@@ -51,7 +51,7 @@ class ReporteController extends Zend_Controller_Action
         }
         if($id != ''){
                     $db = Zend_Db_Table::getDefaultAdapter();
-
+                    $this->view->id = $id;
                     //Generales
                     $query = $db->select()
                                 ->from('AlumnoDetalle')->where('id = ?', $id);
@@ -61,10 +61,20 @@ class ReporteController extends Zend_Controller_Action
                     //Contactos de emergencia
                     $query = $db->select()
                                 ->from('Contacto')->where('idAlumno = ?', $id);
-
                     $contacto = $db->fetchAll($query);
-                    $this->view->id = $id;
                     $this->view->contacto = $contacto;
+
+                    //Contactos de emergencia
+                    $query = $db->select()
+                                ->from('Medico')->where('idAlumno = ?', $id);
+                    $medico = $db->fetchAll($query);
+                    $this->view->medico = $medico;
+
+                    //Contactos de emergencia
+                    $query = $db->select()
+                                ->from('Medicina')->where('idAlumno = ?', $id);
+                    $medicina = $db->fetchAll($query);
+                    $this->view->medicina = $medicina;
             }
             
       

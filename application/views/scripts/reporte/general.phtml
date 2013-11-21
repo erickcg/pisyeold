@@ -18,6 +18,11 @@
                 $datafromdb['dia'] = $fecha[2];
                  ?>
          <br> Fecha de nacimiento: <?= $datafromdb['dia'] ?> - <?= $datafromdb['mes'] ?> - <?= $datafromdb['anio'] ?>
+         <br> Sexo:<?php if($this->query['sexo']== 'm'){
+                      echo 'Masculino';
+         }else{
+                      echo 'Femenino';
+         } ?>
          <br> No. de hermanos:<?= $this->query['nohermanos'] ?>
          <br> Lugar que ocupa en la familia el alumno:<?= $this->query['lugarfamilia'] ?>
          <br> Diagnóstico establecido del alumno:<?= $this->query['diagnostico'] ?>
@@ -55,16 +60,49 @@
           </div>
       </section>
       <section>
-        <p class="title" data-section-title><a href="#panel3">Doctores</a></p>
+        <p class="title" data-section-title><a href="#panel7">Doctores</a></p>
         <div class="content" data-section-content>
-
+          <?php 
+            if (!empty($this->medico)){
+                    foreach($this->medico AS $medic) {
+                      echo "Nombre:  ".$medic['nombre']."<br />";
+                      echo "Especialidad:  ".$medic['especialidad']."<br />";
+                      echo "Teléfono oficina:  ".$medic['teloficina']."<br />";
+                      echo "Teléfono celular:  ".$medic['telcelular']."<br /><br />";
+                    } 
+            }
+            ?>
+            <a class="button" href="/Alumno/medicos/id/<?php echo $this->id; ?>">Agregar Doctor</a>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#panel8">Medicaciones</a></p>
+        <div class="content" data-section-content>
+          <?php 
+            if (!empty($this->medicina)){
+                    foreach($this->medicina AS $medicina) {
+                      echo "Nombre:  ".$medicina['nombre']."<br />";
+                      echo "Fórmula:  ".$medicina['formula']."<br />";
+                      echo "Frecuencia:  ".$medicina['frecuencia']."<br /><br />";
+                    } 
+            }
+            ?>
+            <a class="button" href="/Alumno/medicinas/id/<?php echo $this->id; ?>">Agregar Medicamento</a>
         </div>
       </section>
       <section>
         <p class="title" data-section-title><a href="#panel2">Antecedentes de embarazo</a></p>
         <div class="content" data-section-content>
-          <br>Embarazo planeado:<?= $this->query['embarazoplaneado'] ?> 
-          <br>Tipo de embarazo:<?= $this->query['embarazoriesgoso'] ?>
+          <br>Embarazo planeado:<?php if($this->query['embarazoplaneado']== 's'){
+                                    echo 'Si';
+                       }else{
+                                    echo 'No';
+                       } ?>
+          <br>Tipo de embarazo:<?php if($this->query['embarazoriesgoso']== 's'){
+                                    echo 'Riesgoso';
+                       }else{
+                                    echo 'Sin riesgo';
+                       } ?>
           <br><?php if($this->query['amenazaaborto'] == '')
                     echo '<br>No hubo amenaza de aborto';
                 else
@@ -102,7 +140,11 @@
           <br>Nacimiento: <?= $this->query['nacimiento'] ?> 
           <br>Tipo de nacimiento: <?= $this->query['tipodeparto'] ?>
           <br>Tiempo de parto: <?= $this->query['tiempo'] ?>
-          <br>Nacimiento múltiple: <?= $this->query['multiple'] ?>
+          <br>Nacimiento múltiple: <?php if($this->query['multiple']== 's'){
+                                    echo 'Si';
+                       }else{
+                                    echo 'No';
+                       } ?>
           <br><?php if($this->query['cesarea'] == '')
                     echo '<br>No hubo cesárea';
                 else
@@ -128,8 +170,16 @@
       <section>
         <p class="title" data-section-title><a href="#panel5">Posnatales</a></p>
         <div class="content" data-section-content>
-          <br>Lloró al nacer: <?= $this->query['lloro'] ?> 
-          <br>Le dieron de alta junto a su madre: <?= $this->query['alta'] ?>
+          <br>Lloró al nacer: <?php if($this->query['lloro']== 's'){
+                                    echo 'Si';
+                       }else{
+                                    echo 'No';
+                       } ?> 
+          <br>Le dieron de alta junto a su madre: <?php if($this->query['alta']== 's'){
+                                    echo 'Si';
+                       }else{
+                                    echo 'No';
+                       } ?> 
           <br><?php if($this->query['cuidadosintensivos'] == '')
                     echo '<br>No requirió de cuidados intensivos';
                 else
