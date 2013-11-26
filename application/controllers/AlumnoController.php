@@ -651,6 +651,8 @@ class AlumnoController extends Zend_Controller_Action
                                 'nombre' => $form->getValue('nombre'),
                                 'apaterno' => $form->getValue('apaterno'),
                                 'amaterno' => $form->getValue('amaterno'),
+                                'numhermanos' => $form->getValue('numhermanos'),
+                                'lugarfamilia' => $form->getValue('lugarfam'),
                                 'idGrupo' => $this->_request->getPost('grupo'),
                                 'fechanacimiento' => $form->getValue('anio').'-'.$form->getValue('mes').'-'.$form->getValue('dia'),
                                 'sexo' => $form->getValue('sexo')
@@ -659,14 +661,6 @@ class AlumnoController extends Zend_Controller_Action
                         //Valores que pueden ser NULL y deben ser respetados
                         if($form->getValue('diagnostico') != ''){
                                 $data['diagnostico'] = $form->getValue('diagnostico');
-                        }
-
-                        if($form->getValue('numhermanos') != ''){
-                                $data['numhermanos'] = $form->getValue('numhermanos');
-                        }
-
-                        if($form->getValue('lugarfam') != ''){
-                                $data['lugarfamilia'] = $form->getValue('lugarfam');
                         }
 
                         if($form->getValue('tiposangre') != ''){
@@ -698,10 +692,27 @@ class AlumnoController extends Zend_Controller_Action
                                 $data['apoyopsico'] = $form->getValue('apoyopsico');
                         }
 
+                        //Datos para tablas de calificaciones
+
+                        $califdatos = array(
+                                'Nombre' => $form->getValue('nombre'),
+                                'Apat' => $form->getValue('apaterno'),
+                                'Amat' => $form->getValue('amaterno')
+                        );
+
                         $id = $this->_request->getPost('id');
 
                         if($id != ''){
                                 $db->update('AlumnoDetalle', $data, 'id = '. $id );
+
+                                $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
+
+                                $link = $xml->xpath("/pages/link[url='/Reporte/general/id/".$id."']");; 
+                                $link[0]->title = $form->getValue('nombre').' '.$form->getValue('apaterno').' '.$form->getValue('amaterno'); 
+                                //$link[0]->url = '/Reporte/general/id/'.$id; 
+
+                                file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
+
                         } else {
                                 $db->insert('AlumnoDetalle', $data);
                                 $id = $db->lastInsertId();
@@ -714,6 +725,9 @@ class AlumnoController extends Zend_Controller_Action
                                 $link->addChild('url', '/Reporte/general/id/'.$id); 
 
                                 file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
+
+                                //Insertar en tabla de calificaciones
+                                //$db->insert('alumno', $califdatos);
                         }
 
                         
@@ -744,7 +758,7 @@ class AlumnoController extends Zend_Controller_Action
                         'sexo' => $results['sexo'],
                         'diagnostico' => $results['diagnostico'],
                         'numhermanos' => $results['numhermanos'],
-                        'lugarfam' => $results['lugarfam'],
+                        'lugarfam' => $results['lugarfamilia'],
                         'tiposangre' => $results['tiposangre'],
                         'nombrepadre' => $results['nombrepadre'],
                         'nombremadre' => $results['nombremadre'],

@@ -41,7 +41,7 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 		$dia->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Dia')
 		 	->setAttrib('required','')
-		 	->setAttrib('pattern','integer')
+		 	->setAttrib('pattern','positivo')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
@@ -50,26 +50,30 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 		 	->setAttrib('placeholder', 'Mes-ejemplo: 5')
 			->removeDecorator('label')
 			->setAttrib('required','')
-		 	->setAttrib('pattern','integer')
+		 	->setAttrib('pattern','positivo')
 			->removeDecorator('htmlTag');
 
 		$anio = new Zend_Form_Element_Text('anio');
 		$anio->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Año')
 		 	->setAttrib('required','')
-		 	->setAttrib('pattern','integer')
+		 	->setAttrib('pattern','positivo')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$numhermanos = new Zend_Form_Element_Text('numhermanos');
 		$numhermanos->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Numero de hermanos')
+		 	->setAttrib('required','')
+		 	->setAttrib('pattern','positivo')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$lugarfam = new Zend_Form_Element_Text('lugarfam');
 		$lugarfam->setAttrib('size', 35)
 		 	->setAttrib('placeholder', 'Lugar en la familia')
+		 	->setAttrib('required','')
+		 	->setAttrib('pattern','positivo')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

@@ -105,6 +105,8 @@ class ReporteController extends Zend_Controller_Action
             $status->addMultiOption($options['id'], $options['nombre'].' '.$options['apaterno'].' '.$options['amaterno']);
         }
 
+        $status->setValue($results['id']);
+
         $form->addElement($status);
         $this->view->form = $form;
     }

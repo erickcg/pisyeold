@@ -35,14 +35,21 @@
 				<small class="error">Requerido, deber ser un numero</small>
 			</div>
 		</fieldset>
-		Sexo<br />
-		<?= $this->element->sexo; ?>
-
-		Numero de hermanos<br />
-		<?= $this->element->numhermanos; ?>
-
-		Lugar en la familia<br />
-		<?= $this->element->lugarfam; ?>
+		<div class="field">
+			Sexo<br />
+			<?= $this->element->sexo; ?>
+			<small class="error">Requerido</small>
+		</div>
+		<div class="field">
+			Numero de hermanos<br />
+			<?= $this->element->numhermanos; ?>
+			<small class="error">Requerido, deber ser un numero</small>
+		</div>
+		<div class="field">
+			Lugar en la familia<br />
+			<?= $this->element->lugarfam; ?>
+			<small class="error">Requerido, deber ser un numero</small>
+		</div>
 
 		Diagn&oacute;stico<br />
 		<?= $this->element->diagnostico; ?>

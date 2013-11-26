@@ -5,6 +5,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <link href='http://www.papyrusms.com/favicon.ico' rel='shortcut icon' type='image/x-icon'/>
+  <link href='http://www.papyrusms.com/favicon.ico' rel='icon' type='image/x-icon'/>
   <title>Historial Cl&iacute;nico</title>
 
   <?php echo $this->headLink()->appendStylesheet('/css/foundation.css')->appendStylesheet('/css/historial.css'); ?>
@@ -72,7 +74,7 @@ xmlhttp.send();
             <li class="divider"></li>
             <li class="active"><a href="/Alumno">Alumnos</a></li>
             <li class="divider"></li>
-            <li class="active"><a href="/Grupo">Grupos</a></li>
+            <li class="active"><a href="/Grupo/altagrupo">Grupos</a></li>
             <li class="divider"></li>
             <li class="active"><a href="/Reporte/general">Reportes</a></li>
           </ul>
@@ -82,12 +84,9 @@ xmlhttp.send();
             <li class="has-form">
               <form>
                 <div class="row collapse">
-                  <div class="small-8 columns">
+                  <div class="small-12 columns">
                     <input type="text" placeholder="Buscar Alumno" onkeyup="showResult(this.value)">
 
-                  </div>
-                  <div class="small-4 columns">
-                    <a href="#" class="button">Buscar</a>
                   </div>
                 </div>
               </form>
@@ -101,7 +100,7 @@ xmlhttp.send();
   <div style="margin-top:5px;" id="content" class="row">
     <?php echo $this->layout()->content ?>
     <div style="margin-top: 32px;" class="large-4 pull-8 columns">
-    <div style="background-color: #008eb8;  color: #fff;" class="row login">
+    <div style="background-color: #008eb8;  color: #fff; margin-left: 5px; margin-right: 5px;" class="row login">
         <div class="large-4 small-4 columns">
             <img src="/img/usuario.png" />
             </div>
@@ -109,7 +108,7 @@ xmlhttp.send();
             <?php echo $this->idDisplay; ?>
         </div>
     </div>
-    <div style="background-color: #00b0e5; margin:10px -0.9375em 50px -0.9375em; color: #fff;" class="row">
+    <div style="background-color: #00b0e5; margin:10px 5px 50px 5px; color: #fff;" class="row">
         <div class="large-12 small-12 columns">
             <h3 style="color: #fff;">Recien ingresados</h3>
         </div>
@@ -126,7 +125,7 @@ xmlhttp.send();
   </div>
   <div id="footer"  class="row" style="max-width: 100% !important;">
     <div class="large-12 small-12 small-centered columns">
-      <p>Erick Castillo de la Garza</p><img style="float:left;" src="/img/logoudem.png" /><img style="float:right;" src="/img/logopisye.png" />
+      <p>Erick Castillo de la Garza</p><hr><img style="float:left;" src="/img/logoudem.png" /><img style="float:right;" src="/img/logopisye.png" />
     </div>
   </div>
   <script>
@@ -141,6 +140,11 @@ xmlhttp.send();
 
   <script>
     $(document).foundation();
+    $(document).foundation('abide', {
+    patterns: {
+      positivo: /^\d+$/
+    }
+  });
   </script>
 </body>
 </html>
