@@ -1,0 +1,15 @@
+<fieldset>
+        <legend>Grupo</legend>
+        <form data-abide action="<?= $this->element->getAction(); ?>"
+        method="<?= $this->element->getMethod(); ?>">
+                <div class="name-field">
+                        Nombre del grupo<br />
+                        <?= $this->element->nombre; ?>
+                        <small class="error">Requerido</small>
+                </div>
+
+                <span style="float: right;">
+                        <?= $this->element->submit; ?>
+                </span>
+        </form>
+</fieldset>

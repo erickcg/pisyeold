@@ -34,15 +34,31 @@ class GrupoController extends Zend_Controller_Action
 
     public function indexAction()
     {
-    //     $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
 
-    //     $link = $xml->addChild('link'); 
-    //     $link->addChild('title', 'Yellow Cat'); 
-    //     $link->addChild('url', 'aloof'); 
+    }
 
-    //     file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
+    public function altagrupoAction()
+    {
+        $db = Zend_Db_Table::getDefaultAdapter();
+        $form = new Application_Model_FormGrupo();
+
+        if ($this->getRequest()->isPost()) {
+
+                if ($form->isValid($this->_request->getPost())) {
+                        $data = array(
+                                'nombre' => $form->getValue('nombre')
+                        );
+                        $this->view->mensaje = "<div class='alert-box success'>Grupo guardado</div>";
+
+                        $db->insert('Grupo', $data);
+                }
+        }
+
+        $this->view->form = $form;
     }
 
 
 }
+
+
 

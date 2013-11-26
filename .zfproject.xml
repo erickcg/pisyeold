@@ -33,6 +33,7 @@
         </controllerFile>
         <controllerFile controllerName="Grupo">
           <actionMethod actionName="index"/>
+          <actionMethod actionName="altagrupo"/>
         </controllerFile>
         <controllerFile controllerName="Reporte">
           <actionMethod actionName="index"/>
@@ -61,6 +62,7 @@
         <modelFile modelName="FormMedico"/>
         <modelFile modelName="FormMedicina"/>
         <modelFile modelName="FormHospital"/>
+        <modelFile modelName="FormGrupo"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
@@ -128,6 +130,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Alumno">
             <viewScriptFile forActionName="hospital"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Grupo">
+            <viewScriptFile forActionName="altagrupo"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

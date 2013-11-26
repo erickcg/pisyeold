@@ -24,14 +24,15 @@
                 $datafromdb['mes'] = $fecha[1];
                 $datafromdb['dia'] = $fecha[2];
                  ?>
-         <br> Fecha de nacimiento: <?= $datafromdb['dia'] ?> - <?= $datafromdb['mes'] ?> - <?= $datafromdb['anio'] ?>
+         <br><br> Fecha de nacimiento: <?= $datafromdb['dia'] ?> - <?= $datafromdb['mes'] ?> - <?= $datafromdb['anio'] ?>
          <br> Sexo:<?php if($this->query['sexo']== 'm'){
                       echo 'Masculino';
          }else{
                       echo 'Femenino';
          } ?>
-         <br> No. de hermanos:<?= $this->query['nohermanos'] ?>
+         <br><br> No. de hermanos:<?= $this->query['numhermanos'] ?>
          <br> Lugar que ocupa en la familia el alumno:<?= $this->query['lugarfamilia'] ?>
+         <br><?= $this->lugar; ?><br>
          <br> Diagnóstico establecido del alumno:<?= $this->query['diagnostico'] ?>
 
          <br>Nombre del padre:<?= $this->query['nombrepadre'] ?>

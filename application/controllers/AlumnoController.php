@@ -651,6 +651,7 @@ class AlumnoController extends Zend_Controller_Action
                                 'nombre' => $form->getValue('nombre'),
                                 'apaterno' => $form->getValue('apaterno'),
                                 'amaterno' => $form->getValue('amaterno'),
+                                'idGrupo' => $this->_request->getPost('grupo'),
                                 'fechanacimiento' => $form->getValue('anio').'-'.$form->getValue('mes').'-'.$form->getValue('dia'),
                                 'sexo' => $form->getValue('sexo')
                         );
@@ -753,6 +754,7 @@ class AlumnoController extends Zend_Controller_Action
                         'apoyopsico' => $results['apoyopsico']
                 ); 
 
+
                 $fecha = explode("-", $results['fechanacimiento']);     
 
                 $datafromdb['anio'] = $fecha[0];
@@ -765,6 +767,17 @@ class AlumnoController extends Zend_Controller_Action
                 $hidden->setValue($id);
                 $form->addElement($hidden);
         }
+
+        $options = $db->fetchAll( $db->select()->from('Grupo', array('id', 'nombre'))->order('nombre ASC'), 'id');
+        
+        $grupo = new Zend_Form_Element_Select('grupo');
+        foreach ($options as $options) {
+            $grupo->addMultiOption($options['id'], $options['nombre']);
+        }
+        
+        $grupo->setValue($results['idGrupo']);
+
+        $form->addElement($grupo);
         $this->view->form = $form;
     }
 
@@ -802,7 +815,7 @@ class AlumnoController extends Zend_Controller_Action
                         $db->insert('Hospitalizacion', $data);
 
                         if($this->_request->getPost('fromreportes') == 'yes'){
-                                $this->_redirect('/Reporte/general/id/' . $this->_request->getPost('idAlumno'));
+                                $this->_redirect('/Reporte/general/id/' . $this->_request->getPost('idAlumno'). '#hospital');
                                 return;
                         }
                 }

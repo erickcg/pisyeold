@@ -82,6 +82,16 @@ class ReporteController extends Zend_Controller_Action
                     $hospital = $db->fetchAll($query);
                     $this->view->hospital = $hospital;
             }
+
+        for($i=1; $i<=$results['numhermanos'] + 1; $i++){
+            if($i == $results['lugarfamilia']){
+                $this->view->lugar .= "<img src='/img/personaselected.png' />";
+            }else{
+                $this->view->lugar .= "<img src='/img/persona.png' />";
+            }
+            
+        }
+        
             
       
         $db = Zend_Db_Table::getDefaultAdapter();
