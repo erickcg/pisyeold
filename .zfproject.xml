@@ -38,6 +38,7 @@
         <controllerFile controllerName="Reporte">
           <actionMethod actionName="index"/>
           <actionMethod actionName="general"/>
+          <actionMethod actionName="impresion"/>
         </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
@@ -133,6 +134,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Grupo">
             <viewScriptFile forActionName="altagrupo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Reporte">
+            <viewScriptFile forActionName="impresion"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

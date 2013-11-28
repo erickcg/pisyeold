@@ -1,18 +1,30 @@
-<div class="large-8 push-4 columns">
   <style type="text/css" scoped>
-  .radiobtn{
-    padding: 6px 6px; 
-    margin: 0;
-  }
+          .radiobtn{
+            padding: 0; 
+            margin: 0;
+            display: block;
+            clear: both;
+        }
+        h3, hr{
+                display: block;
+                width: 100%;
+                float:left;
+        }
+        ul{
+                float:left;
+                display: block;
+        }
+        .impresion{
+                display: block;
+                width: 100%;
+                float: left;
+        }
+  
   </style>
-    <fieldset>
-      <legend>Selecciona un alumno</legend>
-    <?= $this->form; ?></fieldset>
-    <div class="section-container auto vertical-tabs" data-section="vertical-tabs">
-      <section class="active">
-        <p class="title" data-section-title><a href="#panel1">Datos Personales</a></p>
-        <div class="content" data-section-content><p>
-          <h3><?= $this->query['nombre']." ".$this->query['apaterno']." ".$this->query['amaterno'] ?></h3>
+        
+        
+          <h1><?= $this->query['nombre']." ".$this->query['apaterno']." ".$this->query['amaterno'] ?></h1>
+          <h3>Datos Personales</h3>
           <br>Nombre:  <?= $this->query['nombre'] ?> 
           <br>Apellido Paterno: <?= $this->query['apaterno'] ?>
           <br>Apellido Materno: <?= $this->query['amaterno'] ?>
@@ -52,13 +64,12 @@
                 else
                     echo "<div class='panel radiobtn' style='background-color: #ffc997;'>Apoyo psicológico:".$this->query['apoyopsico']."</div>";?>
                   <br>
-        </p></div>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel3">Contactos de emergencia</a></p>
-        <div class="content" data-section-content><p>
+       
+        
+        <div class="impresion">
           <?php 
             if (!empty($this->contacto)){
+                echo '<h3>Contactos de emergencia</h3> <hr>';
                     foreach($this->contacto AS $contact) {
                       echo '<ul class="vcard">';
                       echo '<li class="fn">Nombre:  '.$contact['nombre'].'</li>';
@@ -68,16 +79,15 @@
                       echo '</ul>';
                     } 
             }
-            ?>
-            <br><a class="button" href="/Alumno/contactos/id/<?php echo $this->id; ?>">Agregar contacto de emergencia</a>
+            ?> 
             <br>
-          </p></div>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel7">Doctores</a></p>
-        <div class="content" data-section-content><p>
+        </div>
+        <div class="impresion">
+        
+        
           <?php 
             if (!empty($this->medico)){
+                echo '<h3>Doctores</h3><hr>';
                     foreach($this->medico AS $medic) {
                       echo '<ul class="vcard">';
                       echo '<li class="fn">Nombre:  '.$medic['nombre'].'</li>';
@@ -88,15 +98,14 @@
                     } 
             }
             ?>
-            <br><a class="button" href="/Alumno/medicos/id/<?php echo $this->id; ?>">Agregar Doctor</a>
             <br>
-        </p></div>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel8">Medicaciones</a></p>
-        <div class="content" data-section-content><p>
+     </div>
+        <div class="impresion">
+        
+        
           <?php 
             if (!empty($this->medicina)){
+                echo '<h3>Medicaciones</h3><hr>';
                     foreach($this->medicina AS $medicina) {
                       echo '<ul class="vcard">';
                       echo '<li class="fn">Nombre:  '.$medicina['nombre'].'</li>';
@@ -106,16 +115,14 @@
                     } 
             }
             ?>
-            <br><a class="button" href="/Alumno/medicinas/id/<?php echo $this->id; ?>">Agregar Medicamento</a>
             <br>
-        </p></div>
-      </section>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel9">Hospitalizaci&oacute;n</a></p>
-        <div class="content" data-section-content><p>
+        </div>
+        <div class="impresion">
+        
+        
           <?php 
             if (!empty($this->hospital)){
+                echo '<h3>Hospitalizaci&oacute;n</h3><hr>';
                     foreach($this->hospital AS $hospital) {
                       echo '<ul class="vcard">';
                       echo '<li class="fn">Hospital:  '.$hospital['hospital'].'</li>';
@@ -133,13 +140,11 @@
                     } 
             }
             ?>
-            <br><a class="button" href="/Alumno/hospital/id/<?php echo $this->id; ?>">Agregar Hospitalizaci&oacute;n</a>
             <br>
-        </p></div>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel2">Antecedentes de embarazo</a></p>
-        <div class="content" data-section-content><p>
+            </div>
+        <div class="impresion">
+        <h3>Antecedentes de embarazo</h3><hr>
+        
           <br><?php if($this->query['embarazoplaneado']== 's'){
                                     echo '<div class="panel radiobtn" style="background-color: #b3e9b3;">Embarazo planeado: Si</div>';
                        }else{
@@ -167,11 +172,10 @@
                 else
                     echo "<div class='panel radiobtn' style='background-color: #ffc997;'>Se sufrió el(los) siguiente(s) accidente(s) durante el embarazo:".$this->query['accidenteembarazo']."</div>";?>
                   <br>
-        </p></div>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel3">Prenatales</a></p>
-        <div class="content" data-section-content><p>
+        </div>
+        <div class="impresion">
+        <h3>Prenatales</h3><hr>
+        
           <?php if($this->query['enfermedaddurante'] == '')
                     echo '<div class="panel radiobtn" style="background-color: #b3e9b3;">No hubo enfermedad durante el embarazo</div>';
                 else
@@ -181,11 +185,10 @@
                 else
                     echo "<div class='panel radiobtn' style='background-color: #ffc997;'>La madre estuvo expuesta a las siguientes sustancias toxicas:".$this->query['sustancias']."</div>";?>
                   <br>
-        </p></div>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel4">Perinatales</a></p>
-        <div class="content" data-section-content><p>
+        </div>
+        <div class="impresion">
+        <h3>Perinatales</h3><hr>
+        
           <br>Nacimiento: <?= $this->query['nacimiento'] ?> 
           <br>Tipo de nacimiento: <?= $this->query['tipodeparto'] ?>
           <br>Tiempo de parto: <?= $this->query['tiempo'] ?>
@@ -215,11 +218,10 @@
                 else
                     echo "<div class='panel radiobtn' style='background-color: #ffc997;'>Hubo trauma obstétrico con los siguientes detalles:".$this->query['traumaobstetrico']."</div>";?>
                  <br>
-        </p></div>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel5">Posnatales</a></p>
-        <div class="content" data-section-content><p>
+      </div>
+        <div class="impresion">
+        <h3>Posnatales</h3><hr>
+        
           <br><?php if($this->query['lloro']== 's'){
                                     echo '<div class="panel radiobtn" style="background-color: #b3e9b3;">Lloró al nacer: Si</div>';
                        }else{
@@ -267,11 +269,10 @@
                 else
                     echo "<br><div class='panel radiobtn' style='background-color: #ffc997;'>Posee los siguientes problemas adicionales: ".$this->query['otros']."</div>";?>
                   <br>
-        </p></div>
-      </section>
-      <section>
-        <p class="title" data-section-title><a href="#panel6">Factores hereditarios</a></p>
-        <div class="content" data-section-content><p>
+    </div>
+        <div class="impresion">
+        <h3>Factores hereditarios</h3><hr>
+        
           <br><?php if($this->query['lenguaje'] == '')
                     echo '<div class="panel radiobtn" style="background-color: #b3e9b3;">No hay registros de alteración en el lenguaje</div>';
                 else
@@ -293,8 +294,5 @@
                 else
                     echo "<div class='panel radiobtn' style='background-color: #ffc997;'>Se registraron las siguientes patologías psiquiátrica: ".$this->query['patologiapsiquiatrica']."</div>";?>
                   <br>
-        </p></div>
-      </section>
-    </div>
-    <a href="/Reporte/impresion/id/<?= $this->id ?>" class="button">Imprimir</a>
 </div>
+
