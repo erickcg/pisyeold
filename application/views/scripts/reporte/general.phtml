@@ -296,5 +296,10 @@
         </p></div>
       </section>
     </div>
-    <a href="<?php echo $this->baseUrl(); ?>/Reporte/impresion/id/<?= $this->id ?>" class="button" style="float: right;">Imprimir</a>
+    <?php 
+    if ($this->id != '') {
+      echo "<a href=".$this->baseUrl()."/Reporte/impresion/id/".$this->id." class='button' style='float: right;'>Imprimir</a>"; 
+    }  
+    ?>
+    
 </div>
