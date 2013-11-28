@@ -10,11 +10,11 @@ class Application_Model_FormPosnatales extends Zend_Form
 		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/posnatales');
 
 		$lloro = new Zend_Form_Element_Radio('lloro');
-		$lloro->setMultiOptions(array('s'=>'S&iacute;', 'n'=>'No'))
+		$lloro->setMultiOptions(array('s'=>'Sí', 'n'=>'No'))
 		->setAttrib('required','');
 
 	        $altamama = new Zend_Form_Element_Radio('altamama');
-		$altamama->setMultiOptions(array('s'=>'S&iacute;', 'n'=>'No'))
+		$altamama->setMultiOptions(array('s'=>'Sí', 'n'=>'No'))
 		->setAttrib('required','');
 
 		$cuidadosintensivos = new Zend_Form_Element_Text('cuidadosintensivos');
@@ -23,7 +23,7 @@ class Application_Model_FormPosnatales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$problemasalimentacion = new Zend_Form_Element_Text('problemasalimentacion');
-		$problemasalimentacion->setAttrib('placeholder', 'Si no hubo problemas de alimentacion, dejar en blanco')
+		$problemasalimentacion->setAttrib('placeholder', 'Si no hubo problemas de alimentación, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
@@ -33,7 +33,7 @@ class Application_Model_FormPosnatales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$infeccionneuro = new Zend_Form_Element_Text('infeccionneuro');
-		$infeccionneuro->setAttrib('placeholder', 'Si no hubo infeccion neurologica, dejar en blanco')
+		$infeccionneuro->setAttrib('placeholder', 'Si no hubo infección neurológica, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
@@ -53,7 +53,7 @@ class Application_Model_FormPosnatales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$vision = new Zend_Form_Element_Text('vision');
-		$vision->setAttrib('placeholder', 'Si no hubo vision, dejar en blanco')
+		$vision->setAttrib('placeholder', 'Si no hubo visión, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

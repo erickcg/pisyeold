@@ -25,12 +25,12 @@ class Application_Model_FormHereditario extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$patologiacromosomica = new Zend_Form_Element_Text('patologiacromosomica');
-		$patologiacromosomica->setAttrib('placeholder', 'Si no hubo patologia cromosomica, dejar en blanco')
+		$patologiacromosomica->setAttrib('placeholder', 'Si no hubo patologia cromosómica, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$patologiapsiquiatrica = new Zend_Form_Element_Text('patologiapsiquiatrica');
-		$patologiapsiquiatrica->setAttrib('placeholder', 'Si no hubo patoloia psiqui&aacute;trica, dejar en blanco')
+		$patologiapsiquiatrica->setAttrib('placeholder', 'Si no hubo patoloia psiquiátrica, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

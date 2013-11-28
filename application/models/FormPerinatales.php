@@ -23,11 +23,11 @@ class Application_Model_FormPerinatales extends Zend_Form
 	                ->setValue("eut&oacute;cico");
 
 	        $multiple = new Zend_Form_Element_Radio('multiple');
-		$multiple->setMultiOptions(array('s'=>'Si', 'n'=>'No'))
+		$multiple->setMultiOptions(array('s'=>'Sí', 'n'=>'No'))
 		->setAttrib('required','');
 
 		$cesarea = new Zend_Form_Element_Text('cesarea');
-		$cesarea->setAttrib('placeholder', 'Si no hubo ces&aacute;rea, dejar en blanco')
+		$cesarea->setAttrib('placeholder', 'Si no hubo cesárea, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
@@ -47,7 +47,7 @@ class Application_Model_FormPerinatales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$traumaobstetrico = new Zend_Form_Element_Text('traumaobstetrico');
-		$traumaobstetrico->setAttrib('placeholder', 'Si no hubo trauma obst&eacute;trico, dejar en blanco')
+		$traumaobstetrico->setAttrib('placeholder', 'Si no hubo trauma obsétrico, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

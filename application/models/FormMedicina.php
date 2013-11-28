@@ -19,7 +19,7 @@ class Application_Model_FormMedicina extends Zend_Form
 
 		$formula = new Zend_Form_Element_Text('formula');
 		$formula->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'formula')
+		 	->setAttrib('placeholder', 'fórmula')
 		 	->setAttrib('required','')
 		 	->setAttrib('pattern','alpha_numeric')
 			->removeDecorator('label')
