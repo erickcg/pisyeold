@@ -509,7 +509,7 @@ class AlumnoController extends Zend_Controller_Action
 
                         $db->update('AlumnoDetalle', $data, 'id = '. $id );
 
-                        $this->_redirect('/Alumno/terminado');
+                        $this->_redirect('/Alumno/terminado/id/'. $id);
                         return;
                 }
         }
@@ -653,7 +653,8 @@ class AlumnoController extends Zend_Controller_Action
 
     public function terminadoAction()
     {
-        // action body
+        $id = $this->_request->getParam('id');
+        $this->view->idalumno = $id;
     }
 
     public function datosAction()
