@@ -19,15 +19,15 @@ class Application_Model_FormPerinatales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$tipodeparto = new Zend_Form_Element_Radio('tipodeparto');
-		$tipodeparto->setMultiOptions(array('eutocico'=>'eutocico', 'distocico'=>'distocico'))
-	                ->setValue("eutocico");
+		$tipodeparto->setMultiOptions(array('eut&oacute;cico'=>'eut&oacute;cico', 'dist&oacute;cico'=>'dist&oacute;cico'))
+	                ->setValue("eut&oacute;cico");
 
 	        $multiple = new Zend_Form_Element_Radio('multiple');
 		$multiple->setMultiOptions(array('s'=>'Si', 'n'=>'No'))
 		->setAttrib('required','');
 
 		$cesarea = new Zend_Form_Element_Text('cesarea');
-		$cesarea->setAttrib('placeholder', 'Si no hubo cesarea, dejar en blanco')
+		$cesarea->setAttrib('placeholder', 'Si no hubo ces&aacute;rea, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
@@ -47,7 +47,7 @@ class Application_Model_FormPerinatales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$traumaobstetrico = new Zend_Form_Element_Text('traumaobstetrico');
-		$traumaobstetrico->setAttrib('placeholder', 'Si no hubo trauma obstetrico, dejar en blanco')
+		$traumaobstetrico->setAttrib('placeholder', 'Si no hubo trauma obst&eacute;trico, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

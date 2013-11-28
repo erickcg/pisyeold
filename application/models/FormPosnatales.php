@@ -10,11 +10,11 @@ class Application_Model_FormPosnatales extends Zend_Form
 		 $this->setAction('/Alumno/posnatales');
 
 		$lloro = new Zend_Form_Element_Radio('lloro');
-		$lloro->setMultiOptions(array('s'=>'Si', 'n'=>'No'))
+		$lloro->setMultiOptions(array('s'=>'S&iacute;', 'n'=>'No'))
 		->setAttrib('required','');
 
 	        $altamama = new Zend_Form_Element_Radio('altamama');
-		$altamama->setMultiOptions(array('s'=>'Si', 'n'=>'No'))
+		$altamama->setMultiOptions(array('s'=>'S&iacute;', 'n'=>'No'))
 		->setAttrib('required','');
 
 		$cuidadosintensivos = new Zend_Form_Element_Text('cuidadosintensivos');

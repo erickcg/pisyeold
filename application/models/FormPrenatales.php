@@ -15,7 +15,7 @@ class Application_Model_FormPrenatales extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$sustancias = new Zend_Form_Element_Text('sustancias');
-		$sustancias->setAttrib('placeholder', 'Si no hubo exposicion a sustancias toxicas, dejar en blanco')
+		$sustancias->setAttrib('placeholder', 'Si no hubo exposicion a sustancias t&oacute;xicas, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

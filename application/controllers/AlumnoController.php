@@ -2,6 +2,27 @@
 
 class AlumnoController extends Zend_Controller_Action
 {
+    // public function stripAccents($String)
+    // {
+    //     $String = ereg_replace("[äáàâãª]","a",$String);
+    //     $String = ereg_replace("[ÁÀÂÃÄ]","A",$String);
+    //     $String = ereg_replace("[ÍÌÎÏ]","I",$String);
+    //     $String = ereg_replace("[íìîï]","i",$String);
+    //     $String = ereg_replace("[éèêë]","e",$String);
+    //     $String = ereg_replace("[ÉÈÊË]","E",$String);
+    //     $String = ereg_replace("[óòôõöº]","o",$String);
+    //     $String = ereg_replace("[ÓÒÔÕÖ]","O",$String);
+    //     $String = ereg_replace("[úùûü]","u",$String);
+    //     $String = ereg_replace("[ÚÙÛÜ]","U",$String);
+    //     $String = ereg_replace("[^´`¨~]","",$String);
+    //     $String = str_replace("ç","c",$String);
+    //     $String = str_replace("Ç","C",$String);
+    //     $String = str_replace("ñ","n",$String);
+    //     $String = str_replace("Ñ","N",$String);
+    //     $String = str_replace("Ý","Y",$String);
+    //     $String = str_replace("ý","y",$String);
+    //     return $String;
+    // }
 
     public function init()
     {
@@ -709,7 +730,6 @@ class AlumnoController extends Zend_Controller_Action
 
                                 $link = $xml->xpath("/pages/link[url='/Reporte/general/id/".$id."']");; 
                                 $link[0]->title = $form->getValue('nombre').' '.$form->getValue('apaterno').' '.$form->getValue('amaterno'); 
-                                //$link[0]->url = '/Reporte/general/id/'.$id; 
 
                                 file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
 
@@ -717,7 +737,7 @@ class AlumnoController extends Zend_Controller_Action
                                 $db->insert('AlumnoDetalle', $data);
                                 $id = $db->lastInsertId();
 
-                                //Add it to the XML
+                                // //Add it to the XML
                                 $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
 
                                 $link = $xml->addChild('link'); 
@@ -726,8 +746,50 @@ class AlumnoController extends Zend_Controller_Action
 
                                 file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
 
-                                //Insertar en tabla de calificaciones
-                                //$db->insert('alumno', $califdatos);
+                                //Generacion de usuario
+                                $nombre = $form->getValue('nombre');
+                                $user = $nombre[0] . $form->getValue('apaterno');
+                                $user = strtolower($user);
+                                $user = preg_replace("/[äáàâã]/","",$user);
+                                $user = preg_replace("/[ÁÀÂÃÄ]/","",$user);
+                                $user = preg_replace("/[ÍÌÎÏ]/","",$user);
+                                $user = preg_replace("/[íìîï]/","",$user);
+                                $user = preg_replace("/[éèêë]/","",$user);
+                                $user = preg_replace("/[ÉÈÊË]/","",$user);
+                                $user = preg_replace("/[óòôõö]/","",$user);
+                                $user = preg_replace("/[ÓÒÔÕÖ]/","",$user);
+                                $user = preg_replace("/[úùûü]/","",$user);
+                                $user = preg_replace("/[ÚÙÛÜ]/","",$user);
+                                $user = preg_replace("/[ñ]/","",$user);
+                                $user = preg_replace("/[Ñ]/","",$user);
+
+                                $query = $db->select()
+                                            ->from('usuario', array('count' => 'count(Usuario)'))->where('Usuario LIKE "'.$user.'%" ');
+                                $results = $db->fetchRow($query);
+
+                                if (($results['count'] + 1) == 1) {
+                                    $datauser['Usuario'] = $user;
+                                    $datauser['Password'] = md5($user);
+                                    $datauser['Permiso'] = "5";
+
+                                    $califdatos['Usuario'] = $user;
+                                    //Insertar en tabla de calificaciones
+                                    $db->insert('alumno', $califdatos);
+                                }else {
+                                    $numero = $results['count'] + 1;
+                                    $datauser['Usuario'] = $user.$numero;
+                                    $datauser['Password'] = md5($user.$numero);
+                                    $datauser['Permiso'] = "5";
+
+                                    $califdatos['Usuario'] = $user.$numero;
+                                    //Insertar en tabla de calificaciones
+                                    $db->insert('alumno', $califdatos);
+                                }
+
+                                //insertar en usuario
+                                $db->insert('usuario', $datauser);
+
+
                         }
 
                         
@@ -861,7 +923,7 @@ class AlumnoController extends Zend_Controller_Action
         }
     }
 
-
+    
 }
 
 

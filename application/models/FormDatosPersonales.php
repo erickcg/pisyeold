@@ -63,7 +63,7 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 
 		$numhermanos = new Zend_Form_Element_Text('numhermanos');
 		$numhermanos->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'Numero de hermanos')
+		 	->setAttrib('placeholder', 'N&uacute;mero de hermanos')
 		 	->setAttrib('required','')
 		 	->setAttrib('pattern','positivo')
 			->removeDecorator('label')
@@ -115,13 +115,13 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 
 		$poliza = new Zend_Form_Element_Text('poliza');
 		$poliza->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'Poliza')
+		 	->setAttrib('placeholder', 'P&oacute;liza')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$rehab = new Zend_Form_Element_Text('rehab');
 		$rehab->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'Si no hay rehabilitacion del aprendizaje, dejar en blanco')
+		 	->setAttrib('placeholder', 'Si no hay rehabilitacion de aprendizaje, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
