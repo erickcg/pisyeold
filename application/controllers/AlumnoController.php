@@ -39,7 +39,7 @@ class AlumnoController extends Zend_Controller_Action
                 $this->_helper->redirector('login', 'account');
         }
 
-        $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
+        $xml = simplexml_load_file(XML_PATH);
 
         $nombrelast = $xml->xpath('/pages/link[last()]/title');
         $urllast = $xml->xpath('/pages/link[last()]/url');
@@ -504,10 +504,14 @@ class AlumnoController extends Zend_Controller_Action
                         if($form->getValue('patologiapsiquiatrica') != ''){
                                 $data['patologiapsiquiatrica'] = $form->getValue('patologiapsiquiatrica');
                         }
+
+                        
                         
                         $id = $this->_request->getPost('id');
 
-                        $db->update('AlumnoDetalle', $data, 'id = '. $id );
+                        if ($data != null) {
+                            $db->update('AlumnoDetalle', $data, 'id = '. $id );
+                        }
 
                         $this->_redirect('/Alumno/terminado/id/'. $id);
                         return;
@@ -542,7 +546,7 @@ class AlumnoController extends Zend_Controller_Action
                  Zend_Controller_Front::getInstance()
                  ->setParam('noViewRenderer', true);
         $xmlDoc=new DOMDocument();
-        $xmlDoc->load("../application/views/scripts/alumni.xml");
+        $xmlDoc->load(XML_PATH);
 
         $x=$xmlDoc->getElementsByTagName('link');
 
@@ -727,25 +731,25 @@ class AlumnoController extends Zend_Controller_Action
                         if($id != ''){
                                 $db->update('AlumnoDetalle', $data, 'id = '. $id );
 
-                                $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
+                                $xml = simplexml_load_file(XML_PATH);
 
-                                $link = $xml->xpath("/pages/link[url='/Reporte/general/id/".$id."']");; 
+                                $link = $xml->xpath("/pages/link[url='".SITE_ROOT_URL_PATH."/Reporte/general/id/".$id."']");; 
                                 $link[0]->title = $form->getValue('nombre').' '.$form->getValue('apaterno').' '.$form->getValue('amaterno'); 
 
-                                file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
+                                file_put_contents(XML_PATH, $xml->asXML());
 
                         } else {
                                 $db->insert('AlumnoDetalle', $data);
                                 $id = $db->lastInsertId();
 
                                 // //Add it to the XML
-                                $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
+                                $xml = simplexml_load_file(XML_PATH);
 
                                 $link = $xml->addChild('link'); 
                                 $link->addChild('title', $form->getValue('nombre').' '.$form->getValue('apaterno').' '.$form->getValue('amaterno')); 
-                                $link->addChild('url', '/Reporte/general/id/'.$id); 
+                                $link->addChild('url', SITE_ROOT_URL_PATH.'/Reporte/general/id/'.$id); 
 
-                                file_put_contents('../application/views/scripts/alumni.xml', $xml->asXML());
+                                file_put_contents(XML_PATH, $xml->asXML());
 
                                 //Generacion de usuario
                                 $nombre = $form->getValue('nombre');
@@ -799,15 +803,18 @@ class AlumnoController extends Zend_Controller_Action
                         return;
                 }
         }
+        //Var definition before its use, because it could have a value from DB
+        $results['idGrupo'] = '';
+
         if($id != '') {
 
         $this->view->idalumno = $id;
 
-        $this->view->antecedentes = ' href="/Alumno/antecedentes/id/'.$id.'" ';
-        $this->view->prenatales = ' href="/Alumno/prenatales/id/'.$id.'" ';
-        $this->view->perinatales = ' href="/Alumno/perinatales/id/'.$id.'" ';
-        $this->view->posnatales = ' href="/Alumno/posnatales/id/'.$id.'" ';
-        $this->view->hereditario = ' href="/Alumno/hereditario/id/'.$id.'" ';
+        $this->view->antecedentes = ' href="'.SITE_ROOT_URL_PATH.'/Alumno/antecedentes/id/'.$id.'" ';
+        $this->view->prenatales = ' href="'.SITE_ROOT_URL_PATH.'/Alumno/prenatales/id/'.$id.'" ';
+        $this->view->perinatales = ' href="'.SITE_ROOT_URL_PATH.'/Alumno/perinatales/id/'.$id.'" ';
+        $this->view->posnatales = ' href="'.SITE_ROOT_URL_PATH.'/Alumno/posnatales/id/'.$id.'" ';
+        $this->view->hereditario = ' href="'.SITE_ROOT_URL_PATH.'/Alumno/hereditario/id/'.$id.'" ';
 
 
                 $query = $db->select()
@@ -851,8 +858,10 @@ class AlumnoController extends Zend_Controller_Action
         foreach ($options as $options) {
             $grupo->addMultiOption($options['id'], $options['nombre']);
         }
+        if($results['idGrupo'] != ''){
+            $grupo->setValue($results['idGrupo']);
+        }
         
-        $grupo->setValue($results['idGrupo']);
 
         $form->addElement($grupo);
         $this->view->form = $form;

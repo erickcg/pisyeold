@@ -9,7 +9,7 @@
   <link href='http://www.papyrusms.com/favicon.ico' rel='icon' type='image/x-icon'/>
   <title>Historial Cl&iacute;nico</title>
 
-  <?php echo $this->headLink()->appendStylesheet('/css/foundation.css')->appendStylesheet('/css/historial.css'); ?>
+  <?php echo $this->headLink()->appendStylesheet($this->baseUrl().'/css/foundation.css')->appendStylesheet($this->baseUrl().'/css/historial.css'); ?>
   <?php //echo $this->headScript()->appendFile( "/js/vendor/custom.modernizr.js", $type = 'text/javascript' ); ?>
 <script>
 function showResult(str)
@@ -36,7 +36,7 @@ xmlhttp.onreadystatechange=function()
     document.getElementById("livesearch").style.border="1px solid #000";
     }
   }
-xmlhttp.open("GET","/alumno/livesearch/?q="+str,true);
+xmlhttp.open("GET","<?php echo $this->baseUrl(); ?>/alumno/livesearch/?q="+str,true);
 xmlhttp.send();
 }
 </script>
@@ -47,7 +47,7 @@ xmlhttp.send();
     <div class="large-12 columns">
       <div class="row">
         <div class="large-2 small-7 columns">
-          <a href="/"><img src="/img/logonegrop.png" /></a>
+          <a href="<?php echo $this->baseUrl(); ?>/"><img src="<?php echo $this->baseUrl(); ?>/img/logonegrop.png" /></a>
         </div>
         <div class="large-10 small-5 columns">
           <h2>Historial Cl&iacute;nico Pisye</h2>
@@ -72,11 +72,11 @@ xmlhttp.send();
               </ul>
             </li>
             <li class="divider"></li>
-            <li class="active"><a href="/Alumno">Alumnos</a></li>
+            <li class="active"><a href="<?php echo $this->baseUrl(); ?>/Alumno">Alumnos</a></li>
             <li class="divider"></li>
-            <li class="active"><a href="/Grupo/altagrupo">Grupos</a></li>
+            <li class="active"><a href="<?php echo $this->baseUrl(); ?>/Grupo/altagrupo">Grupos</a></li>
             <li class="divider"></li>
-            <li class="active"><a href="/Reporte/general">Reportes</a></li>
+            <li class="active"><a href="<?php echo $this->baseUrl(); ?>/Reporte/general">Reportes</a></li>
           </ul>
 
           <!-- Right Nav Section -->
@@ -102,7 +102,7 @@ xmlhttp.send();
     <div style="margin-top: 32px;" class="large-4 pull-8 columns">
     <div style="background-color: #008eb8;  color: #fff; margin-left: 5px; margin-right: 5px;" class="row login">
         <div class="large-4 small-4 columns">
-            <img src="/img/usuario.png" />
+            <img src="<?php echo $this->baseUrl(); ?>/img/usuario.png" />
             </div>
             <div class="large-8 small-8 columns">
             <?php echo $this->idDisplay; ?>
@@ -125,18 +125,18 @@ xmlhttp.send();
   </div>
   <div id="footer"  class="row" style="max-width: 100% !important;">
     <div class="large-12 small-12 small-centered columns">
-      <p>Erick Castillo de la Garza</p><hr><img style="float:left;" src="/img/logoudem.png" /><img style="float:right;" src="/img/logopisye.png" />
+      <p>Erick Castillo de la Garza</p><hr><img style="float:left;" src="<?php echo $this->baseUrl(); ?>/img/logoudem.png" /><img style="float:right;" src="<?php echo $this->baseUrl(); ?>/img/logopisye.png" />
     </div>
   </div>
   <script>
   document.write('<script src=' +
-  ('__proto__' in {} ? '/js/vendor/zepto' : '/js/vendor/jquery') +
+  ('__proto__' in {} ? '<?php echo $this->baseUrl().'/js/vendor/zepto'; ?>' : '<?php echo $this->baseUrl().'/js/vendor/jquery'; ?>') +
   '.js><\/script>')
   </script>
 
-  <?php echo $this->headScript()->appendFile("/js/vendor/custom.modernizr.js", $type = 'text/javascript')
-                                ->appendFile("/js/foundation.min.js", $type = 'text/javascript')
-                                ->appendFile("/js/foundation/foundation.topbar.js", $type = 'text/javascript'); ?>
+  <?php echo $this->headScript()->appendFile($this->baseUrl()."/js/vendor/custom.modernizr.js", $type = 'text/javascript')
+                                ->appendFile($this->baseUrl()."/js/foundation.min.js", $type = 'text/javascript')
+                                ->appendFile($this->baseUrl()."/js/foundation/foundation.topbar.js", $type = 'text/javascript'); ?>
 
   <script>
     $(document).foundation();

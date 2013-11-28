@@ -7,7 +7,7 @@ class Application_Model_FormMedicina extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('medicinas');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno/medicinas');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/medicinas');
 
 		$nombre = new Zend_Form_Element_Text('nombre');
 		$nombre->setAttrib('size', 35)

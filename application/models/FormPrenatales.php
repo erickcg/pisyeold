@@ -7,7 +7,7 @@ class Application_Model_FormPrenatales extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('prenatales');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno/prenatales');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/prenatales');
 
 	        $enfermedaddurante = new Zend_Form_Element_Text('enfermedaddurante');
 		$enfermedaddurante->setAttrib('placeholder', 'Si no hubo enfermedad durante el embarazo, dejar en blanco')

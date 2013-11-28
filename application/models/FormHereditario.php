@@ -7,7 +7,7 @@ class Application_Model_FormHereditario extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('hereditario');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno/hereditario');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/hereditario');
 
 		$lenguaje = new Zend_Form_Element_Text('lenguaje');
 		$lenguaje->setAttrib('placeholder', 'Si no hubo alteraci&oacute;n del lenguaje, dejar en blanco')
@@ -25,12 +25,12 @@ class Application_Model_FormHereditario extends Zend_Form
 			->removeDecorator('htmlTag');
 
 		$patologiacromosomica = new Zend_Form_Element_Text('patologiacromosomica');
-		$patologiacromosomica->setAttrib('placeholder', 'Si no hubo patolog&iacute;a cromosomica, dejar en blanco')
+		$patologiacromosomica->setAttrib('placeholder', 'Si no hubo patologia cromosomica, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 
 		$patologiapsiquiatrica = new Zend_Form_Element_Text('patologiapsiquiatrica');
-		$patologiapsiquiatrica->setAttrib('placeholder', 'Si no hubo patolog&iacute;a psiqui&aacute;trica, dejar en blanco')
+		$patologiapsiquiatrica->setAttrib('placeholder', 'Si no hubo patoloia psiqui&aacute;trica, dejar en blanco')
 			->removeDecorator('label')
 			->removeDecorator('htmlTag');
 

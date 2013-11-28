@@ -7,7 +7,7 @@ class Application_Model_FormGrupo extends Zend_Form
                  parent::__construct($options);
                  $this->setName('altagrupo');
                  $this->setMethod('post');
-                 $this->setAction('/Grupo/altagrupo');
+                 $this->setAction(SITE_ROOT_URL_PATH.'/Grupo/altagrupo');
 
                 $nombre = new Zend_Form_Element_Text('nombre');
                 $nombre->setAttrib('size', 35)

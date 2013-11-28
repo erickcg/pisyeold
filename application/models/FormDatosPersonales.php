@@ -7,7 +7,7 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('datospersonales');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno/datos');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/datos');
 
 		 $nombre = new Zend_Form_Element_Text('nombre');
 		 $nombre->setAttrib('size', 35)
@@ -63,7 +63,7 @@ class Application_Model_FormDatosPersonales extends Zend_Form
 
 		$numhermanos = new Zend_Form_Element_Text('numhermanos');
 		$numhermanos->setAttrib('size', 35)
-		 	->setAttrib('placeholder', 'N&uacute;mero de hermanos')
+		 	->setAttrib('placeholder', 'Numero de hermanos')
 		 	->setAttrib('required','')
 		 	->setAttrib('pattern','positivo')
 			->removeDecorator('label')

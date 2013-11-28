@@ -7,7 +7,7 @@ class Application_Model_FormHospital extends Zend_Form
                  parent::__construct($options);
                  $this->setName('hospital');
                  $this->setMethod('post');
-                 $this->setAction('/Alumno/hospital');
+                 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/hospital');
 
                 $hospital = new Zend_Form_Element_Text('hospital');
                 $hospital->setAttrib('size', 35)

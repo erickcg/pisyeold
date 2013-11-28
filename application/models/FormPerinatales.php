@@ -7,7 +7,7 @@ class Application_Model_FormPerinatales extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('perinatales');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno/perinatales');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/perinatales');
 
 	        $nacimiento = new Zend_Form_Element_Radio('nacimiento');
 		$nacimiento->setMultiOptions(array('prematuro'=>'Prematuro', 'normal'=>'Normal', 'posmaduro'=>'Posmaduro'))

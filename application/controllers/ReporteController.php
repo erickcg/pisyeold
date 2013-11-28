@@ -17,7 +17,7 @@ class ReporteController extends Zend_Controller_Action
             $this->_helper->redirector('login', 'account');
         }
 
-        $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
+        $xml = simplexml_load_file(XML_PATH);
 
         $nombrelast = $xml->xpath('/pages/link[last()]/title');
         $urllast = $xml->xpath('/pages/link[last()]/url');
@@ -38,8 +38,12 @@ class ReporteController extends Zend_Controller_Action
     }
 
     public function generalAction()
-    {
+    {   
         $id = $this->_request->getParam('id');
+        //init vars
+        $results['numhermanos'] = '';
+        $results['lugarfamilia'] = '';
+        $results['id'] = '';
 
         $form = new Application_Model_FormId();
         if ($this->getRequest()->isPost()) {
@@ -85,9 +89,9 @@ class ReporteController extends Zend_Controller_Action
 
         for($i=1; $i<=$results['numhermanos'] + 1; $i++){
             if($i == $results['lugarfamilia']){
-                $this->view->lugar .= "<img src='/img/personaselected.png' />";
+                $this->view->lugar .= "<img src='".SITE_ROOT_URL_PATH."/img/personaselected.png' />";
             }else{
-                $this->view->lugar .= "<img src='/img/persona.png' />";
+                $this->view->lugar .= "<img src='".SITE_ROOT_URL_PATH."/img/persona.png' />";
             }
             
         }
@@ -162,9 +166,9 @@ class ReporteController extends Zend_Controller_Action
 
         for($i=1; $i<=$results['numhermanos'] + 1; $i++){
             if($i == $results['lugarfamilia']){
-                $this->view->lugar .= "<img src='/img/personaselected.png' />";
+                $this->view->lugar .= "<img src='".SITE_ROOT_URL_PATH."/img/personaselected.png' />";
             }else{
-                $this->view->lugar .= "<img src='/img/persona.png' />";
+                $this->view->lugar .= "<img src='".SITE_ROOT_URL_PATH."/img/persona.png' />";
             }
             
         }

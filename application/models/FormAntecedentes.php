@@ -7,7 +7,7 @@ class Application_Model_FormAntecedentes extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('antecedentes');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno/antecedentes');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/antecedentes');
 
 		$embarazoriesgoso = new Zend_Form_Element_Radio('embarazoriesgoso');
 		$embarazoriesgoso->setMultiOptions(array('s'=>'Si', 'n'=>'No'))
@@ -44,6 +44,6 @@ class Application_Model_FormAntecedentes extends Zend_Form
 
 		 $this->setDecorators( array( array('ViewScript', array('viewScript' => '/alumno/_form_antecedentes.phtml'))));
 
-		 $this->addElements(array($embarazoplaneado, $embarazoriesgoso, $tipoembarazo, $amenazaaborto, $amenazaprematuro, $contactoenfermedad, $accidenteembarazo, $submit));
+		 $this->addElements(array($embarazoplaneado, $embarazoriesgoso, $amenazaaborto, $amenazaprematuro, $contactoenfermedad, $accidenteembarazo, $submit));
 	 }
 }

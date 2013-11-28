@@ -7,7 +7,7 @@ class Application_Model_FormContacto extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('contactos');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno/contactos');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/contactos');
 
 		$nombre = new Zend_Form_Element_Text('nombre');
 		$nombre->setAttrib('size', 35)

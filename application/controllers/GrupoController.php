@@ -17,7 +17,7 @@ class GrupoController extends Zend_Controller_Action
             $this->_helper->redirector('login', 'account');
         }
 
-        $xml = simplexml_load_file('../application/views/scripts/alumni.xml');
+        $xml = simplexml_load_file(XML_PATH);
 
         $nombrelast = $xml->xpath('/pages/link[last()]/title');
         $urllast = $xml->xpath('/pages/link[last()]/url');

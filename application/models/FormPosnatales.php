@@ -7,7 +7,7 @@ class Application_Model_FormPosnatales extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('posnatales');
 		 $this->setMethod('post');
-		 $this->setAction('/Alumno/posnatales');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/Alumno/posnatales');
 
 		$lloro = new Zend_Form_Element_Radio('lloro');
 		$lloro->setMultiOptions(array('s'=>'S&iacute;', 'n'=>'No'))

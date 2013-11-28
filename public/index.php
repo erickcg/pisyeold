@@ -1,5 +1,8 @@
 <?php
 
+define('SITE_ROOT_URL_PATH','');
+define('XML_PATH', '../application/views/scripts/alumni.xml');
+
 // Define path to application directory
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));

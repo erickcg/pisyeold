@@ -7,7 +7,7 @@ class Application_Model_FormLogin extends Zend_Form
 		 parent::__construct($options);
 		 $this->setName('login');
 		 $this->setMethod('post');
-		 $this->setAction('/account/login');
+		 $this->setAction(SITE_ROOT_URL_PATH.'/account/login');
 
 		 $username = new Zend_Form_Element_Text('username');
 		 $username->setAttrib('size', 35)
