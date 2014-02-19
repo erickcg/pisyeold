@@ -24,6 +24,7 @@
 #livesearch {
 	z-index: 1000;
 	background-color: #fff;
+	clear: both;
 }
 
 .omnibar{
@@ -71,6 +72,11 @@
 		margin-bottom: 1.25em;
 		padding:1.25em;
 	}
+
+
+	.searchbarli{
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 999px) {
@@ -87,5 +93,9 @@
 	.panel{
 		margin-bottom: 0;
 		padding:0;
+	}
+
+	.searchbarli{
+		width: auto;
 	}
 }

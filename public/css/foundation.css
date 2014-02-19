@@ -2936,7 +2936,7 @@ label.error {
     width: 100%;
     height: auto;
     display: block;
-    background: #222222;
+    background: #0080A5;
     font-size: 16px;
     margin: 0; }
   .top-bar-section .divider,
@@ -3074,7 +3074,7 @@ label.error {
     transition: none 0 0;
     left: 0 !important; }
     .top-bar-section ul {
-      width: auto;
+      width: 45%;
       height: auto !important;
       display: inline; }
       .top-bar-section ul li {

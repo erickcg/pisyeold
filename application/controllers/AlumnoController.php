@@ -32,7 +32,7 @@ class AlumnoController extends Zend_Controller_Action
         if ($auth->hasIdentity()) {
                 $identity = $auth->getIdentity();
                 if (isset($identity)) {
-                        $this->view->idDisplay = "Bienvenido " . $identity . ", <a href='/account/logout'>logout</a>";
+                        $this->view->idDisplay = "Bienvenido " . $identity . ", <a href='".SITE_ROOT_URL_PATH."/account/logout'>logout</a>";
                 }
         }
         else {
