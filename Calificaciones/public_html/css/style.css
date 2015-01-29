@@ -1,0 +1,67 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #000 !important;
+}
+
+.menudiv a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.menudiv a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+
+.menudiv {
+	background-color: #333;
+}
+
+.header {
+	background-color: #013739;
+}
+
+.headerdiv {
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+
+.hexagonosmain div {
+	text-align: center;
+}
+
+.hexagonosmain p {
+	margin-top: .1em;
+}
+
+.pleca {
+	border-top: 2px solid #bcbdc0;
+	background-image: url("/img/pleca.png");
+	background-repeat: no-repeat;
+	padding-top: 25px;
+	position: relative;
+}
+
+.pleca .titulopleca {
+	position: absolute;
+	top: -2px;
+	left: 5px;
+	color: #fff;
+}
+
+.cuentabox {
+	border-left: 1px solid  #eeeeee;
+	border-right: 1px solid  #eeeeee;
+}
+
+.cuentaboxrow {
+	border-top: 1px solid  #eeeeee;
+	border-bottom: 1px solid  #eeeeee;
+}
+
+.cuentabox img{
+	height:55px;
+	width: auto;
+}

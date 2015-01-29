@@ -1,0 +1,61 @@
+<div style="float:left; padding-right:16px;"><?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?></div>
+<h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->zfcUserDisplayName() ?>!</h3>
+<a href="<?php echo $this->url('zfcuser/logout') ?>">[<?php echo $this->translate('Sign Out'); ?>]</a>
+<div style="clear:both;"></div>
+
+<section class="Registro">
+<h2>Registro Conferencia</h2>
+<?php if ($this->error): ?>
+<p class="error">
+ Hubo errores en la información ingresada, favor de verificarlos. 
+</p>
+<?php endif ?>
+
+
+
+
+<?php
+        //Vista de Forma
+        $form = $this->form;
+        
+
+       $form->setAttribute('action', $this->url(
+                             NULL,
+                                 array(
+                                    'controller' => 'talleres',
+                                    'action' => 'edit',
+                                    'id'     => $this->id,
+                                 )
+                             ));
+        $form->setAttribute('data-abide', '');
+        $form->prepare();
+        echo $this->form()->openTag($form);
+        echo $this->formHidden($form->get('id'));
+?>
+<div class="row">
+        <div class="large-4 medium-7 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('nombre')); ?>
+                    <?php echo $this->formElement($form->get('nombre')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('informacion')); ?>
+                    <?php echo $this->formElement($form->get('informacion')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('carrera')); ?>
+                    <?php echo $this->formElement($form->get('carrera')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+</div>
+<?php echo $this->formElement($form->get('submit')); ?>
+
+<?php echo $this->form()->closeTag() ?>
+

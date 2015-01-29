@@ -1,0 +1,24 @@
+<script src="/js/jquery.honeycombs.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/honeycombs.css" />
+<div class="honeycombs">
+        <?php foreach ($conferencias as $conferencia) : ?>
+        <div class="comb <?php echo $this->escapeHtml($conferencia->carrera);?>">
+            <div class="front-content">
+                <p><?php echo $this->escapeHtml($conferencia->nombre);?></p>
+            </div>
+            <div class="back-content">
+                <p><?php echo $this->escapeHtml($conferencia->informacion);?></p>
+            </div>
+        </div>
+        <?php endforeach; ?>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $('.honeycombs').honeycombs({
+        combWidth:300,  // width of the hexagon
+        margin: -30,      // spacing between hexagon
+        threshold: 3    // hide placeholder hexagons when number of hexagons in a row is more than the threshold number
+    });
+});
+</script>

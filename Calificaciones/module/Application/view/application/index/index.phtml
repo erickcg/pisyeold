@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/js/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="/js/owl-carousel/owl.theme.css">
+<div class="row">
+    <div class="large-12 columns">
+	    <div id="slider" class="owl-carousel">
+	        <div><img src="/img/slider1.jpg" /></div>
+	        <div><img src="/img/slider2.jpg" /></div>
+                <div><img src="/img/slider3.jpg" /></div>
+	    </div>
+    </div>
+</div>
+
+<div class="row hexagonosmain pleca">
+    <div class="titulopleca">
+        Encontrarás
+    </div>
+        <div class="large-3 medium-6 small-12 columns">
+                <img src="/img/conferencia.png" />
+                <p>CONFERENCIAS</p>
+        </div>
+        <div class="large-3 medium-6 small-12 columns">
+                <img src="/img/talleres.png" />
+                <p>TALLERES</p>
+        </div>
+        <div class="large-3 medium-6 small-12 columns">
+                <img src="/img/expositores.png" />
+                <p>EXPOSITORES</p>
+        </div>
+        <div class="large-3 medium-6 small-12 columns">
+                <img src="/img/dias.png" />
+                <p>3 DÍAS</p>
+        </div> 
+</div>
+
+<script src="/js/owl-carousel/owl.carousel.js"></script>
+
+<script>
+$(document).ready( function(){
+	$("#slider").owlCarousel({
+		autoPlay : 5000,
+		navigation : true,
+		singleItem: true,
+		autoHeight : true
+	});
+ });
+</script>

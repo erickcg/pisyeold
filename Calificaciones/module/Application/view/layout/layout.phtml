@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nucleum</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/foundation.css" />
+    
+    <script src="/js/vendor/modernizr.js"></script>
+    <script src="/js/vendor/jquery.js"></script>
+</head>
+<body>
+
+<div class="headerdiv">
+    <div class="large-12 columns header" style="text-align: center;">
+    	<a href="/"><img src="/img/logoprincipal.png" /></a>
+    </div>
+    <div class="large-12 columns menudiv">
+        <div class="row">
+            <div class="large-3 medium-3 small-12 columns">
+                <a href="/info/conferencias/index"><img src="/img/conferenciasicon.png" />Conferencias</a>
+            </div>
+            <div class="large-3 medium-3 small-12 columns">
+                <a href="/info/talleres/index"><img src="/img/talleresicon.png" />Talleres</a>
+            </div>
+            <div class="large-3 medium-3 small-12 columns">
+                <a href="#"><img src="/img/conocenosicon.png" />Conocenos</a>
+            </div>
+            <div class="large-3 medium-3 small-12 columns">
+                <a href="/registro/register/index"><img src="/img/registro.png" />Pre-registro</a>
+            </div>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<?php echo $this->content; ?>
+
+	
+    <script src="/js/foundation.min.js"></script>
+    <script src="/js/foundation/foundation.abide.js"></script>
+    <script>
+    $(document).foundation({
+        abide : {
+          patterns: {
+            alphanumesp: /^[a-zA-Z0-9áéíóúÁÉÍÓÚÑñüÜ (),.#@!-:$&%*]+$/
+          }
+        }
+      });
+    </script>
+	
+</body>
+</html>
+        
