@@ -5,7 +5,7 @@ use Zend\Db\Adapter\Adapter;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
-class TallerTable
+class ClaseTable
 {
 	protected $tableGateway;
 	public function __construct(TableGateway $tableGateway)
@@ -13,19 +13,17 @@ class TallerTable
 		$this->tableGateway = $tableGateway;
 	}
 
-	public function saveTaller(Taller $taller)
+	public function saveClase(Clase $clase)
 	{
 		$data = array(
-			'nombre' => $taller->nombre,
-			'informacion' => $taller->informacion,
-			'carrera' => $taller->carrera
+			'nombre' => $clase->nombre
 			);
 
-		$id = (int) $taller->id;
+		$id = (int) $clase->id;
 		if ($id == 0) {
 			$this->tableGateway->insert($data);
 		} else {
-			if ($this->getTaller($id)) {
+			if ($this->getClase($id)) {
 				$this->tableGateway->update($data, array('id' => $id));
 			} else {
 				throw new \Exception('No existe');
@@ -33,7 +31,7 @@ class TallerTable
 		}
 	}
 
-	public function getTaller($id)
+	public function getClase($id)
 	{
 		$id  = (int)$id;
 		$rowset = $this->tableGateway->select(array('id' => $id));

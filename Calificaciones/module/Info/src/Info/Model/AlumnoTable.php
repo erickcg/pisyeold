@@ -5,7 +5,7 @@ use Zend\Db\Adapter\Adapter;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
-class ConferenciaTable
+class AlumnoTable
 {
 	protected $tableGateway;
 	public function __construct(TableGateway $tableGateway)
@@ -13,19 +13,17 @@ class ConferenciaTable
 		$this->tableGateway = $tableGateway;
 	}
 
-	public function saveConferencia(Conferencia $conferencia)
+	public function saveAlumno(Alumno $alumno)
 	{
 		$data = array(
-			'nombre' => $conferencia->nombre,
-			'informacion' => $conferencia->informacion,
-			'carrera' => $conferencia->carrera
+			'nombre' => $alumno->nombre
 			);
 
-		$id = (int) $conferencia->id;
+		$id = (int) $alumno->id;
 		if ($id == 0) {
 			$this->tableGateway->insert($data);
 		} else {
-			if ($this->getConferencia($id)) {
+			if ($this->getAlumno($id)) {
 				$this->tableGateway->update($data, array('id' => $id));
 			} else {
 				throw new \Exception('No existe');
@@ -33,7 +31,7 @@ class ConferenciaTable
 		}
 	}
 
-	public function getConferencia($id)
+	public function getAlumno($id)
 	{
 		$id  = (int)$id;
 		$rowset = $this->tableGateway->select(array('id' => $id));

@@ -1,3 +1,4 @@
+<div class="row">
 <div style="float:left; padding-right:16px;"><?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?></div>
 <h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->zfcUserDisplayName() ?>!</h3>
 <a href="<?php echo $this->url('zfcuser/logout') ?>">[<?php echo $this->translate('Sign Out'); ?>]</a>
@@ -8,15 +9,17 @@
 
 <div class="row">
 	<div class="large-12 columns">
-        <?php foreach ($conferencias as $conferencia) : ?>
+        <?php foreach ($clasevar as $clase) : ?>
         		<div class="large-4 medium-6 small-12 panel columns">
         			<div class="large-10 columns">
-		                <?php echo $this->escapeHtml($conferencia->nombre);?>
+		                <?php echo $this->escapeHtml($clase->nombre);?>
 	                </div>
 	                <div class="large-2 columns">
-		                <a href="/info/conferencias/edit/<?php echo $this->escapeHtml($conferencia->id);?>">Editar</a>
+		                <a href="/info/clase/edit/<?php echo $this->escapeHtml($clase->id);?>">Editar</a>
 	                </div>
                 </div>
         <?php endforeach; ?>
     </div>
+</div>
+
 </div>

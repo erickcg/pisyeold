@@ -14,8 +14,8 @@
 return array(
 	 'db' => array(
 		 'driver' => 'Pdo',
-		 'dsn' => 'mysql:dbname=congre10_db2015;host=localhost',
-		 'username' => 'congre10_erick',
+		 'dsn' => 'mysql:dbname=pisyecom_db;host=localhost',
+		 'username' => 'pisyecom_erick',
 		 'password' => 'bicarbonato1',
 		 'driver_options' => array(
 		 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''

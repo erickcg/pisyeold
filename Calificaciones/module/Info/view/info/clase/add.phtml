@@ -1,0 +1,37 @@
+<div style="float:left; padding-right:16px;"><?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?></div>
+<h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->zfcUserDisplayName() ?>!</h3>
+<a href="<?php echo $this->url('zfcuser/logout') ?>">[<?php echo $this->translate('Sign Out'); ?>]</a>
+<div style="clear:both;"></div>
+
+<section class="Registro">
+<h2>Registro Clase</h2>
+<?php if ($this->error): ?>
+<p class="error">
+ Hubo errores en la información ingresada, favor de verificarlos. 
+</p>
+<?php endif ?>
+
+
+
+<?php
+        //Vista de Forma
+        $form = $this->form;
+        $form->prepare();
+
+        $form->setAttribute('action', $this->url(NULL, array('controller'=>'clase', 'action' => 'add')));
+        $form->setAttribute('data-abide', '');
+        echo $this->form()->openTag($form);
+?>
+<div class="row">
+        <div class="large-4 medium-7 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('nombre')); ?>
+                    <?php echo $this->formElement($form->get('nombre')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+</div>
+<?php echo $this->formElement($form->get('submit')); ?>
+
+<?php echo $this->form()->closeTag() ?>
+

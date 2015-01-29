@@ -12,10 +12,10 @@ namespace Info;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
-use Info\Model\Conferencia;
-use Info\Model\ConferenciaTable;
-use Info\Model\Taller;
-use Info\Model\TallerTable;
+use Info\Model\Clase;
+use Info\Model\ClaseTable;
+use Info\Model\Alumno;
+use Info\Model\AlumnoTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
@@ -57,27 +57,27 @@ class Module implements AutoloaderProviderInterface
         'aliases' => array(),
         'factories' => array(
             // DB
-            'TallerTable' => function($sm) {
-                $tableGateway = $sm->get('TallerTableGateway');
-                $tabletaller = new TallerTable($tableGateway);
+            'AlumnoTable' => function($sm) {
+                $tableGateway = $sm->get('AlumnoTableGateway');
+                $tabletaller = new AlumnoTable($tableGateway);
                 return $tabletaller;
             },
-            'TallerTableGateway' => function ($sm) {
+            'AlumnoTableGateway' => function ($sm) {
                 $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                 $resultSetPrototype = new ResultSet();
-                $resultSetPrototype->setArrayObjectPrototype(new Taller());
-                return new TableGateway('Taller', $dbAdapter, null, $resultSetPrototype);
+                $resultSetPrototype->setArrayObjectPrototype(new Alumno());
+                return new TableGateway('Alumno', $dbAdapter, null, $resultSetPrototype);
             },
-            'ConferenciaTable' => function($sm) {
-                $tableGateway = $sm->get('ConferenciaTableGateway');
-                $table = new ConferenciaTable($tableGateway);
+            'ClaseTable' => function($sm) {
+                $tableGateway = $sm->get('ClaseTableGateway');
+                $table = new ClaseTable($tableGateway);
                 return $table;
             },
-            'ConferenciaTableGateway' => function ($sm) {
+            'ClaseTableGateway' => function ($sm) {
                 $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                 $resultSetPrototype = new ResultSet();
-                $resultSetPrototype->setArrayObjectPrototype(new Conferencia());
-                return new TableGateway('Conferencia', $dbAdapter, null, $resultSetPrototype);
+                $resultSetPrototype->setArrayObjectPrototype(new Clase());
+                return new TableGateway('Clase', $dbAdapter, null, $resultSetPrototype);
             },
         ),
         'invokables' => array(),

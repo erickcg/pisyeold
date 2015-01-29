@@ -4,7 +4,7 @@
 <div style="clear:both;"></div>
 
 <section class="Registro">
-<h2>Registro Conferencia</h2>
+<h2>Registro Alumno</h2>
 <?php if ($this->error): ?>
 <p class="error">
  Hubo errores en la información ingresada, favor de verificarlos. 
@@ -22,7 +22,7 @@
        $form->setAttribute('action', $this->url(
                              NULL,
                                  array(
-                                    'controller' => 'conferencias',
+                                    'controller' => 'alumno',
                                     'action' => 'edit',
                                     'id'     => $this->id,
                                  )
@@ -37,20 +37,6 @@
                 <div class="field">
                     <?php echo $this->formLabel($form->get('nombre')); ?>
                     <?php echo $this->formElement($form->get('nombre')); ?>
-                    <small class="error">Este campo es requerido.</small>
-                </div>
-        </div>
-        <div class="large-4 medium-6 small-12 columns">
-                <div class="field">
-                    <?php echo $this->formLabel($form->get('informacion')); ?>
-                    <?php echo $this->formElement($form->get('informacion')); ?>
-                    <small class="error">Este campo es requerido.</small>
-                </div>
-        </div>
-        <div class="large-4 medium-6 small-12 columns">
-                <div class="field">
-                    <?php echo $this->formLabel($form->get('carrera')); ?>
-                    <?php echo $this->formElement($form->get('carrera')); ?>
                     <small class="error">Este campo es requerido.</small>
                 </div>
         </div>

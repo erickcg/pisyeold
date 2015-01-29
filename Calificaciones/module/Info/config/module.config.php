@@ -4,10 +4,10 @@ return array(
              'invokables' => array(
                  'Info\Controller\Index' =>
                  'Info\Controller\IndexController',
-                 'Info\Controller\Conferencias' =>
-                 'Info\Controller\ConferenciasController',
-                 'Info\Controller\Talleres' =>
-                 'Info\Controller\TalleresController',
+                 'Info\Controller\Alumno' =>
+                 'Info\Controller\AlumnoController',
+                 'Info\Controller\Clase' =>
+                 'Info\Controller\ClaseController',
              ),
          ),
     'router' => array(

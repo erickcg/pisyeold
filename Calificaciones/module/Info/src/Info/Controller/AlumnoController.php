@@ -3,18 +3,18 @@ namespace Info\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Info\Model\Conferencia;
-use Info\Model\ConferenciaTable;
-use Info\Form\ConferenciaForm;
+use Info\Model\Alumno;
+use Info\Model\AlumnoTable;
+use Info\Form\AlumnoForm;
 
-class ConferenciasController extends AbstractActionController
+class AlumnoController extends AbstractActionController
 {
-    protected $ConferenciaTable;
+    protected $AlumnoTableVar;
 
     public function indexAction()
     {
         $view =  new ViewModel(array(
-           'conferencias' => $this->getConferenciaTable()->fetchAll(),
+           'alumno' => $this->getAlumnoTable()->fetchAll(),
            ));
         return $view;
     }
@@ -28,22 +28,22 @@ class ConferenciasController extends AbstractActionController
                ));
       }
 
-        $form = new ConferenciaForm();
+        $form = new AlumnoForm();
         $form->get('submit')->setValue('Add');
 
         $request = $this->getRequest();
         if ($request->isPost()) {
-           $conf = new Conferencia();
-             //$form->setInputFilter($conf->getInputFilter());
+           $alumno = new Alumno();
+             //$form->setInputFilter($alumno->getInputFilter());
            $form->setData($request->getPost());
 
            if ($form->isValid()) {
-               $conf->exchangeArray($form->getData());
-               $this->getConferenciaTable()->saveConferencia($conf);
+               $alumno->exchangeArray($form->getData());
+               $this->getAlumnoTable()->saveAlumno($alumno);
 
-                 // Redirect to main
+              // Redirect to main
                return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'conferencias',
+                'controller' => 'alumno',
                 'action' => 'lista'
                ));
            }
@@ -62,13 +62,13 @@ class ConferenciasController extends AbstractActionController
        $id = (int)$this->params()->fromRoute('id', 0);
        if (!$id) {
            return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'conferencias',
+                'controller' => 'alumno',
                 'action' => 'add'
                ));
        }
 
        try {
-           $conf = $this->getConferenciaTable()->getConferencia($id);
+           $alumno = $this->getAlumnoTable()->getAlumno($id);
        }
        catch (\Exception $ex) {
            // return $this->redirect()->toRoute('Info', array(
@@ -76,21 +76,21 @@ class ConferenciasController extends AbstractActionController
            //     ));
        }
 
-       $form  = new ConferenciaForm();
-       $form->bind($conf);
+       $form  = new AlumnoForm();
+       $form->bind($alumno);
        $form->get('submit')->setAttribute('value', 'Editar');
 
        $request = $this->getRequest();
        if ($request->isPost()) {
-           //$form->setInputFilter($conf->getInputFilter());
+           //$form->setInputFilter($alumno->getInputFilter());
            $form->setData($request->getPost());
 
            if ($form->isValid()) {
-               $this->getConferenciaTable()->saveConferencia($conf);
+               $this->getAlumnoTable()->saveAlumno($alumno);
 
                  // Redirect to list of albums
-               return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'conferencias',
+                 return $this->redirect()->toRoute(NULL, array(
+                'controller' => 'alumno',
                 'action' => 'lista'
                ));
            }
@@ -113,18 +113,18 @@ class ConferenciasController extends AbstractActionController
       }
       
         $view =  new ViewModel(array(
-           'conferencias' => $this->getConferenciaTable()->fetchAll(),
+           'alumnovar' => $this->getAlumnoTable()->fetchAll(),
            ));
         return $view;
     }
 
-     public function getConferenciaTable()
+     public function getAlumnoTable()
      {
-       if (!$this->ConferenciaTable) {
+       if (!$this->AlumnoTableVar) {
            $sm = $this->getServiceLocator();
-           $this->ConferenciaTable = $sm->get('ConferenciaTable');
+           $this->AlumnoTableVar = $sm->get('AlumnoTable');
        }
-       return $this->ConferenciaTable;
+       return $this->AlumnoTableVar;
    }
 
 }

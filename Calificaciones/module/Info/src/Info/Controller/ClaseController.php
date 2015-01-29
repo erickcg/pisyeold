@@ -3,18 +3,18 @@ namespace Info\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Info\Model\Taller;
-use Info\Model\TallerTable;
-use Info\Form\TallerForm;
+use Info\Model\Clase;
+use Info\Model\ClaseTable;
+use Info\Form\ClaseForm;
 
-class TalleresController extends AbstractActionController
+class ClaseController extends AbstractActionController
 {
-    protected $TallerTableVar;
+    protected $ClaseTable;
 
     public function indexAction()
     {
         $view =  new ViewModel(array(
-           'talleres' => $this->getTallerTable()->fetchAll(),
+           'clase' => $this->getClaseTable()->fetchAll(),
            ));
         return $view;
     }
@@ -28,22 +28,22 @@ class TalleresController extends AbstractActionController
                ));
       }
 
-        $form = new TallerForm();
+        $form = new ClaseForm();
         $form->get('submit')->setValue('Add');
 
         $request = $this->getRequest();
         if ($request->isPost()) {
-           $taller = new Taller();
-             //$form->setInputFilter($taller->getInputFilter());
+           $conf = new Clase();
+             //$form->setInputFilter($conf->getInputFilter());
            $form->setData($request->getPost());
 
            if ($form->isValid()) {
-               $taller->exchangeArray($form->getData());
-               $this->getTallerTable()->saveTaller($taller);
+               $conf->exchangeArray($form->getData());
+               $this->getClaseTable()->saveClase($conf);
 
-              // Redirect to main
+                 // Redirect to main
                return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'talleres',
+                'controller' => 'clase',
                 'action' => 'lista'
                ));
            }
@@ -62,13 +62,13 @@ class TalleresController extends AbstractActionController
        $id = (int)$this->params()->fromRoute('id', 0);
        if (!$id) {
            return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'talleres',
+                'controller' => 'clase',
                 'action' => 'add'
                ));
        }
 
        try {
-           $conf = $this->getTallerTable()->getTaller($id);
+           $conf = $this->getClaseTable()->getClase($id);
        }
        catch (\Exception $ex) {
            // return $this->redirect()->toRoute('Info', array(
@@ -76,7 +76,7 @@ class TalleresController extends AbstractActionController
            //     ));
        }
 
-       $form  = new TallerForm();
+       $form  = new ClaseForm();
        $form->bind($conf);
        $form->get('submit')->setAttribute('value', 'Editar');
 
@@ -86,11 +86,11 @@ class TalleresController extends AbstractActionController
            $form->setData($request->getPost());
 
            if ($form->isValid()) {
-               $this->getTallerTable()->saveTaller($conf);
+               $this->getClaseTable()->saveClase($conf);
 
                  // Redirect to list of albums
-                 return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'talleres',
+               return $this->redirect()->toRoute(NULL, array(
+                'controller' => 'clase',
                 'action' => 'lista'
                ));
            }
@@ -113,18 +113,18 @@ class TalleresController extends AbstractActionController
       }
       
         $view =  new ViewModel(array(
-           'talleres' => $this->getTallerTable()->fetchAll(),
+           'clasevar' => $this->getClaseTable()->fetchAll(),
            ));
         return $view;
     }
 
-     public function getTallerTable()
+     public function getClaseTable()
      {
-       if (!$this->TallerTableVar) {
+       if (!$this->ClaseTable) {
            $sm = $this->getServiceLocator();
-           $this->TallerTableVar = $sm->get('TallerTable');
+           $this->ClaseTable = $sm->get('ClaseTable');
        }
-       return $this->TallerTableVar;
+       return $this->ClaseTable;
    }
 
 }
