@@ -1,0 +1,91 @@
+[29-Jan-2015 17:24:21 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:24:21 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:24:21 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:24:21 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:24:33 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:25:57 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:26:31 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:26:31 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:26:31 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:26:31 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:27:19 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:27:19 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:28:01 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
