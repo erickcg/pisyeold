@@ -1,10 +1,31 @@
 <div class="row">
 	<div class="large-12 columns">
         <?php foreach ($calificacionvar as $calificacion) : ?>
-        		<div class="large-4 medium-6 small-12 panel columns">
-        			<div class="large-10 columns">
-		                <?php echo $this->escapeHtml($calificacion->nombre);?>
-	                </div>
+        		<div class="large-12 medium-12 small-12 panel columns">
+                    <div class="large-4 medium-4 small-12 panel columns">
+    		              <?php echo $this->escapeHtml($calificacion->nombre);?>
+                    </div>
+                    <div class="large-1 medium-1 small-1 panel columns">
+                          <?php echo $this->escapeHtml($calificacion->parcial1);?>
+                    </div>
+                    <div class="large-1 medium-1 small-1 panel columns">
+                          <?php echo $this->escapeHtml($calificacion->parcial2);?>
+                    </div>
+                    <div class="large-1 medium-1 small-1 panel columns">
+                          <?php echo $this->escapeHtml($calificacion->final);?>
+                    </div>
+                    <div class="large-1 medium-1 small-1 panel columns">
+                          <?php echo $this->escapeHtml($calificacion->participacion);?>
+                    </div>
+                    <div class="large-1 medium-1 small-1 panel columns">
+                          <?php echo $this->escapeHtml($calificacion->puntualidad);?>
+                    </div>
+                    <div class="large-1 medium-1 small-1 panel columns">
+                          <?php echo $this->escapeHtml($calificacion->disposicion);?>
+                    </div>
+                    <div class="large-1 medium-1 small-1 panel columns">
+                          <?php echo $this->escapeHtml($calificacion->tareas);?>
+                    </div>
 	                <div class="large-2 columns">
 		                <a href="/info/calificacion/edit/<?php echo $this->escapeHtml($calificacion->id);?>">Editar</a>
 	                </div>

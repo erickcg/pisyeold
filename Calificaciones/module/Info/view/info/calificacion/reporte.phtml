@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="large-2 columns">
+    	<div class="large-4 medium-4 small-12 columns">
+    		<ul class="menu">
+			<?php foreach ($menu as $link) : ?>
+				  <li><a href="/info/calificacion/reporte/<?php echo $this->escapeHtml($link->id);?>" class="button"><?php echo $this->escapeHtml($link->nombre);?></a></li>
+			<?php endforeach; ?>
+			</ul>
+		</div>
+	</div>
+	<div class="large-10 columns">
+	<h3><?php echo $this->clase;?></h3>
+		<?php
+		 foreach ($results as $calificacion) : ?>
+				<div class="large-12 medium-12 small-12 panel columns">
+					<div class="large-12 medium-12 small-12 columns"><strong>Nombre</strong>
+						  <br><?php echo $calificacion['alumnombre'];?>
+					</div>
+					<div class="large-4 medium-4 small-4 columns"><strong>parcial1</strong>
+						  <br><?php echo $calificacion['parcial1'];?>
+					</div>
+					<div class="large-4 medium-4 small-4 columns"><strong>parcial2</strong>
+						  <br><?php echo $calificacion['parcial2'];?>
+					</div>
+					<div class="large-4 medium-4 small-4 columns"><strong>Final(prom)</strong>
+						  <br><?php echo ((float)$calificacion['parcial2']+(float)$calificacion['parcial1'])/2;?>
+					</div>
+					<div class="large-2 medium-2 small-2 columns"><strong>participacion</strong>
+						  <br><?php echo $calificacion['participacion'];?>
+					</div>
+					<div class="large-2 medium-2 small-2 columns"><strong>puntualidad</strong>
+						  <br><?php echo $calificacion['puntualidad'];?>
+					</div>
+					<div class="large-2 medium-2 small-2 columns"><strong>disposici&oacute;n</strong>
+						  <br><?php echo $calificacion['disposicion'];?>
+					</div>
+					<div class="large-2 medium-2 small-2 columns"><strong>tareas</strong>
+						  <br><?php echo $calificacion['tareas'];?>
+					</div>
+					<div class="large-2 columns">
+						<a href="/info/calificacion/edit/<?php echo $calificacion['id'];?>">Editar</a>
+					</div>
+				</div>
+		<?php endforeach; ?>
+	</div>
+</div>

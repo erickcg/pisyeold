@@ -20,13 +20,64 @@
         echo $this->form()->openTag($form);
 ?>
 
-        <div class="large-4 medium-7 small-12 columns">
+<div class="row">
+        <div class="large-4 medium-4 small-12 columns">
                 <div class="field">
-                    <?php echo $this->formLabel($form->get('nombre')); ?>
-                    <?php echo $this->formElement($form->get('nombre')); ?>
+                    <?php echo $this->formLabel($form->get('idAlumno')); ?>
+                    <?php echo $this->formElement($form->get('idAlumno')); ?>
                     <small class="error">Este campo es requerido.</small>
                 </div>
         </div>
+        <div class="large-4 medium-4 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('idClase')); ?>
+                    <?php echo $this->formElement($form->get('idClase')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-2 medium-2 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('parcial1')); ?>
+                    <?php echo $this->formElement($form->get('parcial1')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-2 medium-2 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('parcial2')); ?>
+                    <?php echo $this->formElement($form->get('parcial2')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-2 medium-2 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('participacion')); ?>
+                    <?php echo $this->formElement($form->get('participacion')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-2 medium-2 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('disposicion')); ?>
+                    <?php echo $this->formElement($form->get('disposicion')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-2 medium-2 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('tareas')); ?>
+                    <?php echo $this->formElement($form->get('tareas')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+        <div class="large-2 medium-2 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('puntualidad')); ?>
+                    <?php echo $this->formElement($form->get('puntualidad')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+</div>
 
 <?php echo $this->formElement($form->get('submit')); ?>
 

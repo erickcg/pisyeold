@@ -27,6 +27,17 @@ class ClaseForm extends Form
 					 'label' => 'Nombre',
 				),
 		 ));
+
+		 $this->add(array(
+			'name' => 'activo',
+			'type' => 'Checkbox',
+			'options' => array(
+				'label' => 'Activo',
+				'checked_value' => 'y',
+				'unchecked_value' => 'n'
+				),
+			));
+
 		 $this->add(array(
 				 'name' => 'submit',
 				 'type' => 'Submit',

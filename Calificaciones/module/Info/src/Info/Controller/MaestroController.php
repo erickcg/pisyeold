@@ -14,7 +14,7 @@ class MaestroController extends AbstractActionController
     public function indexAction()
     {
         $view =  new ViewModel(array(
-           'clase' => $this->getMaestroTable()->fetchAll(),
+           'maestro' => $this->getMaestroTable()->fetchAll(),
            ));
         return $view;
     }
@@ -22,11 +22,8 @@ class MaestroController extends AbstractActionController
     public function addAction()
     {
       if (!$this->zfcUserAuthentication()->hasIdentity()) {
-        return $this->redirect()->toRoute('zfcuser', array(
-              'controller' => 'user',
-              'action' => 'login'
-               ));
-      }
+      return $this->redirect()->toUrl('/user/login');
+    }
 
         $form = new MaestroForm();
         $form->get('submit')->setValue('Add');
@@ -43,7 +40,7 @@ class MaestroController extends AbstractActionController
 
                  // Redirect to main
                return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'clase',
+                'controller' => 'maestro',
                 'action' => 'lista'
                ));
            }
@@ -53,16 +50,13 @@ class MaestroController extends AbstractActionController
 
    public function editAction()
    {
-      if (!$this->zfcUserAuthentication()->hasIdentity()) {
-        return $this->redirect()->toRoute('zfcuser', array(
-              'controller' => 'user',
-              'action' => 'login'
-               ));
-      }
+     if (!$this->zfcUserAuthentication()->hasIdentity()) {
+      return $this->redirect()->toUrl('/user/login');
+    }
        $id = (int)$this->params()->fromRoute('id', 0);
        if (!$id) {
            return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'clase',
+                'controller' => 'maestro',
                 'action' => 'add'
                ));
        }
@@ -90,7 +84,7 @@ class MaestroController extends AbstractActionController
 
                  // Redirect to list of albums
                return $this->redirect()->toRoute(NULL, array(
-                'controller' => 'clase',
+                'controller' => 'maestro',
                 'action' => 'lista'
                ));
            }
@@ -106,14 +100,11 @@ class MaestroController extends AbstractActionController
    public function listaAction()
     {
       if (!$this->zfcUserAuthentication()->hasIdentity()) {
-        return $this->redirect()->toRoute('zfcuser', array(
-              'controller' => 'user',
-              'action' => 'login'
-               ));
-      }
+      return $this->redirect()->toUrl('/user/login');
+    }
 
         $view =  new ViewModel(array(
-           'clasevar' => $this->getMaestroTable()->fetchAll(),
+           'maestrovar' => $this->getMaestroTable()->fetchAll(),
            ));
         return $view;
     }

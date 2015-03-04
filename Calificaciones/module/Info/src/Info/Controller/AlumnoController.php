@@ -22,11 +22,8 @@ class AlumnoController extends AbstractActionController
     public function addAction()
     {
       if (!$this->zfcUserAuthentication()->hasIdentity()) {
-        return $this->redirect()->toRoute('zfcuser', array(
-              'controller' => 'user',
-              'action' => 'login'
-               ));
-      }
+      return $this->redirect()->toUrl('/user/login');
+    }
 
         $form = new AlumnoForm();
         $form->get('submit')->setValue('Add');
@@ -54,11 +51,8 @@ class AlumnoController extends AbstractActionController
    public function editAction()
    {
       if (!$this->zfcUserAuthentication()->hasIdentity()) {
-        return $this->redirect()->toRoute('zfcuser', array(
-              'controller' => 'user',
-              'action' => 'login'
-               ));
-      }
+      return $this->redirect()->toUrl('/user/login');
+    }
        $id = (int)$this->params()->fromRoute('id', 0);
        if (!$id) {
            return $this->redirect()->toRoute(NULL, array(
@@ -106,12 +100,9 @@ class AlumnoController extends AbstractActionController
    public function listaAction()
     {
       if (!$this->zfcUserAuthentication()->hasIdentity()) {
-        return $this->redirect()->toRoute('zfcuser', array(
-              'controller' => 'user',
-              'action' => 'login'
-               ));
-      }
-      
+      return $this->redirect()->toUrl('/user/login');
+    }
+
         $view =  new ViewModel(array(
            'alumnovar' => $this->getAlumnoTable()->fetchAll(),
            ));

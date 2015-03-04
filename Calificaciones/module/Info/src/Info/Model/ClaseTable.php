@@ -16,7 +16,8 @@ class ClaseTable
 	public function saveClase(Clase $clase)
 	{
 		$data = array(
-			'nombre' => $clase->nombre
+			'nombre' => $clase->nombre,
+			'activo' => $clase->activo
 			);
 
 		$id = (int) $clase->id;
@@ -41,7 +42,7 @@ class ClaseTable
 		}
 		return $row;
 	}
-	
+
 	public function fetchAll()
 	{
 		$resultSet = $this->tableGateway->select();

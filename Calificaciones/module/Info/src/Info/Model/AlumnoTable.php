@@ -16,7 +16,8 @@ class AlumnoTable
 	public function saveAlumno(Alumno $alumno)
 	{
 		$data = array(
-			'nombre' => $alumno->nombre
+			'nombre' => $alumno->nombre,
+			'activo' => $alumno->activo
 			);
 
 		$id = (int) $alumno->id;
@@ -41,7 +42,7 @@ class AlumnoTable
 		}
 		return $row;
 	}
-	
+
 	public function fetchAll()
 	{
 		$resultSet = $this->tableGateway->select();
