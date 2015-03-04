@@ -5,7 +5,7 @@
     <title>Pisye</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/foundation.css" />
-    
+
     <script src="/js/vendor/modernizr.js"></script>
     <script src="/js/vendor/jquery.js"></script>
 </head>
@@ -13,7 +13,7 @@
 
 <div class="headerdiv">
     <div class="large-12 columns header" style="text-align: center;">
-    	
+
     </div>
     <div class="large-12 columns menudiv">
         <div class="row">
@@ -32,11 +32,18 @@
         </div>
     </div>
 </div>
-
+<div class="row">
+<?php if($this->zfcUserIdentity()) :?>
+    <div style="float:left; padding-right:16px;"><?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?></div>
+    <h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->zfcUserDisplayName() ?>!</h3>
+    <a href="<?php echo $this->url('zfcuser/logout') ?>">[<?php echo $this->translate('Sign Out'); ?>]</a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $this->url('panelcontrol'); ?>">Menú</a>
+    <div style="clear:both;"></div>
+<?php endif; ?>
+</div>
 
 <?php echo $this->content; ?>
 
-	
+
     <script src="/js/foundation.min.js"></script>
     <script src="/js/foundation/foundation.abide.js"></script>
     <script>
@@ -48,7 +55,6 @@
         }
       });
     </script>
-	
+
 </body>
 </html>
-        

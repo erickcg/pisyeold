@@ -1,6 +1,6 @@
 <div class="row">
 <section class="Registro">
-<h2>Registro Clase</h2>
+<h2>Registro Maestro</h2>
 <?php if ($this->error): ?>
 <p class="error">
  Hubo errores en la información ingresada, favor de verificarlos.
@@ -9,26 +9,17 @@
 
 
 
-
 <?php
         //Vista de Forma
         $form = $this->form;
 
-
-       $form->setAttribute('action', $this->url(
-                             NULL,
-                                 array(
-                                    'controller' => 'clase',
-                                    'action' => 'edit',
-                                    'id'     => $this->id,
-                                 )
-                             ));
+        $form->setAttribute('action', $this->url(NULL, array('controller'=>'maestro', 'action' => 'add')));
         $form->setAttribute('data-abide', '');
         $form->prepare();
+
         echo $this->form()->openTag($form);
-        echo $this->formHidden($form->get('id'));
 ?>
-<div class="row">
+
         <div class="large-4 medium-7 small-12 columns">
                 <div class="field">
                     <?php echo $this->formLabel($form->get('nombre')); ?>
@@ -36,9 +27,10 @@
                     <small class="error">Este campo es requerido.</small>
                 </div>
         </div>
-</div>
+
 <?php echo $this->formElement($form->get('submit')); ?>
 
 <?php echo $this->form()->closeTag() ?>
 
 </div>
+

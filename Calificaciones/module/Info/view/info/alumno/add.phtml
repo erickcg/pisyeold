@@ -1,14 +1,9 @@
 <div class="row">
-<div style="float:left; padding-right:16px;"><?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?></div>
-<h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->zfcUserDisplayName() ?>!</h3>
-<a href="<?php echo $this->url('zfcuser/logout') ?>">[<?php echo $this->translate('Sign Out'); ?>]</a>
-<div style="clear:both;"></div>
-
 <section class="Registro">
 <h2>Registro Alumno</h2>
 <?php if ($this->error): ?>
 <p class="error">
- Hubo errores en la información ingresada, favor de verificarlos. 
+ Hubo errores en la información ingresada, favor de verificarlos.
 </p>
 <?php endif ?>
 

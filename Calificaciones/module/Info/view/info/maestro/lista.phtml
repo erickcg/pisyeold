@@ -1,15 +1,15 @@
 <div class="row">
 	<div class="large-12 columns">
-        <?php foreach ($alumnovar as $alumno) : ?>
+        <?php foreach ($maestrovar as $maestro) : ?>
         		<div class="large-4 medium-6 small-12 panel columns">
         			<div class="large-10 columns">
-		                <?php echo $this->escapeHtml($alumno->nombre);?>
+		                <?php echo $this->escapeHtml($maestro->nombre);?>
 	                </div>
 	                <div class="large-2 columns">
-		                <a href="/info/alumno/edit/<?php echo $this->escapeHtml($alumno->id);?>">Editar</a>
+		                <a href="/info/maestro/edit/<?php echo $this->escapeHtml($maestro->id);?>">Editar</a>
 	                </div>
                 </div>
         <?php endforeach; ?>
-        <a href="/info/alumno/add" class="button">Agregar</a>
+        <a href="/info/maestro/add" class="button">Agregar</a>
     </div>
 </div>
