@@ -89,3 +89,113 @@ Stack trace:
 #2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
 #3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
 #4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 17:33:20 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (zfcbase) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('zfcbase')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('lo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[29-Jan-2015 18:16:15 UTC] PHP Fatal error:  Class 'Info\Model\AlumnoTable' not found in /home/pisyecom/module/Info/Module.php on line 62
+[29-Jan-2015 18:16:17 UTC] PHP Fatal error:  Class 'Info\Model\AlumnoTable' not found in /home/pisyecom/module/Info/Module.php on line 62
+[29-Jan-2015 18:24:42 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/pisyecom/module/Info/view/info/alumno/lista.phtml on line 11
+[29-Jan-2015 18:24:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/pisyecom/module/Info/view/info/alumno/lista.phtml on line 11
+[29-Jan-2015 18:24:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/pisyecom/module/Info/view/info/alumno/lista.phtml on line 11
+[29-Jan-2015 18:25:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/pisyecom/module/Info/view/info/alumno/lista.phtml on line 11
+[04-Mar-2015 18:19:44 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:19:44 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:19:44 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:19:44 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:19:47 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:19:58 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:20:02 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:20:06 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:20:07 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:20:11 UTC] PHP Fatal error:  Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Users) could not be initialized.' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php:189
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(163): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php(90): Zend\ModuleManager\ModuleManager->loadModule('Users')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('loadMo in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/ModuleManager/ModuleManager.php on line 189
+[04-Mar-2015 18:22:03 UTC] PHP Fatal error:  Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Route with name "panelcontrol" not found' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/Mvc/Router/Http/TreeRouteStack.php:317
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Helper/Url.php(100): Zend\Mvc\Router\Http\TreeRouteStack->assemble(Array, Array)
+#1 [internal function]: Zend\View\Helper\Url->__invoke('panelcontrol')
+#2 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(399): call_user_func_array(Object(Zend\View\Helper\Url), Array)
+#3 /home/pisyecom/module/Application/view/layout/layout.phtml(39): Zend\View\Renderer\PhpRenderer->__call('url', Array)
+#4 /home/pisyecom/module/Application/view/layout/layout.phtml(39): Zend\View\Renderer\PhpRenderer->url('panelcontrol')
+#5 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/home/pisyecom/...')
+#6 /home/pisyecom/vendor/zendfra in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/Mvc/Router/Http/TreeRouteStack.php on line 317
+[04-Mar-2015 18:22:15 UTC] PHP Fatal error:  Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Route with name "panelcontrol" not found' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/Mvc/Router/Http/TreeRouteStack.php:317
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Helper/Url.php(100): Zend\Mvc\Router\Http\TreeRouteStack->assemble(Array, Array)
+#1 [internal function]: Zend\View\Helper\Url->__invoke('panelcontrol')
+#2 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(399): call_user_func_array(Object(Zend\View\Helper\Url), Array)
+#3 /home/pisyecom/module/Application/view/layout/layout.phtml(39): Zend\View\Renderer\PhpRenderer->__call('url', Array)
+#4 /home/pisyecom/module/Application/view/layout/layout.phtml(39): Zend\View\Renderer\PhpRenderer->url('panelcontrol')
+#5 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/home/pisyecom/...')
+#6 /home/pisyecom/vendor/zendfra in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/Mvc/Router/Http/TreeRouteStack.php on line 317
+[04-Mar-2015 18:22:18 UTC] PHP Fatal error:  Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Route with name "panelcontrol" not found' in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/Mvc/Router/Http/TreeRouteStack.php:317
+Stack trace:
+#0 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Helper/Url.php(100): Zend\Mvc\Router\Http\TreeRouteStack->assemble(Array, Array)
+#1 [internal function]: Zend\View\Helper\Url->__invoke('panelcontrol')
+#2 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(399): call_user_func_array(Object(Zend\View\Helper\Url), Array)
+#3 /home/pisyecom/module/Application/view/layout/layout.phtml(39): Zend\View\Renderer\PhpRenderer->__call('url', Array)
+#4 /home/pisyecom/module/Application/view/layout/layout.phtml(39): Zend\View\Renderer\PhpRenderer->url('panelcontrol')
+#5 /home/pisyecom/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/home/pisyecom/...')
+#6 /home/pisyecom/vendor/zendfra in /home/pisyecom/vendor/zendframework/zendframework/library/Zend/Mvc/Router/Http/TreeRouteStack.php on line 317

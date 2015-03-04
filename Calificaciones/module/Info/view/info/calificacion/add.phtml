@@ -1,0 +1,36 @@
+<div class="row">
+<section class="Registro">
+<h2>Registro Calificaciones</h2>
+<?php if ($this->error): ?>
+<p class="error">
+ Hubo errores en la información ingresada, favor de verificarlos.
+</p>
+<?php endif ?>
+
+
+
+<?php
+        //Vista de Forma
+        $form = $this->form;
+
+        $form->setAttribute('action', $this->url(NULL, array('controller'=>'calificacion', 'action' => 'add')));
+        $form->setAttribute('data-abide', '');
+        $form->prepare();
+
+        echo $this->form()->openTag($form);
+?>
+
+        <div class="large-4 medium-7 small-12 columns">
+                <div class="field">
+                    <?php echo $this->formLabel($form->get('nombre')); ?>
+                    <?php echo $this->formElement($form->get('nombre')); ?>
+                    <small class="error">Este campo es requerido.</small>
+                </div>
+        </div>
+
+<?php echo $this->formElement($form->get('submit')); ?>
+
+<?php echo $this->form()->closeTag() ?>
+
+</div>
+

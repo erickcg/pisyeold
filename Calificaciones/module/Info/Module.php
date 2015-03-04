@@ -16,6 +16,10 @@ use Info\Model\Clase;
 use Info\Model\ClaseTable;
 use Info\Model\Alumno;
 use Info\Model\AlumnoTable;
+use Info\Model\Maestro;
+use Info\Model\MaestroTable;
+use Info\Model\Calificacion;
+use Info\Model\CalificacionTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
@@ -78,6 +82,28 @@ class Module implements AutoloaderProviderInterface
                 $resultSetPrototype = new ResultSet();
                 $resultSetPrototype->setArrayObjectPrototype(new Clase());
                 return new TableGateway('Clase', $dbAdapter, null, $resultSetPrototype);
+            },
+            'MaestroTable' => function($sm) {
+                $tableGateway = $sm->get('MaestroTableGateway');
+                $table = new MaestroTable($tableGateway);
+                return $table;
+            },
+            'MaestroTableGateway' => function ($sm) {
+                $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                $resultSetPrototype = new ResultSet();
+                $resultSetPrototype->setArrayObjectPrototype(new Maestro());
+                return new TableGateway('Maestro', $dbAdapter, null, $resultSetPrototype);
+            },
+            'CalificacionTable' => function($sm) {
+                $tableGateway = $sm->get('CalificacionTableGateway');
+                $table = new CalificacionTable($tableGateway);
+                return $table;
+            },
+            'CalificacionTableGateway' => function ($sm) {
+                $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                $resultSetPrototype = new ResultSet();
+                $resultSetPrototype->setArrayObjectPrototype(new Calificacion());
+                return new TableGateway('Calificacion', $dbAdapter, null, $resultSetPrototype);
             },
         ),
         'invokables' => array(),

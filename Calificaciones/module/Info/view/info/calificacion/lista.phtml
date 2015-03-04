@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="large-12 columns">
+        <?php foreach ($calificacionvar as $calificacion) : ?>
+        		<div class="large-4 medium-6 small-12 panel columns">
+        			<div class="large-10 columns">
+		                <?php echo $this->escapeHtml($calificacion->nombre);?>
+	                </div>
+	                <div class="large-2 columns">
+		                <a href="/info/calificacion/edit/<?php echo $this->escapeHtml($calificacion->id);?>">Editar</a>
+	                </div>
+                </div>
+        <?php endforeach; ?>
+        <a href="/info/calificacion/add" class="button">Agregar</a>
+    </div>
+</div>

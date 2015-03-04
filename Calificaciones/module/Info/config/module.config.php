@@ -8,6 +8,10 @@ return array(
                  'Info\Controller\AlumnoController',
                  'Info\Controller\Clase' =>
                  'Info\Controller\ClaseController',
+                 'Info\Controller\Maestro' =>
+                 'Info\Controller\MaestroController',
+                 'Info\Controller\Calificacion' =>
+                 'Info\Controller\CalificacionController',
              ),
          ),
     'router' => array(
