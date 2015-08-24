@@ -36,15 +36,15 @@ abstract class AbstractController {
 	public function executeAction($action){
 		header('Content-type: text/html');
 		if (method_exists($this, '_init')) {
-			//ob_start();
+			ob_start();
 				$this->_init();
-			//	$this->init = ob_get_clean();		
+				$this->init = ob_get_clean();		
 		}
 
 		//ejecucion de accion
-		//ob_start();
+		ob_start();
 			$this->$action();
-		//	$this->_action = ob_get_clean();
+			$this->_action = ob_get_clean();
 
 		$this->getView($action);
 		return $this->getTemplate();

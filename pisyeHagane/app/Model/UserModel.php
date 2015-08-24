@@ -2,16 +2,16 @@
 namespace Hagane\Model;
 
 include_once('AdministradorUserModel.php');
-include_once('DoctorUserModel.php');
-include_once('ClienteUserModel.php');
+include_once('MaestroUserModel.php');
+include_once('AlumnoUserModel.php');
 
 class User implements UserInterface {
 	private $username;
 	private $userType;
 	private $imgPath;
 	private $admon;
-	private $doctor;
-	private $cliente;
+	private $maestro;
+	private $alumno;
 	
 	public function __construct(&$auth, &$db) {
 		$id = $auth->isAuth();
@@ -24,10 +24,10 @@ class User implements UserInterface {
 			$this->imgPath = $userArray['imgPath'];
 			if ($this->userType == 'Administrador') {
 				$this->admon = new \Hagane\Model\Administrador($auth, $db);
-			} elseif ($this->userType == 'Doctor') {
-				$this->doctor = new \Hagane\Model\Doctor($auth, $db);
-			} elseif ($this->userType == 'Cliente') {
-				$this->cliente = new \Hagane\Model\Cliente($auth, $db);
+			} elseif ($this->userType == 'Maestro') {
+				$this->maestro = new \Hagane\Model\Maestro($auth, $db);
+			} elseif ($this->userType == 'Alumno') {
+				$this->alumno = new \Hagane\Model\Alumno($auth, $db);
 			}
 		}
 	}
@@ -47,18 +47,18 @@ class User implements UserInterface {
 	public function getUserObject() {
 		if ($this->userType == 'Administrador') {
 			return $this->admon;
-		} elseif ($this->userType == 'Doctor') {
-			return $this->doctor;
-		} elseif ($this->userType == 'Cliente') {
-			return $this->cliente;
+		} elseif ($this->userType == 'Maestro') {
+			return $this->maestro;
+		} elseif ($this->userType == 'Alumno') {
+			return $this->alumno;
 		}
 	}
 
 	public function getNombreCompleto() {
 		if ($this->userType == 'Administrador') {
 			return $this->admon->getNombre().' '.$this->admon->getApellidoPaterno().' '.$this->admon->getApellidoMaterno();
-		} elseif ($this->userType == 'Doctor') {
-			return $this->doctor->getNombre().' '.$this->doctor->getApellidoPaterno().' '.$this->doctor->getApellidoMaterno();
+		} elseif ($this->userType == 'Maestro') {
+			return $this->maestro->getNombre().' '.$this->maestro->getApellidoPaterno().' '.$this->maestro->getApellidoMaterno();
 		}
 	}
 }

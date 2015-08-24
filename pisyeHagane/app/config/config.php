@@ -9,9 +9,9 @@ class Config {
 				'template' => 'main',
 				'db_engine' => 'mysql',
 				'db_server' => 'localhost',
-				'db_database' => 'haganeso_crm',
-				'db_user' => 'haganeso_dev',
-				'db_password' => 'Bicarbonato1!',
+				'db_database' => 'pisyecom_hagane',
+				'db_user' => 'pisyecom_erick',
+				'db_password' => 'Bacalao1!!',
 				'session_time' => 3600
 			);
 	}

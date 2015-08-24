@@ -1,0 +1,15 @@
+<?php foreach ($this->clases as $clase) : ?>
+<div class="row">
+	<div class="col s12 m3">
+		<div class="card teal darken-4 small">
+			<div class="card-content white-text">
+				<span class="card-title"><?=$clase['nombre']?></span>
+				<p><?=$clase['descripcion']?></p>
+			</div>
+			<div class="card-action">
+				<a href="#">Ver Alumnos</a>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endforeach; ?>

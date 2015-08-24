@@ -8,7 +8,7 @@
 	<link type="text/css" rel="stylesheet" href="/css/default.date.css"	media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="/css/default.time.css"	media="screen,projection" />
 
-	<title>SISSE Alpha</title>
+	<title>PISYE Alpha</title>
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -235,11 +235,10 @@
 			<div id="main-navbar" class="main-navbar main-navbar-fixed-top">
 	              <div class="main-navbar-content">
 	                  	<div id="toggle-sidebar" class="icon left">
-	                    	<img class="logo-sidebar" alt="menu" src="<?=$this->getSecureImage('logo_negro.png'); ?>" > 
 	                  	</div>
 	              </div>
 	        </div> 
-			<a href="/" class="brand-logo center">MAS<span class="indigo-text text-darken-4">Alpha</span></a>
+			<a href="/" class="brand-logo center">PISYE<span class="indigo-text text-darken-4">Alpha</span></a>
 
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<?php if($this->auth->isAuth()) : ?>
@@ -258,100 +257,7 @@
 		</div>
 	</nav>
 </div>
-
-	
-	 <?php if($this->auth->isAuth()) : ?>
-<div class="row">
-	<div class="right-align">
-		<iframe src="http://free.timeanddate.com/clock/i4tc10mo/n162/tlmx4/fn14/fs18/ahr/ftb/pa10/tt0/tw1/tm3/tb4" frameborder="0" width="183" height="64"></iframe>
-	</div>
-</div>
-
-
- 	<!-- Esto se llama en todos lados por eso lo puse afuera -->
-	<br><br>
-	
-	          <div id="main-sidebar" class="main-sidebar main-sidebar-left">
-
-	              <div id="main-sidebar-wrapper" class="main-sidebar-wrapper">
-	<!-- Hasta aqui termina "esto" -->
-	<?php $obj= $this->user->getUserObject(); 
-	if ($this->user->getUserType() == 'Doctor'): ?>
-
-          
-                  <div class="section">
-                      <img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
-                      <p class="nombre-sidebar"> Dr. <?=$this->user->getNombreCompleto()?> </p>
-                      <p class="nombre-sidebar"> C&eacute;dula: <?=$obj->getCedula() ?> </p>
-                  </div>
-                  <nav>
-                      <ul id="nav-mobile" class="right hide-on-med-and-down">
-                          <li class="lista-sidebar"><a href="/Doctor/index" class="active">Inicio</a></li>
-                          
-                          <li class="lista-sidebar"><a href="/Doctor/examenGeneral" >Examen m&eacute;dico</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" >Laboratorio</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" >Consulta</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" >Gabinete</a></li>
-                          
-                          <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
-                          
-                  </nav>
-              </div>
-          	</div>
-      	</div>
-
-  		<?php elseif ($this->user->getUserType() == 'Administrador'): ?>
-                  <div class="section">
-                      <img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
-                      <p class="nombre-sidebar"> Administrador <br><br> <?=$this->user->getNombreCompleto()?> </p>
-                  </div>
-                  <nav>
-                      <ul class="right hide-on-med-and-down">
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Inicio</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Gesti&oacute;n de usuarios</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Reporte de Proveedores</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Reporte de Clientes</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">#####</a></li>
-                          
-                          <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
-                          
-                  </nav>
-              </div>
-          	</div>
-      	</div>    
-  		<?php elseif ($this->user->getUserType() == 'Cliente'): ?>
-                  <div class="section">
-                      <img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
-                      <p class="nombre-sidebar"> Empresa <b><b> <?=$this->user->getNombreCompleto()?> </p>
-                  </div>
-                  <nav>
-                      <ul class="right hide-on-med-and-down">
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Inicio</a></li>
-                          
-                          <li class="lista-sidebar"><a href="/Cliente/solicitudIndividual" class="lista-sidebar">Agendar Cita Individual</a></li>
-                          
-                          <li class="lista-sidebar"><a href="/Cliente/solicitudGrupal" class="lista-sidebar">Agendar Citas Grupales</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Costos</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">#####</a></li>
-                          
-                          <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
-                          
-                  </nav>
-              	</div>
-          	</div>
-      	</div>
-  		<?php endif; ?>   
- 	<?php endif; echo $this->view; ?>
- 	<br><br>
+<?php echo $this->view; ?>
 		<footer class="page-footer cyan darken-1">
           <div class="footer-copyright">
             <div class="container">
