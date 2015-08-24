@@ -1,0 +1,1475 @@
+<div class="row">
+	<div class="col s12">
+	<style>
+	.stepwizard-step p {
+	    margin-top: 10px;
+	}
+	.stepwizard-row {
+	    display: table-row;
+	}
+	.stepwizard {
+	    display: table;
+	    width: 100%;
+	    position: relative;
+	}
+	.stepwizard-row:before {
+	    top: 14px;
+	    bottom: 0;
+	    position: absolute;
+	    content: " ";
+	    width: 100%;
+	    height: 1px;
+	    background-color: #ccc;
+	    z-order: 0;
+	}
+	.stepwizard-step {
+	    display: table-cell;
+	    text-align: center;
+	    position: relative;
+	}
+	.process-row {
+	    display: table-row;
+	}
+	.btn-circle {
+	  width: 30px;
+	  height: 30px;
+	  text-align: center;
+	  padding: 6px 0;
+	  font-size: 12px;
+	  line-height: 1.428571429;
+	  border-radius: 15px;
+	}
+	.btn-circle-1 {
+	  width: 100px;
+	  height: 100px;
+	  text-align: center;
+	  padding: 6px 0;
+	  font-size: 12px;
+	  line-height: 1.428571429;
+	  border-radius: 15px;
+	}
+	.btn-circle-1:hover,
+	.btn-color-1:active,
+	.btn-color-1:visited{
+		border-color: #46b8da;
+		background-color: #fff;
+		color: #000;
+	}
+	.process-row {
+	display: table-row;
+	}
+	.process {
+	    display: table;     
+	    width: 100%;
+	    position: relative;
+	}
+	.process-step {    
+	    display: table-cell;
+	    text-align: center;
+	    position: relative;
+	}
+	.process-step p {
+	    margin-top:10px;
+	    
+	}
+	.title{
+		margin: 2%;
+		text-align: center;
+		background-color: #46b8da;
+		color: #ffffff;
+	}
+
+	.f {
+		display: none;
+	}
+
+	.f + label{
+		background-color: #fff;
+		color: #000;
+	}
+
+	.f:checked + label{
+		background-color: #46b8da;
+		color: #fff;
+	}
+	.f:checked:hover + label{
+		border-color: #fff;
+	}
+	.fa{
+		margin-top: 25px;
+	}
+	/* Use a wide full screen for small screens like tablets. */
+	@media (min-width: 768px) and (max-width:992px) {
+	    .container {
+			width: initial;
+	        padding-left: 2em;
+	        padding-right: 2em;        
+		}
+	}
+	/* --- Plans ---------------------------- */
+	.my_planHeader {
+	    text-align: center;
+	    color: white;
+	    padding-top:0.2em;
+	    padding-bottom:0.2em;
+	}
+	.my_planTitle {
+	    font-size:2em;
+	    font-weight: bold;
+	}
+	@media (max-width: 768px) {
+	    .my_planTitle {
+	        font-size:small;
+	    }    
+	}
+	/* --- Features ------------------------- */
+	.my_feature {
+	    line-height:3.0em;   
+	}
+	@media (max-width: 768px) {
+	    .my_feature {
+	        text-align: center
+	    }
+	 }
+	.my_featureRow {
+	    margin-top: 0.2em;
+	    margin-bottom: 0.2em;
+	    border: 0.1em solid rgb(163, 163, 163);
+	} 
+	/* --- Sidebar ---*/
+	.sidebar-wrapper {
+	  position: relative;
+	  height: 100%;
+	  overflow: auto;
+	}  
+	/* --- Plan 1 --------------------------- */
+	.my_plan1 {
+	    background: rgb(224,234,242);
+	}
+	.my_planHeader.my_plan1 a {
+	    background: rgb(72, 109, 139);
+	    color:white;
+	}
+	.my_planHeader.my_plan1 {
+	    background: rgb(105, 153, 193);
+	    border-bottom: thick solid rgb(72, 109, 139);
+	}
+	.my_planFeature {
+	    text-align: center;
+	    font-size: 2em;
+	}
+	.my_planFeature i.my_check {
+	    color: green;
+	}
+	/* ------------------- FUNKY RADIO ----------------------*/
+	.funkyradio input[type="checkbox"]:empty {
+	    display: none;
+	}
+	.funkyradio input[type="checkbox"]:empty ~ label {
+	    position: static;
+	    line-height: 100%;
+	    cursor: pointer;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	}
+	.funkyradio input[type="checkbox"]:empty ~ label:before {
+	    position: absolute;
+	    display: block;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    content:'';
+	    width: 10em;
+	    background: #D1D3D4;
+	    border-radius: 3px 0 0 3px;
+	}
+	.funkyradio input[type="checkbox"]:checked ~ label:before {
+	    content:'\2714';
+	    text-align: center;
+	}
+	.funkyradio-default input[type="checkbox"]:checked ~ label:before {
+	    color: #333;
+	    background-color: #ccc;
+	}
+/*-------- left sidebar ---------*/
+	.id-sesion-doc{
+		text-align: left;
+		color: rgb(178, 178, 178);
+	}
+
+	.lista-sidebar{
+		color: rgb(112, 219, 255);
+		list-style: none;
+	}
+
+	.boton-logout{
+		color: rgb(255, 255, 255);
+		border: 3px;
+		background-color: rgb(112, 219, 255);
+		min-width: 50%;
+		height: auto;
+		list-style: none;
+	}
+
+
+</style> 
+    <div class="container">
+		<div class="stepwizard">
+		    <div class="stepwizard-row setup-panel">
+		        <div class="stepwizard-step">
+		            <a href="#step-1" type="button" class="btn btn-info btn-circle">1</a>
+		            <p>Etapa 1</p>
+		        </div>
+		        <div class="stepwizard-step">
+		            <a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
+		            <p>Etapa 2</p>
+		        </div>
+		        <div class="stepwizard-step">
+		            <a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
+		            <p>Etapa 3</p>
+		        </div>
+		        <div class="stepwizard-step">
+		            <a href="#step-4" type="button" class="btn btn-default btn-circle">4</a>
+		            <p>Etapa 4</p>
+		        </div>
+		    </div>
+		</div>
+
+		<form role="form">
+		    <div class="row setup-content" id="step-1">
+		        <div class="col-xs-12">
+		            <div class="col-md-12">
+		            	<div class="col-sm-12 title">
+		                	<h3> Antecedentes</h3>
+		                </div>
+			                <div class="form-group col-sm-12">
+			                    <label class="control-label col-sm-3">&iquest;A qu&eacute; edad empez&oacute; a trabajar?</label>
+			                    <div class="col-sm-9">
+			                    	<input id="edad_trabajar" name="edad_trabajar"  maxlength="100" type="text" required="required" class="form-control" />
+			                    </div>
+			                </div>
+			                <div class="form-group col-sm-12">
+			                    <label class="control-label col-sm-3">&iquest;Qu&eacute; trabajos ha desempe&ntilde;ado?</label>
+			                    <div class="col-sm-9">
+			                    	<textarea id="trabajo" name="trabajo" class="form-control" rows="5"></textarea>
+			                    </div>
+			                </div>
+			            <div class="col-sm-12 title">
+		                	<h3>Empleos Anteriores</h3>
+		                </div>
+			                <div class="form-group col-sm-12">
+			                    <label class="control-label col-sm-3">Empresa</label>
+			                    <div class="col-sm-9">
+			                    	<input id="empresa" name="empresa" maxlength="100" type="text" required="required" class="form-control" />
+			                    </div>
+			                </div>
+			                <div class="form-group col-sm-12">
+			                    <label class="control-label col-sm-3">Puesto</label>
+			                    <div class="col-sm-9">
+			                    	<input id="puesto" name="puesto" maxlength="100" type="text" required="required" class="form-control" />
+			                    </div>
+			                </div>
+			                <div class="form-group col-sm-12">
+			                    <label class="control-label col-sm-3">Departamento</label>
+			                    <div class="col-sm-9">
+			                    	<input id="departamento" name="departamento" maxlength="100" type="text" required="required" class="form-control" />
+			                    </div>
+			                </div>
+			                <div class="form-group col-sm-12">
+			                    <label class="control-label col-sm-3">Tiempo (en meses)</label>
+			                    <div class="col-sm-9">
+			                    	<input id="meses" name="meses" maxlength="100" type="text" required="required" class="form-control" />
+			                    </div>
+			                </div>
+			                <div class="form-group col-sm-12">
+			                    <label class="control-label col-sm-3">&iquest;Qu&eacute; produc&iacute;a?</label>
+			                    <div class="col-sm-9">
+			                    	<input id="produccion" name="produccion" maxlength="100" type="text" required="required" class="form-control" />
+			                    </div>
+			                </div>
+
+			            <div class="col-sm-12 title">
+			            	<h3>Factores Ambientales Nocivos</h3>
+			            </div>
+			            <div class="process" id="factores" name="factores">
+				            <div class="process-row">
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f1" name="factores[]">
+						            	<label for="f1" class="btn btn-default btn-circle-1"><i class="fa fa-user fa-3x"></i></label>
+						        	</input>
+						            <p>Ruido</p>
+						        </div>
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f2" name="factores[]">
+						            	<label for="f2" class="btn btn-default btn-circle-1"><i class="fa fa-comments fa-3x"></i></label>
+						        	</input>
+						            <p>Humos</p>
+						        </div>
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f3" name="factores[]">
+						            	<label for="f3" class="btn btn-default btn-circle-1"><i class="fa fa-facebook fa-3x"></i></label>
+						        	</input>
+						            <p>Vapor</p>
+						        </div> 
+						         <div class="process-step">
+						            <input type="checkbox" class="f" id="f4" name="factores[]">
+						            	<label for="f4" class="btn btn-default btn-circle-1"><i class="fa fa-dollar fa-3x"></i></label>
+						        	</input>
+						            <p>Humedad</p>
+						        </div> 
+						    </div>
+
+						    <div class="process-row">
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f5" name="factores[]">
+						            	<label for="f5" class="btn btn-default btn-circle-1"><i class="fa fa-user fa-3x"></i></label>
+						        	</input>
+						            <p>Vibraciones</p>
+						        </div>
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f6" name="factores[]">
+						            	<label for="f6" class="btn btn-default btn-circle-1"><i class="fa fa-comment fa-3x"></i></label>
+						        	</input>
+						            <p>Gases</p>
+						        </div>
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f7" name="factores[]">
+						            	<label for="f7" class="btn btn-default btn-circle-1"><i class="fa fa-facebook fa-3x"></i></label>
+						        	</input>
+						            <p>Qu&iacute;micos</p>
+						        </div> 
+						         <div class="process-step">
+						            <input type="checkbox" class="f" id="f8" name="factores[]">
+						            	<label for="f8" class="btn btn-default btn-circle-1"><i class="fa fa-dollar fa-3x"></i></label>
+						        	</input>
+						            <p>Radiaciones</p>
+						        </div> 
+						    </div>
+
+						    <div class="process-row">
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f9" name="factores[]">
+						            	<label for="f9" class="btn btn-default btn-circle-1"><i class="fa fa-user fa-3x"></i></label>
+						        	</input>
+						            <p>Calor</p>
+						        </div>
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f10" name="factores[]">
+						            	<label for="f10" class="btn btn-default btn-circle-1"><i class="fa fa-comment fa-3x"></i></label>
+						        	</input>
+						            <p>Solventes</p>
+						        </div>
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f11" name="factores[]">
+						            	<label for="f11" class="btn btn-default btn-circle-1"><i class="fa fa-facebook fa-3x"></i></label>
+						        	</input>
+						            <p>Biol&oacute;gicos</p>
+						        </div> 
+						         <div class="process-step">
+						            <input type="checkbox" class="f" id="f12" name="factores[]">
+						            	<label for="f12" class="btn btn-default btn-circle-1"><i class="fa fa-dollar fa-3x"></i></label>
+						        	</input>
+						            <p>Polvos</p>
+						        </div> 
+						    </div>
+
+						    <div class="process-row">
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f13" name="factores[]">
+						            	<label for="f13" class="btn btn-default btn-circle-1"><i class="fa fa-user fa-3x"></i></label>
+						        	</input>
+						            <p>Fr&iacute;o</p>
+						        </div>
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f14" name="factores[]">
+						            	<label for="f14" class="btn btn-default btn-circle-1"><i class="fa fa-comments fa-3x"></i></label>
+						        	</input>
+						            <p>Pintura</p>
+						        </div>
+						        <div class="process-step">
+						            <input type="checkbox" class="f" id="f15" name="factores[]">
+						            	<label for="f15" class="btn btn-default btn-circle-1"><i class="fa fa-facebook fa-3x"></i></label>
+						        	</input>
+						            <p>Ergon&oacute;micos</p>
+						        </div> 
+						    </div>
+						</div>
+
+		                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente Paso</button>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="row setup-content" id="step-2">
+		        <div class="col-xs-12">
+                    <div class="col-md-12">
+                        <div class="col-sm-12 title">
+                            <h3> Antecedentes heredo- familiares</h3>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-offset-4 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 my_planHeader my_plan1">
+                                            <div class="my_planTitle">Padres</div>
+                                        </div>
+                                        <div class="col-xs-4 my_planHeader my_plan1">
+                                            <div class="my_planTitle">Hermanos</div>
+                                        </div>
+                                        <div class="col-xs-4 my_planHeader my_plan1">
+                                            <div class="my_planTitle">Otros</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Cardiovasculares
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox11"/>
+                                                <label for="checkbox11"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox12"/>
+                                                <label for="checkbox12"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox13"/>
+                                                <label for="checkbox13"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Oncologicos
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox21"/>
+                                                <label for="checkbox21"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox22"/>
+                                                <label for="checkbox22"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox23"/>
+                                                <label for="checkbox23"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Tuberculosis
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox31"/>
+                                                <label for="checkbox31"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox32"/>
+                                                <label for="checkbox32"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox33"/>
+                                                <label for="checkbox33"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Diabeticos
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox41"/>
+                                                <label for="checkbox41"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox42"/>
+                                                <label for="checkbox42"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox43"/>
+                                                <label for="checkbox43"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Renales
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox51"/>
+                                                <label for="checkbox51"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox52"/>
+                                                <label for="checkbox52"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox53"/>
+                                                <label for="checkbox53"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Congenitos
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox61"/>
+                                                <label for="checkbox61"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox62"/>
+                                                <label for="checkbox62"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox63"/>
+                                                <label for="checkbox63"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Convulsivos
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox71"/>
+                                                <label for="checkbox71"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox72"/>
+                                                <label for="checkbox72"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox73"/>
+                                                <label for="checkbox73"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Psiquiatricos
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox81"/>
+                                                <label for="checkbox81"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox82"/>
+                                                <label for="checkbox82"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox83"/>
+                                                <label for="checkbox83"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my_featureRow">
+                                <div class="col-xs-12 col-sm-4 my_feature">
+                                    Otros
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox91"/>
+                                                <label for="checkbox91"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox92"/>
+                                                <label for="checkbox92"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 ">
+                                            <div class="funkyradio funkyradio-default">
+                                                <input type="checkbox" name="checkbox" id="checkbox93"/>
+                                                <label for="checkbox93"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <br>
+
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-3">Observaciones</label>
+                            <div class="col-sm-9">
+                                <input id="observaciones" name="observaciones"  maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="disposicion">
+                            <label class="control-label col-sm-4">Presenta disposicion alta a enfermedades:</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="checkbox" data-toggle="toggle" data-size="mini" data-target="cualesgroup" id="checkboxdisposicion" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="cualesgroup" hidden>
+                            <label class="control-label col-sm-3">Cuales: </label>
+                            <div class="col-sm-9">
+                                <input id="cualesInput" name="cuales"  maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-sm-12 title">
+                            <h3> Antecedentes personales no patológicos</h3>
+                        </div>
+                        <div class="form-group col-sm-12" id="inmunizaciones">
+                            <label class="control-label col-sm-4">Inmunizaciones:</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="checkbox" data-toggle="toggle" data-size="mini" id="checkboxinmunizaciones" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12" id="inmunizacionesgroup" style="margin-bottom: 10px;" hidden>
+                            <div class="funkyradio-default col-sm-2">
+                                <input type="checkbox" name="inmunizaciones[]" id="i1" />
+                                <label for="i1">T. Tetanico</label>
+                            </div>
+                            <div class="funkyradio-primary col-sm-2">
+                                <input type="checkbox" name="inmunizaciones[]" id="i2" />
+                                <label for="i2">Influenza</label>
+                            </div>
+                            <div class="funkyradio-success col-sm-2 ">
+                                <input type="checkbox" name="inmunizaciones[]" id="i3" />
+                                <label for="i3">B.C.G.</label>
+                            </div>
+                            <div class="funkyradio-danger col-sm-2">
+                                <input type="checkbox" name="inmunizaciones[]" id="i4" />
+                                <label for="i4">VS Hepatitis B</label>
+                            </div>
+                            <div class="funkyradio-warning col-sm-2">
+                                <input type="checkbox" name="inmunizaciones[]" id="i5" />
+                                <label for="i5">T. Antitifoidea</label>
+                            </div>
+                            <div class="funkyradio-info col-sm-2">
+                                <input type="checkbox" name="inmunizaciones[]" id="i6" />
+                                <label for="i6">Neumococo</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-3">Medicacion Actual</label>
+                            <div class="col-sm-9">
+                                <input id="medicacionactual" name="medicacionactual" maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="drogadiccion">
+                            <label class="control-label col-sm-4">Drogadiccion:</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="checkbox" data-toggle="toggle" data-size="mini" id="checkboxdrogadiccion" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12" id="drogadiccionesgroup" hidden>
+                        	<div class="funkyradio-info col-sm-12">
+	                            <div class="funkyradio-default col-sm-2 col-sm-offset-1" >
+	                                <input type="checkbox" name="drogadicciones[]" id="d1" />
+	                                <label for="d1">Marihuana</label>
+	                            </div>
+	                            <div class="funkyradio-primary col-sm-2">
+	                                <input type="checkbox" name="drogadicciones[]" id="d2" />
+	                                <label for="d2">Cocaina</label>
+	                            </div>
+	                            <div class="funkyradio-success col-sm-2 ">
+	                                <input type="checkbox" name="drogadicciones[]" id="d3" />
+	                                <label for="d3">AMF</label>
+	                            </div>
+	                            <div class="funkyradio-danger col-sm-2">
+	                                <input type="checkbox" name="drogadicciones[]" id="d4" />
+	                                <label for="d4">Sus. Toxic unhal</label>
+	                            </div>
+	                            <div class="funkyradio-warning col-sm-2">
+	                                <input type="checkbox" name="drogadicciones[]" id="d5" />
+	                                <label for="d5">Metanfetaminas</label>
+	                            </div>
+	                        </div>
+                            <div class="funkyradio-info col-sm-12" style="margin: 20px;">
+                                <label class="control-label col-sm-3">Edad: </label>
+	                            <div class="col-sm-9">
+	                                <input id="edadInput" name="cuales" maxlength="2" type="number" placeholder="Ejemplo: 14" required="required" class="form-control" />
+	                            </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-sm-12" id="Higiene">
+                            <label class="control-label col-sm-4">Higiene:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="radio" name="options" id="optionbueno" autocomplete="off" >
+                                        Bueno
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="radio" name="options" id="optionregular" autocomplete="off">
+                                        Regular
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="radio" name="options" id="optionmala" autocomplete="off">
+                                        Mala
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="condicion">
+                            <label class="control-label col-sm-4">El trabajador presenta alguna condici&oacute;n que afecte su salud:</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="checkbox" id="checkboxcondicion" data-size="mini" data-toggle="toggle"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="cualcondiciongroup" hidden>
+                            <label class="control-label col-sm-3">&iquest;Cu&aacute;les? </label>
+                            <div class="col-sm-9">
+                                <input id="cualcondicion" name="cualcondicion"  maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 title">
+                            <h3> Antecedentes personales patológicos</h3>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="diabetes">
+                            <label class="control-label col-sm-4">Diabetes:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="diabetesno" data-name="diabetes" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="diabetesdx" data-name="diabetes" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="diabetestx" data-name="diabetes" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="diabetesdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="diabetestxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-sm-12" id="hipertencion">
+                            <label class="control-label col-sm-4">Hipertencion:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="hipertencionno" data-name="hipertencion" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="hipertenciondx" data-name="hipertencion" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="hipertenciontx" data-name="hipertencion" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="hipertenciondxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="hipertenciontxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-sm-12" id="lumalgias">
+                            <label class="control-label col-sm-4">Lumalgias:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="lumalgiasno" data-name="lumalgias" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="lumalgiasdx" data-name="lumalgias" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="lumalgiastx" data-name="lumalgias" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="lumalgiasdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="lumalgiastxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="obesidad">
+                            <label class="control-label col-sm-4">Obesidad:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="obesidadno" data-name="obesidad" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="obesidaddx" data-name="obesidad" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="obesidadtx" data-name="obesidad" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="obesidaddxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="obesidadtxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group col-sm-12" id="neumonias">
+                            <label class="control-label col-sm-4">Neumonias:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="radio" name="options" id="neumoniasno" data-name="neumonias" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="neumoniasdx" data-name="neumonias" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="neumoniastx" data-name="neumonias" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="neumoniasdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="neumoniastxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group col-sm-12" id="hipertiroidismo">
+                            <label class="control-label col-sm-4">Hipertiroidismo:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="hipertiroidismono" data-name="hipertiroidismo" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="hipertiroidismodx" data-name="hipertiroidismo" autocomplete="off" >
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="hipertiroidismotx" data-name="hipertiroidismo" autocomplete="off" >
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="hipertiroidismodxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="hipertiroidismotxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="hipotirodismo">
+                            <label class="control-label col-sm-4">Hipotirodismo:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="hipotirodismono" data-name="hipotirodismo" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="hipotirodismodx" data-name="hipotirodismo" autocomplete="off" >
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="hipotirodismotx" data-name="hipotirodismo" autocomplete="off" >
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="hipotirodismodxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="hipotirodismotxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-sm-12" id="hernias">
+                            <label class="control-label col-sm-4">Hernias:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="herniasno" data-name="hernias" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="herniasdx" data-name="hernias" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="herniastx" data-name="hernias" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="herniasdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="herniastxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="enfrenales">
+                            <label class="control-label col-sm-4">ENF Renales:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="enfrenalesno" data-name="enfrenales" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="enfrenalesdx" data-name="enfrenales" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="enfrenalestx" data-name="enfrenales" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="enfrenalesdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="enfrenalestxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="gastritis">
+                            <label class="control-label col-sm-4">Gastritis:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="gastritisno" data-name="gastritis" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="gastritisdx" data-name="gastritis" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="gastritistx" data-name="gastritis" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="gastritisdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="gastritistxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="epilepsia">
+                            <label class="control-label col-sm-4">Epilepsia:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="epilepsiano" data-name="epilepsia" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="epilepsiadx" data-name="epilepsia" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="epilepsiatx" data-name="epilepsia" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="epilepsiadxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="epilepsiatxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="alergias">
+                            <label class="control-label col-sm-4">Alergias:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="alergiasno" data-name="alergias" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="alergiasdx" data-name="alergias" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="alergiastx" data-name="alergias" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="alergiasdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="alergiastxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12" id="cirugias">
+                            <label class="control-label col-sm-4">Cirugias:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="cirugiasno" data-name="cirugias" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="cirugiasdx" data-name="cirugias" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="cirugiastx" data-name="cirugias" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="cirugiasdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="cirugiastxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group col-sm-12" id="traumaticos">
+                            <label class="control-label col-sm-4">Traumaticos:</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default col-sm-4 active">
+                                        <input type="checkbox" name="options" id="traumaticosno" data-name="traumatismo" autocomplete="off" >
+                                        NO
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="traumaticosdx" data-name="traumatismo" autocomplete="off">
+                                        DX
+                                    </label>
+
+                                    <label class="btn btn-default col-sm-4">
+                                        <input type="checkbox" name="options" id="traumaticostx" data-name="traumatismo" autocomplete="off">
+                                        TX
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="traumaticosdxfield" hidden>
+                            <label class="control-label col-sm-3">DX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="traumaticostxfield" hidden>
+                            <label class="control-label col-sm-3">TX: </label>
+                            <div class="col-sm-9">
+                                <input maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+		                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente Paso</button>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="row setup-content" id="step-3">
+		        <div class="col-xs-12">
+		            <div class="col-md-12">
+                        <div class="col-sm-12 title">
+                            <h3> Paso 3 - Antecedentes Gineco-obtestricos</h3>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Menarca</label>
+                            <div class="col-sm-9">
+                                <input id="menaca" maxlength="100" type="text" required="required" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+    		                <label class="control-label col-sm-1">Ritmo</label>
+                            <div class="col-sm-4">
+                                <input id="ritmo" name="ritmo" type="text" class="form-control" placeholder="" />
+                                <span class="input-group-addon" style="border-left: 0; border-right: 0;">x</span>
+                            </div>
+                            <div class="col-sm-4">
+                                <input id="ritmox" name="ritmod" type="text" class="form-control" placeholder="" />
+                                <span class="input-group-addon" style="border-left: 0; border-right: 0;">d</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-2">Ciclo Regular: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="ciclo" name="ciclo"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+
+		                <div class="input-group">
+		                <label class="control-label">FUM</label>
+							  <span class="input-group-addon" style="border-left: 0; border-right: 0;" >:</span>
+							  <input type="text" id="fum" name="fum" class="form-control" placeholder="" />
+							  <span class="input-group-addon" style="border-left: 0; border-right: 0;">I.V.S.A.</span>
+							  <input type="text" id="fumivsa" name="fumivsa" class="form-control" placeholder="" />
+							  <span class="input-group-addon" style="border-left: 0; border-right: 0;">a.</span>
+							  <input type="text" id="fumcs" name="fumcs"class="form-control" placeholder="" />
+							  <span class="input-group-addon" style="border-left: 0; border-right: 0;">#CS</span>
+						</div>
+
+
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-2">Anticonceptivos: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="anticonceptivos" name="anticonceptivos"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="anticonceptivoscualesgroup" hidden>
+                            <div class="col-sm-9">
+                                <input maxlength="200" id="anticonceptivoscuales" name="anticonceptivoscuales" type="number" required="required" class="form-control" placeholder="&iquest;Cu&aacute;les?"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Disema: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="disema" name="disema"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Leucorrea: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="leucorrea" name="leucorrea"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Metrorragia: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="metrorragia" name="metrorragia"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Menopausia: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="menopausia" name="menopausia"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Papanicolao: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="papanicolao" name="papanicolao"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Gestas: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="gestas" name="gestas"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Paras: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="paras" name="paras"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Cesareas: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="cesareas" name="cesareas"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="control-label col-sm-1">Abortos: </label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" id="abortos" name="abortos"  data-toggle="toggle" data-size="mini" data-on="S&iacute;" data-off="No" data-onstyle="info" >
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12" id="abortoscuantosgroup" hidden>
+                            <div class="col-sm-9">
+                                <input maxlength="200" id="abortoscuantos" name="abortoscuantos" type="number" required="required" class="form-control" placeholder="&iquest;Cu&aacute;ntos?"  />
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Siguiente Paso</button>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="row setup-content" id="step-4">
+		        <div class="col-xs-12">
+		            <div class="col-md-12">
+                        <div class="col-sm-12 title">
+                            <h3> Paso 4 - Por Definir :)</h3>
+                        </div>
+
+                        <button class="btn btn-success btn-lg pull-right" type="submit">Terminar</button>
+		            </div>
+		        </div>
+		    </div>
+		</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	$('.form-group .input-group.date').datepicker({
+	    format: "dd/mm/yy",
+	    todayBtn: "linked",
+	    clearBtn: true,
+	    language: "es",
+	    daysOfWeekDisabled: "0,6",
+	    autoclose: true,
+	    todayHighlight: true,
+	    toggleActive: true
+	});
+	var allChecks = document.getElementsByClassName("checkboxtype");
+    var boolChecks;
+    var x = 0;
+    for(x = 0; x < allChecks.length; x++){
+        allChecks[x].onclick = function(){
+            if(boolChecks == this){
+                    this.checked = false;
+                    boolChecks = null;
+            }else{
+                    boolChecks = this;
+            }
+        };
+    }
+    
+</script>

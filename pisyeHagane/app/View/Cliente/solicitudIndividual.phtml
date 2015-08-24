@@ -1,0 +1,128 @@
+<style>
+.notas-imp{
+	border: 1px solid black;
+	width: 100%;
+	color: red;
+	border-top-width: 50%;
+	border-bottom-width: 50%;
+}
+ 
+.notas-imp::before{
+
+}
+h3{
+	width: 100%;
+}
+</style>
+<div class="row">
+	<div class="col s12">
+		<h3 class="center-align"> Programaci&oacute;n de Atenci&oacute;n Individual</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12"> 
+		<div class="notas-imp">
+			<h6 class="center-align"> Notas: </h6>
+			<h6 class="center-align">  Para las tomas de Laboratorio se requiere presentarse en ayunas. </h6>
+			<h6 class="center-align">  Se requiere identificaci&oacute;n oficial para recibir atenci&oacute;n. </h6>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+    <form class="col s12" method="post" action="/Cliente/solicitudIndividual">
+		<div class="row">
+		    <div class="input-field col s4">
+		        <input placeholder="Ingrese el / los nombres del empleado aquí." id="nombre"  name="nombre" type="text" class="validate">
+		        <label for="nombre">Nombres(s)</label>
+		    </div>
+		    <div class="input-field col s4">
+		        <input placeholder="Ingrese el apellido PATERNO aquí." id="apellido_paterno" name="apellido_paterno" type="text" class="validate">
+		        <label for="apellido_paterno">Apellido Paterno</label>
+		    </div>
+		    <div class="input-field col s4">
+		        <input placeholder="Ingrese el apellido MATERNO aquí." id="apellido_materno" name="apellido_materno" type="text" class="validate">
+		        <label for="apellido_materno">Apellido Materno</label>
+		    </div>
+		</div>
+
+
+	    <div class="row">
+	        <div class="input-field col s4">
+	    	  	<label for="empresa_nombre">Empresa</label>
+	        	<br>
+	        	<input disabled value="<?=$this->user->getUserObject()->getEmpresa()?>" id="disabled" type="text" class="validate">
+	          
+	        </div>
+	      
+	        <div class="input-field col s4">
+	         	<label for="fecha">Fecha de atenci&oacute;n</label>
+	         	<br>
+	          	<input id="fecha" name="fecha" type="date" class="datepicker">
+	          
+	        </div>
+	      
+	        <div class="input-field col s4">
+	        	<label for="hora">Hora</label>
+	          	<br>
+	          	<input id="hora" name="hora" type="time" class="timepicker">          
+	        </div>
+	    </div>
+	    <div class="row">
+	      	<div class="col s12">
+	      		<h5> Estudios a realizar </h5>
+	      	</div>
+	    <div class="row">  
+	      	<div class="col s3">
+	      		<p>
+	      			<input type="checkbox" name="estudios[]" id="examen-pre-ingreso"/ value="7">
+	      			<label for="examen-pre-ingreso"> Examen Pre-Ingreso </label> 
+	      		</p>
+	      	</div>
+	    	<div class="col s3">
+	      		<p>
+	      			<input type="checkbox" name="estudios[]" id="consulta" value="4" />
+	      			<label for="consulta"> Consulta </label> 
+	      		</p>
+	      	</div>
+	      	<div class="col s3">
+	      		<p>
+	      			<input type="checkbox" name="estudios[]" id="espirometria" value="5" />
+	      			<label for="espirometria"> Espirometría </label> 
+	      		</p>
+	      	</div>
+	      	<div class="col s3">
+	      		<p>
+	      			<input type="checkbox" name="estudios[]" id="ray-x" value="6" />
+	      			<label for="ray-x"> Rayos X </label> 
+	      		</p>
+	      	</div>
+	    <br>
+	    <div class="row">
+		    <div class="col s12">
+		      	<label for="observaciones"> Observaciones</label>
+		      	<textarea placeholader="En esta sección puedes poner un rango de tiempo en el que crees que tardará el empleado en llegar, o cualquier observación especial." id="observaciones" name="observaciones" class="materialize-textarea" length="150" > </textarea>
+		    </div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<label for="autorizado_por"> Autorizado por: </label>
+				<input placeholder="Ingrese el nombre de quien llenó esta forma." id="autorizado_por" type="text" class="validate">
+			</div>
+		</div>
+		<button class="btn waves-effect waves-teal orange" type="submit">Agendar</button>
+    </form>
+  </div>
+<br>
+
+
+ <script type="text/javascript">
+
+ $('.datepicker').pickadate({
+ 	formatSubmit: 'yyyy-mm-dd',
+ 	hiddenName: true,
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+ </script>

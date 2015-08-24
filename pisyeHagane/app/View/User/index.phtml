@@ -1,0 +1,14 @@
+<?php if ($this->auth->isAuth()) : ?>
+<a class="btn" href="/User/logout">Logout</a>
+ya etsas logueado tututruur   shhhoohh
+<?php else: ?>
+ <div class="row white">
+      <div class="col s6">
+            <form action="/User/auth" method="post">
+                  <input name="user" type="text" placeholder="User">
+                  <input name="password" type="password" placeholder="Password">
+                  <button class="btn waves-effect waves-teal orange" type="submit">Login</button>
+            </form>
+      </div>
+</div>
+<?php endif; ?>
