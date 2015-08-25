@@ -30,7 +30,10 @@ class Maestro {
 		} else {
 			return $this->classModel->getClaseById($id);
 		}
-		
+	}
+
+	function getGrades($claseId, $alumnoId) {
+		return $this->classModel->getGrades($claseId, $alumnoId);
 	}
 
 	function getNombre() {

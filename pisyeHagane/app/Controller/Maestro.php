@@ -23,13 +23,13 @@ class Maestro extends AbstractController{
 		$this->clases = $userObject->getMyClass($classId);
 	}
 
-	function clase() {
+	function calificar() {
 		//Mis clases
 		$classId = $_GET['claseid'];
 		$alumnoId = $_GET['alumnoid'];
-		
+
 		$userObject = $this->user->getUserObject();
-		$this->clases = $userObject->getMyClass($classId);
+		$this->alumno = $userObject->getGrades($classId, $alumnoId);
 	}
 }
 

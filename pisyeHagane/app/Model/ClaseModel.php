@@ -71,10 +71,26 @@ class Clase {
 			$data = array('id' => $this->maestroID, 'claseid' => $claseId, 'alumnoid' => $alumnoId);
 
 			//query para traer a los alumnos de la clase con sus calificaciones
-			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
+			$claseArray = $this->db->getRow('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
 				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
 				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id
-				AND pc.idMaestro = :id AND pc.id = :claseid AND pc.idAlumno = :alumnoid', $data);
+				AND pc.idMaestro = :id AND pc.id = :claseid AND cal.idAlumno = :alumnoid', $data);
+		}
+		return $claseArray;
+	}
+
+	function setGrades($claseId, $alumnoId) {
+		$claseArray = array();
+		
+		//Change gradeees
+		if ($this->maestroID != null) {
+			$data = array('id' => $this->maestroID, 'claseid' => $claseId, 'alumnoid' => $alumnoId);
+
+			//query para traer a los alumnos de la clase con sus calificaciones
+			$claseArray = $this->db->getRow('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
+				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
+				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id
+				AND pc.idMaestro = :id AND pc.id = :claseid AND cal.idAlumno = :alumnoid', $data);
 		}
 		return $claseArray;
 	}
