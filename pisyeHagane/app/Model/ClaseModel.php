@@ -79,16 +79,16 @@ class Clase {
 		return $claseArray;
 	}
 
-	function setGrades($claseId, $alumnoId) {
+	function setGrades($claseId, $alumnoId, $parcial1, $parcial2) {
 		$claseArray = array();
-		
+
 		//Change gradeees
 		if ($this->maestroID != null) {
-			$data = array('id' => $this->maestroID, 'claseid' => $claseId, 'alumnoid' => $alumnoId);
+			$data = array('id' => $this->maestroID, 'claseid' => $claseId, 'alumnoid' => $alumnoId, 'parcial1' => $parcial1, 'parcial2' => $parcial2);
 
 			//query para traer a los alumnos de la clase con sus calificaciones
-			$claseArray = $this->db->getRow('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
-				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
+			$claseArray = $this->db->query('UPDATE Calificacion as cal JOIN PeriodoClase AS pc JOIN Clase AS c JOIN Alumno as a
+				SET cal.resultado1=:parcial1, cal.resultado2=:parcial2
 				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id
 				AND pc.idMaestro = :id AND pc.id = :claseid AND cal.idAlumno = :alumnoid', $data);
 		}

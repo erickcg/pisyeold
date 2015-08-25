@@ -27,8 +27,13 @@ class Maestro extends AbstractController{
 		//Mis clases
 		$classId = $_GET['claseid'];
 		$alumnoId = $_GET['alumnoid'];
-
 		$userObject = $this->user->getUserObject();
+
+
+		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+			$this->alumno = $userObject->setGrades($classId, $alumnoId, $_POST['parcial1'], $_POST['parcial2']);
+		}
+		
 		$this->alumno = $userObject->getGrades($classId, $alumnoId);
 	}
 }

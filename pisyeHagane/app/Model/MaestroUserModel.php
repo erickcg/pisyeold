@@ -36,6 +36,10 @@ class Maestro {
 		return $this->classModel->getGrades($claseId, $alumnoId);
 	}
 
+	function setGrades($claseId, $alumnoId, $p1, $p2) {
+		return $this->classModel->setGrades($claseId, $alumnoId, $p1, $p2);
+	}
+
 	function getNombre() {
 		return $this->nombre;
 	}
