@@ -32,14 +32,50 @@ class Clase {
 	function getClase() {
 		$claseArray = array();
 
+		//queries que traen las clases inscritas para el maestro o el alumno
 		if ($this->maestroID != null) {
 			$data = array('id' => $this->maestroID);
-			$claseArray = $this->db->query('SELECT * FROM PeriodoClase AS pc JOIN Clase AS c WHERE  c.id = pc.idClase AND pc.idMaestro = :id', $data);
+			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.* FROM PeriodoClase AS pc JOIN Clase AS c WHERE  c.id = pc.idClase AND pc.idMaestro = :id', $data);
 		} elseif ($this->alumnoID != null) {
 			$data = array('id' => $this->alumnoID);
 			$claseArray = $this->db->query('SELECT * FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal WHERE  c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = :id', $data);
 		}
 		
+		return $claseArray;
+	}
+
+	function getClaseById($claseId) {
+		$claseArray = array();
+
+		if ($this->maestroID != null) {
+			$data = array('id' => $this->maestroID, 'claseid' => $claseId);
+
+			//query para traer a los alumnos de la clase con sus calificaciones
+			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
+				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
+				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id
+				AND pc.idMaestro = :id AND pc.id = :claseid', $data);
+
+		} elseif ($this->alumnoID != null) {
+			$data = array('id' => $this->alumnoID, 'claseid' => $claseId);
+			$claseArray = $this->db->query('SELECT * FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal WHERE  c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = :id AND pc.id = :claseid', $data);
+		}
+		
+		return $claseArray;
+	}
+
+	function getGrades($claseId, $alumnoId) {
+		$claseArray = array();
+
+		if ($this->maestroID != null) {
+			$data = array('id' => $this->maestroID, 'claseid' => $claseId, 'alumnoid' => $alumnoId);
+
+			//query para traer a los alumnos de la clase con sus calificaciones
+			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
+				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
+				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id
+				AND pc.idMaestro = :id AND pc.id = :claseid AND pc.idAlumno = :alumnoid', $data);
+		}
 		return $claseArray;
 	}
 }

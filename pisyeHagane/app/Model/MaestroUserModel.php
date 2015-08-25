@@ -24,8 +24,13 @@ class Maestro {
 		}
 	}
 
-	function getMyClass() {
-		return $this->classModel->getClase();
+	function getMyClass($id = 0) {
+		if ($id == 0) {
+			return $this->classModel->getClase();
+		} else {
+			return $this->classModel->getClaseById($id);
+		}
+		
 	}
 
 	function getNombre() {
