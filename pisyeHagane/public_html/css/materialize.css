@@ -5253,7 +5253,7 @@ nav {
   nav a {
     color: #fff; }
   nav .nav-wrapper {
-    position: relative;
+    position: fixed;
     height: 100%; }
     nav .nav-wrapper i {
       display: block;

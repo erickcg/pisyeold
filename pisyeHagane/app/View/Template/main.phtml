@@ -234,7 +234,8 @@
 		<div class="nav-wrapper ">
 			<div id="main-navbar" class="main-navbar main-navbar-fixed-top">
 	              <div class="main-navbar-content">
-	                  	<div id="toggle-sidebar" class="icon left">
+	                  	<div id="toggle-sidebar" class="left">
+	                  	Menu
 	                  	</div>
 	              </div>
 	        </div> 
@@ -257,7 +258,73 @@
 		</div>
 	</nav>
 </div>
-<?php echo $this->view; ?>
+	 <?php if($this->auth->isAuth()) : ?>
+ 	<!-- Esto se llama en todos lados por eso lo puse afuera -->
+	<br><br>
+	
+	          <div id="main-sidebar" class="main-sidebar main-sidebar-left">
+
+	              <div id="main-sidebar-wrapper" class="main-sidebar-wrapper">
+	<!-- Hasta aqui termina "esto" -->
+	<?php $obj= $this->user->getUserObject(); 
+	if ($this->user->getUserType() == 'Maestro'): ?>
+
+          
+                  <div class="section">
+                      <img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
+                      <p class="nombre-sidebar"> Maestro <?=$this->user->getNombreCompleto()?> </p>
+                  </div>
+                  <nav>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                          <li class="lista-sidebar"><a href="/Maestro/index" class="active">Inicio</a></li>
+                          
+                          <li class="lista-sidebar"><a href="#" >accion 2</a></li>
+                          
+                          <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
+                          
+                  </nav>
+              </div>
+          	</div>
+      	</div>
+
+  		<?php elseif ($this->user->getUserType() == 'Administrador'): ?>
+                  <div class="section">
+                      <img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
+                      <p class="nombre-sidebar"> Administrador <br><br> <?=$this->user->getNombreCompleto()?> </p>
+                  </div>
+                  <nav>
+                      <ul class="right hide-on-med-and-down">
+                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Inicio</a></li>
+                          
+                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Gesti&oacute;n de usuarios</a></li>
+                          
+                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">#####</a></li>
+                          
+                          <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
+                          
+                  </nav>
+              </div>
+          	</div>
+      	</div>    
+  		<?php elseif ($this->user->getUserType() == 'Alumno'): ?>
+                  <div class="section">
+                      <img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
+                      <p class="nombre-sidebar"> Empresa <b><b> <?=$this->user->getNombreCompleto()?> </p>
+                  </div>
+                  <nav>
+                      <ul class="right hide-on-med-and-down">
+                          <li class="lista-sidebar"><a href="/Alumno/index" class="lista-sidebar">Inicio</a></li>
+                          
+                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">#####</a></li>
+                          
+                          <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
+                          
+                  </nav>
+              	</div>
+          	</div>
+      	</div>
+  		<?php endif; ?>   
+ 	<?php endif; echo $this->view; ?>
 		<footer class="page-footer cyan darken-1">
           <div class="footer-copyright">
             <div class="container">
