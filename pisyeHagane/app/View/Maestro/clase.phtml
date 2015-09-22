@@ -5,13 +5,18 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col s12 m6">
+		<div class="col s12 m12">
 			<table class="hoverable">
 			<thead>
 			  <tr>
 			      <th >Nombre</th>
 			      <th >Parcial 1</th>
 			      <th >Parcial 2</th>
+			      <th >Participación</th>
+			      <th >Puntualidad</th>
+			      <th >Disposición</th>
+			      <th >Tareas</th>
+			      <th >Observaciones</th>
 			      <th ></th>
 			  </tr>
 			</thead>
@@ -20,8 +25,13 @@
 			<?php foreach ($this->clases as $clase) : ?>
 			  <tr>
 			    <td><?=$clase['anombre']?> <?=$clase['apellido_paterno']?> <?=$clase['apellido_materno']?></td>
-			    <td><?=$clase['resultado1']?></td>
-			    <td><?=$clase['resultado2']?></td>
+			    <td><?=$clase['parcial1']?></td>
+			    <td><?=$clase['parcial2']?></td>
+			    <td><?=$clase['participacion']?></td>
+			    <td><?=$clase['puntualidad']?></td>
+			    <td><?=$clase['disposicion']?></td>
+			    <td><?=$clase['tareas']?></td>
+			    <td><?=$clase['observaciones']?></td>
 			    <td><a class="btn waves-effect waves-light" href="/Maestro/calificar?claseid=<?=$clase['pcid']?>&alumnoid=<?=$clase['aid']?>">Modificar-></a></td>
 			  </tr>
 			<?php endforeach; ?>

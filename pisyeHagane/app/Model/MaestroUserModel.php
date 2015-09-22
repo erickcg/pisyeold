@@ -19,7 +19,7 @@ class Maestro {
 			$this->nombre = $userArray['nombre'];
 			$this->apellidoPaterno = $userArray['apellido_paterno'];
 			$this->apellidoMaterno = $userArray['apellido_materno'];
-			
+
 			$this->classModel = new \Hagane\Model\Clase($auth, $db);
 		}
 	}
@@ -36,8 +36,8 @@ class Maestro {
 		return $this->classModel->getGrades($claseId, $alumnoId);
 	}
 
-	function setGrades($claseId, $alumnoId, $p1, $p2) {
-		return $this->classModel->setGrades($claseId, $alumnoId, $p1, $p2);
+	function setGrades($claseId, $alumnoId, $p1, $p2, $participacion, $puntualidad, $disposicion, $tareas, $observaciones) {
+		return $this->classModel->setGrades($claseId, $alumnoId, $p1, $p2, $participacion, $puntualidad, $disposicion, $tareas, $observaciones);
 	}
 
 	function getNombre() {
