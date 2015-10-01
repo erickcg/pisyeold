@@ -17,7 +17,7 @@ class Database {
 
 		if (strcasecmp($this->config['db_engine'], 'mysql') == 0) {
 			try {
-				$this->pdo = new \PDO("mysql:host=".$this->config['db_server'].";dbname=".$this->config['db_database'], $this->config['db_user'], $this->config['db_password']);
+				$this->pdo = new \PDO("mysql:host=".$this->config['db_server'].";dbname=".$this->config['db_database'].";charset=UTF8", $this->config['db_user'], $this->config['db_password']);
 			} catch (\PDOException $e) {
 				$this->database_log['error'] .= $e->getMessage();
 				print($this->database_log['error']);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8"> 
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="/css/default.css"	media="screen,projection" />
@@ -19,7 +19,7 @@
 	<script type="text/javascript" src="/js/picker.date.js"></script>
 	<script type="text/javascript" src="/js/picker.time.js"></script>
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
-    <script type="text/javascript"> 
+    <script type="text/javascript">
 	$(document).ready(function () {
 	    var navListItems = $('div.setup-panel div a'),
 	            allWells = $('.setup-content'),
@@ -238,7 +238,7 @@
 	                  	Menu
 	                  	</div>
 	              </div>
-	        </div> 
+	        </div>
 			<a href="/" class="brand-logo center">PISYE<span class="indigo-text text-darken-4">Alpha</span></a>
 
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -261,15 +261,15 @@
 	 <?php if($this->auth->isAuth()) : ?>
  	<!-- Esto se llama en todos lados por eso lo puse afuera -->
 	<br><br>
-	
+
 	          <div id="main-sidebar" class="main-sidebar main-sidebar-left">
 
 	              <div id="main-sidebar-wrapper" class="main-sidebar-wrapper">
 	<!-- Hasta aqui termina "esto" -->
-	<?php $obj= $this->user->getUserObject(); 
+	<?php $obj= $this->user->getUserObject();
 	if ($this->user->getUserType() == 'Maestro'): ?>
 
-          
+
                   <div class="section">
                       <img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
                       <p class="nombre-sidebar"> Maestro <?=$this->user->getNombreCompleto()?> </p>
@@ -277,11 +277,11 @@
                   <nav>
                       <ul id="nav-mobile" class="right hide-on-med-and-down">
                           <li class="lista-sidebar"><a href="/Maestro/index" class="active">Inicio</a></li>
-                          
+
                           <li class="lista-sidebar"><a href="#" >accion 2</a></li>
-                          
+
                           <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
-                          
+
                   </nav>
               </div>
           	</div>
@@ -294,18 +294,18 @@
                   </div>
                   <nav>
                       <ul class="right hide-on-med-and-down">
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Inicio</a></li>
-                          
-                          <li class="lista-sidebar"><a href="#" class="lista-sidebar">Gesti&oacute;n de usuarios</a></li>
-                          
+                          <li class="lista-sidebar"><a href="/Admin/" class="lista-sidebar">Inicio</a></li>
+
+                          <li class="lista-sidebar"><a href="/Admin/users" class="lista-sidebar">Gesti&oacute;n de usuarios</a></li>
+
                           <li class="lista-sidebar"><a href="#" class="lista-sidebar">#####</a></li>
-                          
+
                           <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
-                          
+
                   </nav>
               </div>
           	</div>
-      	</div>    
+      	</div>
   		<?php elseif ($this->user->getUserType() == 'Alumno'): ?>
                   <div class="section">
                       <img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
@@ -314,16 +314,16 @@
                   <nav>
                       <ul class="right hide-on-med-and-down">
                           <li class="lista-sidebar"><a href="/Alumno/index" class="lista-sidebar">Inicio</a></li>
-                          
+
                           <li class="lista-sidebar"><a href="#" class="lista-sidebar">#####</a></li>
-                          
+
                           <li class="lista-sidebar"><a href="/User/logout" class="boton-logout">Cerrar Sesion</a></li>
-                          
+
                   </nav>
               	</div>
           	</div>
       	</div>
-  		<?php endif; ?>   
+  		<?php endif; ?>
  	<?php endif; echo $this->view; ?>
 		<footer class="page-footer cyan darken-1">
           <div class="footer-copyright">
@@ -345,9 +345,9 @@
                         width: 360,
                         backgroundColor: 'black',
                         closingLinks: '.close-sb'
-                    	
+
                     }
-                    
+
                 });
 
             });
