@@ -5,7 +5,9 @@ class Administrador {
 	private $nombre;
 	private $apellidoPaterno;
 	private $apellidoMaterno;
-	
+
+	private $classModel;
+
 	function __construct(&$auth, &$db) {
 		$id = $auth->isAuth();
 		if (!empty($id)) {
@@ -15,7 +17,25 @@ class Administrador {
 			$this->nombre = $userArray['nombre'];
 			$this->apellidoPaterno = $userArray['apellido_paterno'];
 			$this->apellidoMaterno = $userArray['apellido_materno'];
+
+			$this->classModel = new \Hagane\Model\Clase($auth, $db);
 		}
+	}
+
+	function getMyClass($id = 0) {
+		if ($id == 0) {
+			return $this->classModel->getClase();
+		} else {
+			return $this->classModel->getClaseById($id);
+		}
+	}
+
+	function getGrades($claseId, $alumnoId) {
+		return $this->classModel->getGrades($claseId, $alumnoId);
+	}
+
+	function getAllGrades($alumnoId) {
+		return $this->classModel->getAllGrades($alumnoId);
 	}
 
 	function getNombre() {

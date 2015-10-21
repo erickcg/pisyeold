@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row">
+	<p>Boleta de calificaciones PISYE</p>
+	<h4>
+		<?=$this->boletas[0]['anombre']?> <?=$this->boletas[0]['apellido_paterno']?> <?=$this->boletas[0]['apellido_materno']?>
+	</h4>
+	<?php foreach ($this->boletas as $boleta) : ?>
+		<div class="col s12 m3">
+			<div class="card deep-orange darken-4 white-text" style="padding: 12px;">
+				<span class="card-title"><?=$boleta['cnombre']?></span>
+				<p>parcial1: <?=$boleta['parcial1']?></p>
+				<p>parcial2: <?=$boleta['parcial2']?></p>
+				<p>participacion: <?=$boleta['participacion']?></p>
+				<p>puntualidad: <?=$boleta['puntualidad']?></p>
+				<p>disposicion: <?=$boleta['disposicion']?></p>
+				<p>tareas: <?=$boleta['tareas']?></p>
+				<p>observaciones: <?=$boleta['observaciones']?></p>
+			</div>
+		</div>
+		<?php endforeach; ?>
+	</div>
+</div>

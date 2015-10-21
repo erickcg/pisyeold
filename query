@@ -1,0 +1,1013 @@
+Taller de empleo Nivel a      ---- id 4-20
+Insert into  `Alumno` set nombre='Aleida', apellido_paterno='Rivera', apellido_materno='Soto';
+Insert into  `Alumno` set nombre='Ilena', apellido_paterno='Martinez', apellido_materno='Vallejo';
+Insert into  `Alumno` set nombre='Luis Guillermo ', apellido_paterno='Ortíz', apellido_materno='Garza';
+Insert into  `Alumno` set nombre='Luz Cristina', apellido_paterno='Guerra', apellido_materno='González';
+Insert into  `Alumno` set nombre='Raúl', apellido_paterno='García', apellido_materno='Villalobos';
+Insert into  `Alumno` set nombre='Cristina', apellido_paterno='Herrera', apellido_materno='Alamilla';
+Insert into  `Alumno` set nombre='Martín Alfonso', apellido_paterno='García', apellido_materno='Vargas';
+Insert into  `Alumno` set nombre='Fernando', apellido_paterno='Caballero', apellido_materno='Garza';
+Insert into  `Alumno` set nombre='María Isabel', apellido_paterno='Álvarez', apellido_materno='Pérez-Duarte';
+Insert into  `Alumno` set nombre='Jesica', apellido_paterno='Bortoni', apellido_materno='Evans';
+Insert into  `Alumno` set nombre='Arturo Iván', apellido_paterno='Cordero', apellido_materno='Morales';
+Insert into  `Alumno` set nombre='Ma. Anabella ', apellido_paterno='Salgado', apellido_materno='Calvillo';
+Insert into  `Alumno` set nombre='Graciela', apellido_paterno='Welsh', apellido_materno='';
+Insert into  `Alumno` set nombre='Patricio', apellido_paterno='Bueno', apellido_materno='García';
+Insert into  `Alumno` set nombre='Ricardo Javier', apellido_paterno='Jiménez', apellido_materno='Galván';
+Insert into  `Alumno` set nombre='Ana Lucía', apellido_paterno='Rosales', apellido_materno='Hernández';
+Insert into  `Alumno` set nombre='Jorge Sebastián', apellido_paterno='Martínez', apellido_materno='Leal';
+Insert into  `Alumno` set nombre='José Javier', apellido_paterno='Maldonado', apellido_materno='Garza';
+
+Taller de empleo Nivel b    id 21-38
+Insert into  `Alumno` set nombre='Alejandra', apellido_paterno='Huerta', apellido_materno='Lecea';
+Insert into  `Alumno` set nombre='Thalia L.', apellido_paterno='González', apellido_materno='Floresparra';
+Insert into  `Alumno` set nombre='Patricia', apellido_paterno='Rubio', apellido_materno='Elizondo';
+Insert into  `Alumno` set nombre='Nallely', apellido_paterno='García', apellido_materno='Avila';
+Insert into  `Alumno` set nombre='Carlos', apellido_paterno='Romero', apellido_materno='Anaya';
+Insert into  `Alumno` set nombre='Javier', apellido_paterno='Cantú', apellido_materno='Rodríguez';
+Insert into  `Alumno` set nombre='Nahum', apellido_paterno='Ramírez', apellido_materno='Rodriguez';
+Insert into  `Alumno` set nombre='Pablo', apellido_paterno='Ramos', apellido_materno='de la Garza';
+Insert into  `Alumno` set nombre='Laura Beatriz', apellido_paterno='Arguello', apellido_materno='del Villar';
+Insert into  `Alumno` set nombre='Juan Carlos', apellido_paterno='Martínez', apellido_materno='Elizondo';
+Insert into  `Alumno` set nombre='Joel', apellido_paterno='Cantú', apellido_materno='Rodríguez';
+Insert into  `Alumno` set nombre='Ileana Melissa', apellido_paterno='Salinas', apellido_materno='Garza';
+Insert into  `Alumno` set nombre='Beatriz Eugenia', apellido_paterno='Peña', apellido_materno='García';
+Insert into  `Alumno` set nombre='Brenda Lizeth', apellido_paterno='Sabino', apellido_materno='Ortiz';
+Insert into  `Alumno` set nombre='Daniel Eugenio', apellido_paterno='Drexel', apellido_materno='Kalife';
+Insert into  `Alumno` set nombre='Luis David', apellido_paterno='Salas', apellido_materno='Morales';
+Insert into  `Alumno` set nombre='Eder Humberto', apellido_paterno='Zazueta', apellido_materno='Barraza';
+Insert into  `Alumno` set nombre='Alberto', apellido_paterno='Ortegon', apellido_materno='';
+
+nivel a   id 39-48
+Insert into  `Alumno` set nombre='José Ángel', apellido_paterno='Lara', apellido_materno='García';
+Insert into  `Alumno` set nombre='Martha Yazmin', apellido_paterno='Lozano', apellido_materno='Pérez';
+Insert into  `Alumno` set nombre='Blanca Leticia', apellido_paterno='Treviño', apellido_materno='García';
+Insert into  `Alumno` set nombre='Maria Cristina', apellido_paterno='Villarreal', apellido_materno='Garcia';
+Insert into  `Alumno` set nombre='Abraham F.', apellido_paterno='Salas', apellido_materno='Mora';
+Insert into  `Alumno` set nombre='Julio Arturo', apellido_paterno='Castillo', apellido_materno='Bautista';
+Insert into  `Alumno` set nombre='Jorge Andrés', apellido_paterno='Dominguez', apellido_materno='Jimenez';
+Insert into  `Alumno` set nombre='Andrés', apellido_paterno='Treviño', apellido_materno='Gastelum';
+Insert into  `Alumno` set nombre='Diego', apellido_paterno='Elizondo', apellido_materno='';
+Insert into  `Alumno` set nombre='Maria de los Angeles', apellido_paterno='Ortiz', apellido_materno='Muller';
+
+nivel b   id 49-63
+Insert into  `Alumno` set nombre='Iram', apellido_paterno='Alcocer', apellido_materno='Guerra';
+Insert into  `Alumno` set nombre='Antonio G.', apellido_paterno='Berlanga', apellido_materno='Morales';
+Insert into  `Alumno` set nombre='Aidée', apellido_paterno='Sousa', apellido_materno='Solís';
+Insert into  `Alumno` set nombre='Rodrigo Alonso', apellido_paterno='Alanis', apellido_materno='Dzibe';
+Insert into  `Alumno` set nombre='Juan Armando', apellido_paterno='Romero', apellido_materno='Guerra';
+Insert into  `Alumno` set nombre='Banelly Karime', apellido_paterno='Domínguez', apellido_materno='Acevedo';
+Insert into  `Alumno` set nombre='Sergio Enrique', apellido_paterno='Chávez', apellido_materno='Hernández';
+Insert into  `Alumno` set nombre='Jair Alejandro', apellido_paterno='Rangel', apellido_materno='Díaz';
+Insert into  `Alumno` set nombre='Liza Fernanda', apellido_paterno='Hernández', apellido_materno='Serna';
+Insert into  `Alumno` set nombre='Héctor Emanuel', apellido_paterno='Alonso', apellido_materno='Cortés';
+Insert into  `Alumno` set nombre='Patricio Alejandro', apellido_paterno='Galindo', apellido_materno='Trejo';
+Insert into  `Alumno` set nombre='Everardo', apellido_paterno='Chapa', apellido_materno='Villanueva';
+Insert into  `Alumno` set nombre='Carla Andrea', apellido_paterno='Galves', apellido_materno='';
+Insert into  `Alumno` set nombre='Alberto Eduardo', apellido_paterno='Zambrano', apellido_materno='Ramirez';
+Insert into  `Alumno` set nombre='José Abraham', apellido_paterno='Ramírez', apellido_materno='Guevara';
+
+nivel c   id 64-82
+Insert into  `Alumno` set nombre='Eugenio', apellido_paterno='Sylveira', apellido_materno='de la Garza';
+Insert into  `Alumno` set nombre='Diego', apellido_paterno='de León', apellido_materno='Reyes';
+Insert into  `Alumno` set nombre='Jannet', apellido_paterno='Barrios', apellido_materno='Martínez';
+Insert into  `Alumno` set nombre='Rubén Orlando', apellido_paterno='Gómez', apellido_materno='Silva';
+Insert into  `Alumno` set nombre='Luis Daniel', apellido_paterno='Tijerina', apellido_materno='Cuevas';
+Insert into  `Alumno` set nombre='Samuel', apellido_paterno='Gonzalez', apellido_materno='Sanchez';
+Insert into  `Alumno` set nombre='Eugenio Rodolfo', apellido_paterno='Quiroga', apellido_materno='Cásarez';
+Insert into  `Alumno` set nombre='Juan Pablo', apellido_paterno='Chapa', apellido_materno='Vera';
+Insert into  `Alumno` set nombre='Hugo Alejandro', apellido_paterno='Dias de Leon', apellido_materno='Galvan';
+Insert into  `Alumno` set nombre='Jesus Emilio', apellido_paterno='Rodriguez', apellido_materno='';
+Insert into  `Alumno` set nombre='Walter Alexis', apellido_paterno='Ojeda', apellido_materno='Martínez';
+Insert into  `Alumno` set nombre='Sarai', apellido_paterno='Narvaez', apellido_materno='Alarcon';
+Insert into  `Alumno` set nombre='Ramiro', apellido_paterno='Isla', apellido_materno='Quiroz';
+Insert into  `Alumno` set nombre='Liliana Margarita', apellido_paterno='Elizondo', apellido_materno='Chávez';
+Insert into  `Alumno` set nombre='Samuel', apellido_paterno='Valenzuela', apellido_materno='Benezpa';
+Insert into  `Alumno` set nombre='José Emiliano', apellido_paterno='Tijerina', apellido_materno='Cañamar';
+Insert into  `Alumno` set nombre='Luisa Fernanda', apellido_paterno='Reyna', apellido_materno='Arroyo';
+Insert into  `Alumno` set nombre='Mauricio Alberto', apellido_paterno='Zárate', apellido_materno='Flores';
+Insert into  `Alumno` set nombre='Samantha', apellido_paterno='Allison', apellido_materno='Arce';
+
+nivel d id 83-102
+Insert into  `Alumno` set nombre='Daniela', apellido_paterno='Palacios', apellido_materno='Moyeda';
+Insert into  `Alumno` set nombre='José Manuel', apellido_paterno='Falcón', apellido_materno='Ramones';
+Insert into  `Alumno` set nombre='Montserrat', apellido_paterno='Dorantes', apellido_materno='García';
+Insert into  `Alumno` set nombre='Juan Carlos', apellido_paterno='Morales', apellido_materno='Escobedo';
+Insert into  `Alumno` set nombre='Verónica', apellido_paterno='Bates', apellido_materno='Rodríguez';
+Insert into  `Alumno` set nombre='Marcela', apellido_paterno='Vela', apellido_materno='Villarreal';
+Insert into  `Alumno` set nombre='Leslye K.', apellido_paterno='Castro', apellido_materno='Martinez';
+Insert into  `Alumno` set nombre='Rodrigo', apellido_paterno='Valenciana', apellido_materno='Sígala';
+Insert into  `Alumno` set nombre='Ari', apellido_paterno='Marinez', apellido_materno='Bernal';
+Insert into  `Alumno` set nombre='Karim Azael', apellido_paterno='Mercado', apellido_materno='Palacios';
+Insert into  `Alumno` set nombre='Diana Teresita', apellido_paterno='Mejía', apellido_materno='Barrera';
+Insert into  `Alumno` set nombre='Nancy', apellido_paterno='Leal', apellido_materno='Sepulveda';
+Insert into  `Alumno` set nombre='Laura Natalia', apellido_paterno='Briones', apellido_materno='';
+Insert into  `Alumno` set nombre='Raymundo', apellido_paterno='Rivera', apellido_materno='Garza';
+Insert into  `Alumno` set nombre='Alan Nicolás', apellido_paterno='González', apellido_materno='';
+Insert into  `Alumno` set nombre='Luis Eduardo', apellido_paterno='Cantú', apellido_materno='Villarreal';
+Insert into  `Alumno` set nombre='Adolfo', apellido_paterno='Saldaña', apellido_materno='Treviño';
+Insert into  `Alumno` set nombre='Guillermo', apellido_paterno='Valenciana', apellido_materno='Sígala';
+Insert into  `Alumno` set nombre='Paula Ximena', apellido_paterno='Ibarra', apellido_materno='Rodriguez';
+Insert into  `Alumno` set nombre='Cinthia', apellido_paterno='Gonzalez', apellido_materno='Montemayor';
+
+
+clases
+1-11
+Insert into  `Clase` set nombre='Teatro musical', descripcion='Nivel A';
+Insert into  `Clase` set nombre='Desarrollo humano', descripcion='Nivel A';
+Insert into  `Clase` set nombre='Computación', descripcion='Nivel A';
+Insert into  `Clase` set nombre='Vida diaria', descripcion='Nivel A';
+Insert into  `Clase` set nombre='Arte', descripcion='Nivel A';
+Insert into  `Clase` set nombre='DHP', descripcion='Nivel A';
+Insert into  `Clase` set nombre='Lenguaje', descripcion='Nivel A';
+Insert into  `Clase` set nombre='Matemáticas', descripcion='Nivel A';
+Insert into  `Clase` set nombre='Deportes', descripcion='Nivel A';
+Insert into  `Clase` set nombre='Tutoría', descripcion='Nivel A';
+Insert into  `Clase` set nombre='DHL', descripcion='Nivel A';
+
+12-22
+Insert into  `Clase` set nombre='Teatro musical', descripcion='Nivel B';
+Insert into  `Clase` set nombre='Desarrollo humano', descripcion='Nivel B';
+Insert into  `Clase` set nombre='Computación', descripcion='Nivel B';
+Insert into  `Clase` set nombre='Vida diaria', descripcion='Nivel B';
+Insert into  `Clase` set nombre='Arte', descripcion='Nivel B';
+Insert into  `Clase` set nombre='DHP', descripcion='Nivel B';
+Insert into  `Clase` set nombre='Lenguaje', descripcion='Nivel B';
+Insert into  `Clase` set nombre='Matemáticas', descripcion='Nivel B';
+Insert into  `Clase` set nombre='Deportes', descripcion='Nivel B';
+Insert into  `Clase` set nombre='Tutoría', descripcion='Nivel B';
+Insert into  `Clase` set nombre='DHL', descripcion='Nivel B';
+
+23-33
+Insert into  `Clase` set nombre='Teatro musical', descripcion='Nivel C';
+Insert into  `Clase` set nombre='Desarrollo humano', descripcion='Nivel C';
+Insert into  `Clase` set nombre='Computación', descripcion='Nivel C';
+Insert into  `Clase` set nombre='Vida diaria', descripcion='Nivel C';
+Insert into  `Clase` set nombre='Arte', descripcion='Nivel C';
+Insert into  `Clase` set nombre='DHP', descripcion='Nivel C';
+Insert into  `Clase` set nombre='Inglés', descripcion='Nivel C';
+Insert into  `Clase` set nombre='Matemáticas', descripcion='Nivel C';
+Insert into  `Clase` set nombre='Deportes', descripcion='Nivel C';
+Insert into  `Clase` set nombre='Tutoría', descripcion='Nivel C';
+Insert into  `Clase` set nombre='DHL', descripcion='Nivel C';
+
+34-44
+Insert into  `Clase` set nombre='Teatro musical', descripcion='Nivel D';
+Insert into  `Clase` set nombre='Desarrollo humano', descripcion='Nivel D';
+Insert into  `Clase` set nombre='Computación', descripcion='Nivel D';
+Insert into  `Clase` set nombre='Vida diaria', descripcion='Nivel D';
+Insert into  `Clase` set nombre='Arte', descripcion='Nivel D';
+Insert into  `Clase` set nombre='DHP', descripcion='Nivel D';
+Insert into  `Clase` set nombre='Inglés', descripcion='Nivel D';
+Insert into  `Clase` set nombre='Matemáticas', descripcion='Nivel D';
+Insert into  `Clase` set nombre='Deportes', descripcion='Nivel D';
+Insert into  `Clase` set nombre='Tutoría', descripcion='Nivel D';
+Insert into  `Clase` set nombre='DHL', descripcion='Nivel D';
+
+
+Maestros
+
+2-11
+Insert into  `Maestro` set nombre='Anelisa';
+Insert into  `Maestro` set nombre='Jaime';
+Insert into  `Maestro` set nombre='Sara';
+Insert into  `Maestro` set nombre='Mary Carmen';
+Insert into  `Maestro` set nombre='Eugenio';
+Insert into  `Maestro` set nombre='Maria Jose';
+Insert into  `Maestro` set nombre='Barbara';
+Insert into  `Maestro` set nombre='Crishna';
+Insert into  `Maestro` set nombre='Sujei';
+Insert into  `Maestro` set nombre='Jose Luis';
+
+User
+Insert into  `User` set id=2, user='anelisa', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=3, user='jaime', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=4, user='sara', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=5, user='marycarmen', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=6, user='eugenio', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=7, user='mariajose', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=8, user='barbara', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=9, user='crishna', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=10, user='sujei', password="pisye123", user_type='Maestro';
+Insert into  `User` set id=11, user='joseluis', password="pisye123", user_type='Maestro';
+
+periodoClase
+
+Insert into  `PeriodoClase` set idMaestro=2, idClase=1,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=2, idClase=13,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=2, idClase=24,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=2, idClase=35,idPeriodo=1 ;
+
+Insert into  `PeriodoClase` set idMaestro=3, idClase=2,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=3, idClase=12,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=3, idClase=23,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=3, idClase=34,idPeriodo=1 ;
+
+jaime arte
+Insert into  `PeriodoClase` set idMaestro=3, idClase=5,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=3, idClase=16,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=3, idClase=27,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=3, idClase=28,idPeriodo=1 ;
+
+Sara
+Insert into  `PeriodoClase` set idMaestro=4, idClase=4,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=4, idClase=15,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=4, idClase=26,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=4, idClase=37,idPeriodo=1 ;
+
+maricarmen
+Insert into  `PeriodoClase` set idMaestro=5, idClase=6,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=5, idClase=17,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=5, idClase=28,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=5, idClase=39,idPeriodo=1 ;
+
+Eugenio
+Insert into  `PeriodoClase` set idMaestro=6, idClase=8,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=6, idClase=19,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=6, idClase=29,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=6, idClase=40,idPeriodo=1 ;
+
+Maria Jose
+Insert into  `PeriodoClase` set idMaestro=7, idClase=11,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=7, idClase=22,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=7, idClase=33,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=7, idClase=44,idPeriodo=1 ;
+
+Barbara
+Insert into  `PeriodoClase` set idMaestro=8, idClase=7,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=8, idClase=18,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=8, idClase=30,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=8, idClase=41,idPeriodo=1 ;
+
+Crishna
+Insert into  `PeriodoClase` set idMaestro=9, idClase=10,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=9, idClase=21,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=9, idClase=32,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=9, idClase=43,idPeriodo=1 ;
+
+Sujei
+Insert into  `PeriodoClase` set idMaestro=10, idClase=3,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=10, idClase=14,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=10, idClase=25,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=10, idClase=36,idPeriodo=1 ;
+
+Jose Luis
+Insert into  `PeriodoClase` set idMaestro=11, idClase=9,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=11, idClase=20,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=11, idClase=31,idPeriodo=1 ;
+Insert into  `PeriodoClase` set idMaestro=11, idClase=42,idPeriodo=1 ;
+
+Calificaciones
+ Nivel A
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=3, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=7, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=31, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=39, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=43, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=11, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=23, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=15, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=35, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=27, idAlumno=48 ;
+
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=39;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=40 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=41;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=42;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=43;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=44;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=45 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=46 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=47 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=48 ;
+
+Nivel B
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=8, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=4, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=32, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=40, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=44, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=12, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=24, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=16, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=36, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=28, idAlumno=63 ;
+
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=49;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=50 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=51 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=52 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=53 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=54 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=55 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=56 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=57 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=58 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=59 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=60 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=61 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=62 ;
+Insert into  `Calificacion` set idPeriodoClase=20, idAlumno=63 ;
+
+Nivel C
+
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=9, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=5, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=33, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=41, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=45, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=13, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=17, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=25, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=37, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=29, idAlumno=82 ;
+
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=64;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=65 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=66 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=67 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=68 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=69 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=70 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=71 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=72 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=73 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=74 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=75 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=76 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=77 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=78 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=79 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=80 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=81 ;
+Insert into  `Calificacion` set idPeriodoClase=21, idAlumno=82 ;
+
+nivel d
+
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=10, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=6, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=34, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=42, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=46, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=14, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=18, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=26, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=38, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=30, idAlumno=102 ;
+
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=83 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=84 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=85 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=86 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=87 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=88 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=89 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=90 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=91 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=92 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=93 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=94 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=95 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=96 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=97 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=98 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=99 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=100 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=101 ;
+Insert into  `Calificacion` set idPeriodoClase=22, idAlumno=102 ;

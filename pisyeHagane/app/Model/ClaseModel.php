@@ -5,6 +5,7 @@ class Clase {
 	private $nombre;
 	private $maestroID;
 	private $alumnoID;
+	private $admin = false;
 
 	private $db;
 
@@ -25,7 +26,10 @@ class Clase {
 				$userArray = $db->getRow('SELECT User.*, Alumno.id as aid, Alumno.* from Alumno join User where User.id = Alumno.idUser AND User.id = :id', $data);
 
 				$this->alumnoID = $userArray['aid'];
+			}	elseif ($userArray['user_type'] == 'Administrador') {
+				$this->admin = true;
 			}
+
 		}
 	}
 
@@ -39,6 +43,8 @@ class Clase {
 		} elseif ($this->alumnoID != null) {
 			$data = array('id' => $this->alumnoID);
 			$claseArray = $this->db->query('SELECT * FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal WHERE  c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = :id', $data);
+		} elseif ($this->admin) {
+			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.* FROM PeriodoClase AS pc JOIN Clase AS c WHERE  c.id = pc.idClase ORDER BY c.descripcion', $data);
 		}
 
 		return $claseArray;
@@ -59,6 +65,12 @@ class Clase {
 		} elseif ($this->alumnoID != null) {
 			$data = array('id' => $this->alumnoID, 'claseid' => $claseId);
 			$claseArray = $this->db->query('SELECT * FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal WHERE  c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = :id AND pc.id = :claseid', $data);
+		} elseif ($this->admin) {
+			$data = array('claseid' => $claseId);
+
+			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
+				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
+				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id AND pc.id = :claseid', $data);
 		}
 
 		return $claseArray;
@@ -75,15 +87,34 @@ class Clase {
 				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
 				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id
 				AND pc.idMaestro = :id AND pc.id = :claseid AND cal.idAlumno = :alumnoid', $data);
+		} elseif ($this->admin) {
+			$data = array('claseid' => $claseId, 'alumnoid' => $alumnoId);
+
+			$claseArray = $this->db->getRow('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
+				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
+				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id AND pc.id = :claseid AND cal.idAlumno = :alumnoid', $data);
 		}
 		return $claseArray;
+	}
+
+	function getAllGrades($alumnoId) {
+		$boletaArray = array();
+
+		if ($this->admin) {
+			$data = array('alumnoid' => $alumnoId);
+
+			$boletaArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
+				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
+				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id AND cal.idAlumno = :alumnoid', $data);
+		}
+		return $boletaArray;
 	}
 
 	function setGrades($claseId, $alumnoId, $parcial1, $parcial2, $participacion, $puntualidad, $disposicion, $tareas, $observaciones) {
 		$claseArray = array();
 
 		//Change gradeees
-		if ($this->maestroID != null) {
+		if ($this->maestroID != null || $this->admin) {
 			$data = array(
 				'id' => $this->maestroID,
 				'claseid' => $claseId,

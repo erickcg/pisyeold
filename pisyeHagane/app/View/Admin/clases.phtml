@@ -1,5 +1,4 @@
 <div class="container">
-
 	<div class="row">
 	<?php foreach ($this->clases as $clase) : ?>
 		<div class="col s12 m3">
@@ -9,7 +8,7 @@
 					<p><?=$clase['descripcion']?></p>
 				</div>
 				<div class="card-action">
-					<a href="/Maestro/clase?claseid=<?=$clase['pcid']?>">Ver Alumnos</a>
+					<a href="/Admin/lista?claseid=<?=$clase['pcid']?>">Ver Alumnos</a>
 				</div>
 			</div>
 		</div>

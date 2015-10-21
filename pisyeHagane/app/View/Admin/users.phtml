@@ -1,0 +1,147 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.modal-trigger').leanModal();
+	});
+</script>
+<div class="row">
+	<div class="col s12">
+		<ul class="tabs">
+		<li class="tab col s3"><a class="<?=$this->alumno?>" href="#alumno">alumno</a></li>
+		<li class="tab col s3"><a class="<?=$this->maestro?>" href="#maestro">maestro</a></li>
+		<li class="tab col s3"><a class="<?=$this->admin?>" href="#admin">admin</a></li>
+		</ul>
+	</div>
+	<div id="alumno" class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>Username</th>
+					<th>Tipo</th>
+					<th>Nombre</th>
+					<th>apellido paterno</th>
+					<th>apellido materno</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<?php foreach ($this->userManager->getAlumnoUsers() as $user) : ?>
+				<tr>
+					<td><?=$user['user']?></td>
+					<td><?=$user['user_type']?></td>
+					<td><?=$user['nombre']?></td>
+					<td><?=$user['apellido_paterno']?></td>
+					<td><?=$user['apellido_materno']?></td>
+				</tr>
+			<?php endforeach; ?>
+			</tbody>
+		</table>
+		<a class="waves-effect waves-light btn modal-trigger" href="#addAlumno">Agregar Alumnos</a>
+
+		<div id="addAlumno" class="modal">
+			<form action="/Admin/users" method="post">
+				<div class="modal-content">
+					<h4>Alumno</h4>
+						<input type="hidden" name="tipo" value="alumno">
+						<input type="text" name="username" placeholder="username">
+						<input type="password" name="password" placeholder="password">
+						<input type="text" name="nombre" placeholder="nombre">
+						<input type="text" name="apellido_paterno" placeholder="apellido_paterno">
+						<input type="text" name="apellido_materno" placeholder="apellido_materno">
+				</div>
+				<div class="modal-footer">
+					<button class="modal-action modal-close waves-effect waves-green btn-flat">Agregar</button>
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<div id="maestro" class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>Username</th>
+					<th>Tipo</th>
+					<th>Nombre</th>
+					<th>apellido paterno</th>
+					<th>apellido materno</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<?php foreach ($this->userManager->getMaestroUsers() as $user) : ?>
+				<tr>
+					<td><?=$user['user']?></td>
+					<td><?=$user['user_type']?></td>
+					<td><?=$user['nombre']?></td>
+					<td><?=$user['apellido_paterno']?></td>
+					<td><?=$user['apellido_materno']?></td>
+				</tr>
+			<?php endforeach; ?>
+			</tbody>
+		</table>
+		<a class="waves-effect waves-light btn modal-trigger" href="#addMaestro">Agregar Maestro</a>
+
+		<div id="addMaestro" class="modal">
+			<form action="/Admin/users" method="post">
+				<div class="modal-content">
+					<h4>Maestro</h4>
+						<input type="hidden" name="tipo" value="maestro">
+						<input type="text" name="username" placeholder="username">
+						<input type="password" name="password" placeholder="password">
+						<input type="text" name="nombre" placeholder="nombre">
+						<input type="text" name="apellido_paterno" placeholder="apellido_paterno">
+						<input type="text" name="apellido_materno" placeholder="apellido_materno">
+				</div>
+				<div class="modal-footer">
+					<button class="modal-action modal-close waves-effect waves-green btn-flat">Agregar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div id="admin" class="col s12">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>Username</th>
+					<th>Tipo</th>
+					<th>Nombre</th>
+					<th>apellido paterno</th>
+					<th>apellido materno</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<?php foreach ($this->userManager->getAdminUsers() as $user) : ?>
+				<tr>
+					<td><?=$user['user']?></td>
+					<td><?=$user['user_type']?></td>
+					<td><?=$user['nombre']?></td>
+					<td><?=$user['apellido_paterno']?></td>
+					<td><?=$user['apellido_materno']?></td>
+				</tr>
+			<?php endforeach; ?>
+			</tbody>
+		</table>
+		<a class="waves-effect waves-light btn modal-trigger" href="#addAdministrador">Agregar Administrador</a>
+
+		<div id="addAdministrador" class="modal">
+			<form action="/Admin/users" method="post">
+				<div class="modal-content">
+					<h4>Administrador</h4>
+						<input type="hidden" name="tipo" value="admin">
+						<input type="text" name="username" placeholder="username">
+						<input type="password" name="password" placeholder="password">
+						<input type="text" name="nombre" placeholder="nombre">
+						<input type="text" name="apellido_paterno" placeholder="apellido_paterno">
+						<input type="text" name="apellido_materno" placeholder="apellido_materno">
+				</div>
+				<div class="modal-footer">
+					<button class="modal-action modal-close waves-effect waves-green btn-flat">Agregar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
