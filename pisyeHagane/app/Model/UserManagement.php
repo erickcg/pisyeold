@@ -35,7 +35,7 @@ class UserManagement {
 	}
 
 	function getAlumnoUsers() {
-		$users = $this->db->query('SELECT u.user, u.user_type, a.* FROM User as u RIGHT JOIN Alumno as a ON a.idUser = u.id');
+		$users = $this->db->query('SELECT u.user, u.user_type, a.id as aid, a.* FROM User as u RIGHT JOIN Alumno as a ON a.idUser = u.id');
 
 		return $users;
 	}

@@ -14,6 +14,10 @@ class Admin extends AbstractController{
 	function index() {
 	}
 
+	function alumnos() {
+		$this->userManager = new \Hagane\Model\UserManagement($this->auth, $this->db);
+	}
+
 	function lista() {
 		//Mis clases
 		$classId = $_GET['claseid'];

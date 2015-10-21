@@ -1,3 +1,8 @@
+<style type="text/css">
+	table.boleta td{
+		padding: 5px;
+	}
+</style>
 <div class="container">
 	<div class="row">
 	<p>Boleta de calificaciones PISYE</p>
@@ -8,13 +13,30 @@
 		<div class="col s12 m3">
 			<div class="card deep-orange darken-4 white-text" style="padding: 12px;">
 				<span class="card-title"><?=$boleta['cnombre']?></span>
-				<p>parcial1: <?=$boleta['parcial1']?></p>
-				<p>parcial2: <?=$boleta['parcial2']?></p>
-				<p>participacion: <?=$boleta['participacion']?></p>
-				<p>puntualidad: <?=$boleta['puntualidad']?></p>
-				<p>disposicion: <?=$boleta['disposicion']?></p>
-				<p>tareas: <?=$boleta['tareas']?></p>
-				<p>observaciones: <?=$boleta['observaciones']?></p>
+				<div class="card-action">
+					<table class="boleta">
+						<tr>
+							<td>parcial1</td><td><?=$boleta['parcial1']?></td>
+						<tr>
+							<td>parcial2</td><td><?=$boleta['parcial2']?></td>
+						</tr>
+						<tr>
+							<td>participacion</td><td><?=$boleta['participacion']?></td>
+						</tr>
+						<tr>
+							<td>puntualidad</td><td><?=$boleta['puntualidad']?></td>
+						</tr>
+						<tr>
+							<td>disposicion</td><td><?=$boleta['disposicion']?></td>
+						</tr>
+						<tr>
+							<td>tareas</td><td><?=$boleta['tareas']?></td>
+						</tr>
+						<tr>
+							<td>observaciones</td><td><?=$boleta['observaciones']?></td>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 		<?php endforeach; ?>
