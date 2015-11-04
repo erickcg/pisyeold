@@ -1,0 +1,39 @@
+<md-dialog aria-label="Modificación de Usuario Administrador"  ng-cloak>
+<form>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Modificación de Usuario Administrador</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="cancel()">
+				<md-icon aria-label="Close dialog">close</md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+	<md-dialog-content style="width:800px;height:810px; ">
+		<div class="md-dialog-content">
+			<div layout layout-sm="column">
+				<md-input-container style="width:33.33%;">
+					<md-icon>person</md-icon>
+					<input ng-model="usuarioAdminForm.nombre" type="text" placeholder="Nombre" ng-required="true">
+				</md-input-container>
+				<md-input-container style="width:33.33%;">
+					<input ng-model="usuarioAdminForm.apellido_paterno" type="text" placeholder="Apellido paterno" ng-required="true">
+				</md-input-container>
+				<md-input-container style="width:33.33%;">
+					<input ng-model="usuarioAdminForm.apellido_materno" type="text" placeholder="Apellido materno" ng-required="true">
+				</md-input-container>
+			</div>
+		</div>
+	</md-dialog-content>
+	<div class="md-actions" layout="row">
+		<span flex></span>
+		<md-button ng-click="answer(false)" >
+				Cancelar
+		</md-button>
+		<md-button ng-click="answer(true)" style="margin-right:20px;" >
+				Guardar
+		</md-button>
+	</div>
+</form>
+</md-dialog>
+

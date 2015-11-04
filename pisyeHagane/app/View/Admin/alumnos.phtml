@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12 m12">
+			<table class="hoverable">
+			<?php foreach ($this->userManager->getAlumnoUsers() as $user) : ?>
+				<tr>
+					<td><?=$user['nombre']?></td>
+					<td><?=$user['apellido_paterno']?></td>
+					<td><?=$user['apellido_materno']?></td>
+					<td><a class="btn waves-effect waves-light" href="/Admin/calificaciones?alumnoid=<?=$user['aid']?>">Ver Boleta-></a></td>
+				</tr>
+			<?php endforeach; ?>
+			</table>
+		</div>
+	</div>
+</div>

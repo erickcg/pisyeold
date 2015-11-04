@@ -9,8 +9,6 @@ include_once('Router.php');
 include_once('UserInterface.php');
 include_once('../app/config/config.php');
 
-header('Content-Type: text/html; charset=utf-8');
-
 class App {
 	function start() {
 		$config = new \Hagane\Config();
@@ -21,8 +19,8 @@ class App {
 		}
 
 		include_once($config->getConf()['appPath'].'Model/UserModel.php');
-
-		$router = new \Hagane\Router($config->getConf());
+		
+		$router = new \Hagane\Router($config);
 		$params = $router->parse();
 
 		$ControllerDriver = new \Hagane\ControllerDriver($config->getConf());

@@ -1,7 +1,7 @@
 <?php
 namespace Hagane\Controller;
 
-//el abastracto del controller va a dar de alta todas las variables y servicios necesarios para 
+//el abastracto del controller va a dar de alta todas las variables y servicios necesarios para
 //esconder esta funcionalidad del uso cotidiano
 
 abstract class AbstractController {
@@ -16,7 +16,9 @@ abstract class AbstractController {
 	protected $_viewPath;
 	protected $_init;
 	protected $_action;
-	
+
+	protected $print_template;
+	protected $sendJson;
 
 	public function __construct($config = null){
 		$this->config = $config;
@@ -25,6 +27,8 @@ abstract class AbstractController {
 
 		$this->user = new \Hagane\Model\User($this->auth, $this->db);
 
+		$this->print_template = true;
+		$this->sendJson = false;
 		$this->_viewPath = $this->config['appPath'] . 'View/';
 		$this->template = '';
 		$this->view = '';
@@ -34,11 +38,11 @@ abstract class AbstractController {
 	}
 
 	public function executeAction($action){
-		header('Content-type: text/html');
+
 		if (method_exists($this, '_init')) {
 			ob_start();
 				$this->_init();
-				$this->init = ob_get_clean();		
+				$this->init = ob_get_clean();
 		}
 
 		//ejecucion de accion
@@ -62,10 +66,20 @@ abstract class AbstractController {
 	}
 
 	public function getTemplate(){
-		$templateFile = 'Template/'.$this->config['template'].'.phtml';
+		if ($this->print_template) {
+			$templateFile = 'Template/'.$this->config['template'].'.phtml';
 
-		$this->template = $this->render($templateFile);
-		return $this->template;
+			$this->template = $this->render($templateFile);
+			return $this->template;
+		} else {
+			if ($this->sendJson) {
+				header("Content-type: application/json; charset=utf-8");
+			} else {
+				header('Content-type: text/html; charset=utf-8');
+			}
+			$this->template = $this->view;
+			return $this->template;
+		}
 	}
 
 	public function render($name){

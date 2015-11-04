@@ -1,147 +1,38 @@
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.modal-trigger').leanModal();
-	});
-</script>
-<div class="row">
-	<div class="col s12">
-		<ul class="tabs">
-		<li class="tab col s3"><a class="<?=$this->alumno?>" href="#alumno">alumno</a></li>
-		<li class="tab col s3"><a class="<?=$this->maestro?>" href="#maestro">maestro</a></li>
-		<li class="tab col s3"><a class="<?=$this->admin?>" href="#admin">admin</a></li>
-		</ul>
-	</div>
-	<div id="alumno" class="col s12">
-		<table class="striped">
-			<thead>
-				<tr>
-					<th>Username</th>
-					<th>Tipo</th>
-					<th>Nombre</th>
-					<th>apellido paterno</th>
-					<th>apellido materno</th>
-				</tr>
-			</thead>
-
-			<tbody>
-			<?php foreach ($this->userManager->getAlumnoUsers() as $user) : ?>
-				<tr>
-					<td><?=$user['user']?></td>
-					<td><?=$user['user_type']?></td>
-					<td><?=$user['nombre']?></td>
-					<td><?=$user['apellido_paterno']?></td>
-					<td><?=$user['apellido_materno']?></td>
-				</tr>
-			<?php endforeach; ?>
-			</tbody>
-		</table>
-		<a class="waves-effect waves-light btn modal-trigger" href="#addAlumno">Agregar Alumnos</a>
-
-		<div id="addAlumno" class="modal">
-			<form action="/Admin/users" method="post">
-				<div class="modal-content">
-					<h4>Alumno</h4>
-						<input type="hidden" name="tipo" value="alumno">
-						<input type="text" name="username" placeholder="username">
-						<input type="password" name="password" placeholder="password">
-						<input type="text" name="nombre" placeholder="nombre">
-						<input type="text" name="apellido_paterno" placeholder="apellido_paterno">
-						<input type="text" name="apellido_materno" placeholder="apellido_materno">
-				</div>
-				<div class="modal-footer">
-					<button class="modal-action modal-close waves-effect waves-green btn-flat">Agregar</button>
-				</div>
-			</form>
-		</div>
-
-	</div>
-	<div id="maestro" class="col s12">
-		<table class="striped">
-			<thead>
-				<tr>
-					<th>Username</th>
-					<th>Tipo</th>
-					<th>Nombre</th>
-					<th>apellido paterno</th>
-					<th>apellido materno</th>
-				</tr>
-			</thead>
-
-			<tbody>
-			<?php foreach ($this->userManager->getMaestroUsers() as $user) : ?>
-				<tr>
-					<td><?=$user['user']?></td>
-					<td><?=$user['user_type']?></td>
-					<td><?=$user['nombre']?></td>
-					<td><?=$user['apellido_paterno']?></td>
-					<td><?=$user['apellido_materno']?></td>
-				</tr>
-			<?php endforeach; ?>
-			</tbody>
-		</table>
-		<a class="waves-effect waves-light btn modal-trigger" href="#addMaestro">Agregar Maestro</a>
-
-		<div id="addMaestro" class="modal">
-			<form action="/Admin/users" method="post">
-				<div class="modal-content">
-					<h4>Maestro</h4>
-						<input type="hidden" name="tipo" value="maestro">
-						<input type="text" name="username" placeholder="username">
-						<input type="password" name="password" placeholder="password">
-						<input type="text" name="nombre" placeholder="nombre">
-						<input type="text" name="apellido_paterno" placeholder="apellido_paterno">
-						<input type="text" name="apellido_materno" placeholder="apellido_materno">
-				</div>
-				<div class="modal-footer">
-					<button class="modal-action modal-close waves-effect waves-green btn-flat">Agregar</button>
-				</div>
-			</form>
-		</div>
-	</div>
-	<div id="admin" class="col s12">
-		<table class="striped">
-			<thead>
-				<tr>
-					<th>Username</th>
-					<th>Tipo</th>
-					<th>Nombre</th>
-					<th>apellido paterno</th>
-					<th>apellido materno</th>
-				</tr>
-			</thead>
-
-			<tbody>
-			<?php foreach ($this->userManager->getAdminUsers() as $user) : ?>
-				<tr>
-					<td><?=$user['user']?></td>
-					<td><?=$user['user_type']?></td>
-					<td><?=$user['nombre']?></td>
-					<td><?=$user['apellido_paterno']?></td>
-					<td><?=$user['apellido_materno']?></td>
-				</tr>
-			<?php endforeach; ?>
-			</tbody>
-		</table>
-		<a class="waves-effect waves-light btn modal-trigger" href="#addAdministrador">Agregar Administrador</a>
-
-		<div id="addAdministrador" class="modal">
-			<form action="/Admin/users" method="post">
-				<div class="modal-content">
-					<h4>Administrador</h4>
-						<input type="hidden" name="tipo" value="admin">
-						<input type="text" name="username" placeholder="username">
-						<input type="password" name="password" placeholder="password">
-						<input type="text" name="nombre" placeholder="nombre">
-						<input type="text" name="apellido_paterno" placeholder="apellido_paterno">
-						<input type="text" name="apellido_materno" placeholder="apellido_materno">
-				</div>
-				<div class="modal-footer">
-					<button class="modal-action modal-close waves-effect waves-green btn-flat">Agregar</button>
-				</div>
-			</form>
-		</div>
-	</div>
+<section id="pagecontent" layout="row" flex ng-controller="AdminUserController">
+<div ng-cloak class="slider">
+	<md-content>
+		<md-tabs md-dynamic-height md-border-bottom>
+			<md-tab label="Usuarios Responsables">
+				<md-content class="md-padding">
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="usuarioResponsable in usuariosResponsable">
+							<div class="md-list-item-text" layout="column">
+								<h3>{{ usuarioResponsable.nombre }} {{ usuarioResponsable.apellido_paterno }} {{ usuarioResponsable.apellido_materno }}</h3>
+								<h4>{{ usuarioResponsable.empresa }}</h4>
+								<p>info</p>
+							</div>
+							<md-button class="md-secondary" ng-click="modPymeDialog($event, $index)">Modificar</md-button>
+							<md-divider ></md-divider>
+						</md-list-item>
+					</md-list>
+				</md-content>
+			</md-tab>
+		<md-tab label="Usuarios Administradores">
+			<md-content class="md-padding">
+						<md-list>
+							<md-list-item class="md-3-line" ng-repeat="usuarioAdmin in usuariosAdmin">
+								<div class="md-list-item-text" layout="column">
+									<h3>{{ usuarioAdmin.nombre }} {{ usuarioAdmin.apellido_paterno }} {{ usuarioAdmin.apellido_materno }}</h3>
+									<h4>SISSE</h4>
+									<p>info</p>
+								</div>
+								<md-button class="md-secondary" ng-click="modAdminDialog($event, $index)">Modificar</md-button>
+								<md-divider ></md-divider>
+							</md-list-item>
+						</md-list>
+			</md-content>
+		</md-tab>
+	</md-tabs>
+	</md-content>
 </div>
-
-
-
+</section>

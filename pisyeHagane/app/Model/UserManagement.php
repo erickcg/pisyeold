@@ -40,7 +40,7 @@ class UserManagement {
 		return $users;
 	}
 
-	function setAlumno($username, $password, $nombre, $ap, $am, $empresa) {
+	function setAlumno($data = array()) {
 		$data = array('user' => $username,
 					'user_type' => 'Alumno',
 					'password' => $password);
@@ -51,6 +51,31 @@ class UserManagement {
 					'apellido_materno' => $am,
 					'idUser' => $lastid);
 		$this->db->insert('INSERT INTO Alumno SET nombre=:nombre, apellido_paterno=:apellido_paterno, apellido_materno=:apellido_materno, idUser=:idUser ', $data);
+	}
+
+	function updateAlumno($data = array()) {
+		$userData = array(
+			'idUser' => $data['idUser'],
+			'user' => $data['user'],
+			'user_type' => 'Cliente'
+		);
+
+		if (isset($data['password'])) {
+			$userData['password'] = $data['password'];
+			$this->db->query('UPDATE User SET user=:user, password=:password, user_type=:user_type WHERE id=:idUser', $userData);
+
+		} else {
+			$this->db->query('UPDATE User SET user=:user, user_type=:user_type WHERE id=:idUser', $userData);
+		}
+
+		$responsableData = array(
+			'nombre' => $data['nombre'],
+			'apellido_paterno' => $data['apellido_paterno'],
+			'apellido_materno' => $data['apellido_materno'],
+			'idCliente' => $data['idCliente'],
+			'idUser' => $data['idUser']
+		);
+		$this->db->query('UPDATE Responsable SET nombre=:nombre, apellido_paterno=:apellido_paterno, apellido_materno=:apellido_materno, idCliente=:idCliente WHERE idUser=:idUser', $responsableData);
 	}
 
 	function setMaestro($username, $password, $nombre, $ap, $am) {
