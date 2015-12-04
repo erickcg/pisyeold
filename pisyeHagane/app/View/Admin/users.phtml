@@ -2,34 +2,61 @@
 <div ng-cloak class="slider">
 	<md-content>
 		<md-tabs md-dynamic-height md-border-bottom>
-			<md-tab label="Usuarios Responsables">
+			<md-tab label="Alumnos">
 				<md-content class="md-padding">
+				<md-input-container>
+					<label>Buscar Alumno</label>
+					<input ng-model="searchAlumno" />
+				</md-input-container>
 					<md-list>
-						<md-list-item class="md-3-line" ng-repeat="usuarioResponsable in usuariosResponsable">
+						<md-list-item class="md-3-line" ng-repeat="usuarioAlumno in usuariosAlumno | filter:searchAlumno">
 							<div class="md-list-item-text" layout="column">
-								<h3>{{ usuarioResponsable.nombre }} {{ usuarioResponsable.apellido_paterno }} {{ usuarioResponsable.apellido_materno }}</h3>
-								<h4>{{ usuarioResponsable.empresa }}</h4>
+								<h3>{{ usuarioAlumno.nombre }} {{ usuarioAlumno.apellido_paterno }} {{ usuarioAlumno.apellido_materno }}</h3>
+								<h4>{{ usuarioAlumno.empresa }}</h4>
 								<p>info</p>
 							</div>
-							<md-button class="md-secondary" ng-click="modPymeDialog($event, $index)">Modificar</md-button>
+							<md-button class="md-secondary" ng-click="modAlumnoDialog($event, $index)">Modificar</md-button>
 							<md-divider ></md-divider>
 						</md-list-item>
 					</md-list>
 				</md-content>
 			</md-tab>
-		<md-tab label="Usuarios Administradores">
+		<md-tab label="Maestros">
 			<md-content class="md-padding">
-						<md-list>
-							<md-list-item class="md-3-line" ng-repeat="usuarioAdmin in usuariosAdmin">
-								<div class="md-list-item-text" layout="column">
-									<h3>{{ usuarioAdmin.nombre }} {{ usuarioAdmin.apellido_paterno }} {{ usuarioAdmin.apellido_materno }}</h3>
-									<h4>SISSE</h4>
-									<p>info</p>
-								</div>
-								<md-button class="md-secondary" ng-click="modAdminDialog($event, $index)">Modificar</md-button>
-								<md-divider ></md-divider>
-							</md-list-item>
-						</md-list>
+				<md-input-container>
+					<label>Buscar Maestro</label>
+					<input ng-model="searchMaestro" />
+				</md-input-container>
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="usuarioMaestro in usuariosMaestro | filter:searchMaestro">
+							<div class="md-list-item-text" layout="column">
+								<h3>{{ usuarioMaestro.nombre }} {{ usuarioMaestro.apellido_paterno }} {{ usuarioMaestro.apellido_materno }}</h3>
+								<h4>Pisye</h4>
+								<p>info</p>
+							</div>
+							<md-button class="md-secondary" ng-click="modMaestroDialog($event, $index)">Modificar</md-button>
+							<md-divider ></md-divider>
+						</md-list-item>
+					</md-list>
+			</md-content>
+		</md-tab>
+		<md-tab label="Administradores">
+			<md-content class="md-padding">
+				<md-input-container>
+					<label>Buscar Admin</label>
+					<input ng-model="searchAdmin" />
+				</md-input-container>
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="usuarioAdmin in usuariosAdmin | filter:searchAdmin">
+							<div class="md-list-item-text" layout="column">
+								<h3>{{ usuarioAdmin.nombre }} {{ usuarioAdmin.apellido_paterno }} {{ usuarioAdmin.apellido_materno }}</h3>
+								<h4>SISSE</h4>
+								<p>info</p>
+							</div>
+							<md-button class="md-secondary" ng-click="modAdminDialog($event, $index)">Modificar</md-button>
+							<md-divider ></md-divider>
+						</md-list-item>
+					</md-list>
 			</md-content>
 		</md-tab>
 	</md-tabs>

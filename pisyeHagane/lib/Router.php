@@ -9,7 +9,7 @@ class Router {
 	private $config = array();
 	private $routes = array();
 
-	function __construct($config){
+	function __construct(&$config){
 		$this->config = $config->getConf();
 		$this->routes = $config->getRoutes();
 	}
@@ -20,11 +20,11 @@ class Router {
 
 		if ($this->config['document_root'] != '/') {
 			$request = str_replace($this->config['document_root'], '', $request);
-			if ($tmp = $this->match($request)) {
-				$request = $tmp;
-			}
 		} else {
 			$request = substr($request, 1);
+		}
+		if ($tmp = $this->match((string)$request)) {
+			$request = $tmp;
 		}
 		$request = explode("/", $request);
 

@@ -5,7 +5,7 @@ class Maestro extends AbstractController{
 	function _init() {
 		echo $this->db->database_log['error'];
 		if (!$this->auth->isAuth()) {
-			 header("Location: http://pisye.com/User");
+			 header("Location: /User");
 			 die();
 		}
 	}
@@ -32,7 +32,7 @@ class Maestro extends AbstractController{
 
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$this->alumno = $userObject->setGrades($classId, $alumnoId, $_POST['parcial1'], $_POST['parcial2'], $_POST['participacion'], $_POST['puntualidad'], $_POST['disposicion'], $_POST['tareas'], $_POST['observaciones']);
-			header("Location: http://pisye.com/Maestro/clase?claseid=".$classId);
+			header("Location:  /Maestro/clase?claseid=".$classId);
 			die();
 		}
 

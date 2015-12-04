@@ -26,9 +26,9 @@ class Authentication {
 		} else {
 			$sessionid = $this->getSessionId();
 		}
-		//comrpare
+		//compare
 		$data = array('sessionid' => $sessionid);
-		$result = $this->db->getRow('Select id, sessionid From User where sessionid = :sessionid and sessionid <> ""', $data);
+		$result = $this->db->getRow('SELECT id, sessionid FROM User WHERE sessionid = :sessionid and sessionid <> ""', $data); // Is it necessary to select the sessionid?
 		if (!empty ( $result )) {
 			return $result['id'];
 		} else {
@@ -39,7 +39,7 @@ class Authentication {
 	public function authenticate($user, $password){
 		//checar par de pass y user
 		$data = array('user' => $user, 'password' => $password);
-		$result = $this->db->getRow('Select * from User where user=:user and password=:password', $data);
+		$result = $this->db->getRow('SELECT * FROM User WHERE user=:user AND password=:password', $data);
 		if (!empty ( $result )) {
 			$this->cookie_insert_httpsession = $this->generateSessionid($result['id']);
 			return true;
@@ -55,7 +55,7 @@ class Authentication {
 	public function logout(){
 		$sessionid = $this->getSessionId();
 		$data = array('NewSessionId' => null, 'OldSessionId' => $sessionid);
-		$this->db->query('Update User set sessionid = :NewSessionId where sessionid = :OldSessionId', $data);
+		$this->db->query('UPDATE User SET sessionid = :NewSessionId WHERE sessionid = :OldSessionId', $data);
 
 		unset($_COOKIE["sessionid"]);
 		setcookie('sessionid', '', 0, '/');
@@ -78,12 +78,12 @@ class Authentication {
 		$token = $this->getToken($this->sessionidLength);
 		$data = array('sessionid' => $token);
 
-		while ($this->db->rowCount('Select sessionid From User where sessionid = :sessionid', $data) > 0) {
+		while ($this->db->rowCount('SELECT sessionid FROM User WHERE sessionid = :sessionid', $data) > 0) {
 			$data = array('sessionid' => $this->getToken($this->sessionidLength));
 		}
 
 		$data['id'] = $userId;
-		$this->db->query('Update User set sessionid = :sessionid where id = :id', $data);
+		$this->db->query('UPDATE User SET sessionid = :sessionid WHERE id = :id', $data);
 		$this->setCookie($data['sessionid']);
 		return $token;
 	}

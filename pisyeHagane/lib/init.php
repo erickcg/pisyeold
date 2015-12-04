@@ -7,19 +7,19 @@ include_once('Authentication.php');
 include_once('ControllerDriver.php');
 include_once('Router.php');
 include_once('UserInterface.php');
-include_once('../app/config/config.php');
 
 class App {
-	function start() {
-		$config = new \Hagane\Config();
+	function start($HaganeInit = array()) {
+		include_once($HaganeInit['appFolderDepth'].$HaganeInit['appFolderName'].'/config/config.php'); //llama a la configuracion de la carpeta de la app
+		$config = new \Hagane\Config($HaganeInit);
 
 		//inicializacion de modulos
 		foreach ($config->getModules() as $module) {
 			include_once('Modules/'.$module.'.php');
 		}
 
-		include_once($config->getConf()['appPath'].'Model/UserModel.php');
-		
+		include_once($HaganeInit['appFolderDepth'].$HaganeInit['appFolderName'].'/Model/UserModel.php');
+
 		$router = new \Hagane\Router($config);
 		$params = $router->parse();
 

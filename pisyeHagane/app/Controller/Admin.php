@@ -5,7 +5,7 @@ class Admin extends AbstractController{
 
 	function _init() {
 		if (!$this->auth->isAuth()) {
-			 header("Location: http://pisye.com/User");
+			 header("Location: /User");
 			 die();
 		}
 		include_once($this->config['appPath'].'Model/UserManagement.php');
@@ -18,6 +18,40 @@ class Admin extends AbstractController{
 		$this->userManager = new \Hagane\Model\UserManagement($this->auth, $this->db);
 	}
 
+	function ajaxGetAdminUsers() {
+		$this->sendJson = true;
+		$this->print_template = false;
+		$this->userManager = new \Hagane\Model\UserManagement($this->auth, $this->db);
+		echo json_encode($this->userManager->getAdminUsers());
+	}
+
+	function ajaxGetMaestroUsers() {
+		$this->sendJson = true;
+		$this->print_template = false;
+		$this->userManager = new \Hagane\Model\UserManagement($this->auth, $this->db);
+		echo json_encode($this->userManager->getMaestroUsers());
+	}
+
+	function ajaxGetAlumnoUsers() {
+		$this->sendJson = true;
+		$this->print_template = false;
+		$this->userManager = new \Hagane\Model\UserManagement($this->auth, $this->db);
+		echo json_encode($this->userManager->getAlumnoUsers());
+	}
+
+	function ajaxGetClases() {
+		$this->sendJson = true;
+		$this->print_template = false;
+
+		//Mis clases
+		$classId = (isset($_GET['claseid'])) ? $_GET['claseid'] : 0;
+		$classType = (isset($_GET['clasetype'])) ? $_GET['clasetype'] : null;
+		$userObject = $this->user->getUserObject();
+		//$this->clases = $userObject->getMyClass($classId);
+
+		echo json_encode($userObject->getMyClass($classId, $classType));
+	}
+
 	function lista() {
 		//Mis clases
 		$classId = $_GET['claseid'];
@@ -26,10 +60,7 @@ class Admin extends AbstractController{
 	}
 
 	function clases() {
-		//Mis clases
-		$classId = $_GET['claseid'];
-		$userObject = $this->user->getUserObject();
-		$this->clases = $userObject->getMyClass($classId);
+
 	}
 
 	function users() {
@@ -67,7 +98,7 @@ class Admin extends AbstractController{
 
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$this->alumno = $userObject->setGrades($classId, $alumnoId, $_POST['parcial1'], $_POST['parcial2'], $_POST['participacion'], $_POST['puntualidad'], $_POST['disposicion'], $_POST['tareas'], $_POST['observaciones']);
-			header("Location: http://pisye.com/Admin/clase?claseid=".$classId);
+			header("Location:  /Admin/clase?claseid=".$classId);
 			die();
 		}
 

@@ -16,15 +16,15 @@ class User extends AbstractController{
 			if ($this->auth->isAuth()) {
 				$this->user = new \Hagane\Model\User($this->auth, $this->db);
 				if ($this->user->getUserType() == 'Administrador') {
-					header("Location: http://pisye.com/Admin/index");
+					header("Location:  /Admin/index");
 					die();
 				}
 				if ($this->user->getUserType() == 'Maestro') {
-					header("Location: http://pisye.com/Maestro/index");
+					header("Location:  /Maestro/index");
 					die();
 				}
 				if ($this->user->getUserType() == 'Alumno') {
-					header("Location: http://pisye.com/Alumno/index");
+					header("Location:  /Alumno/index");
 					die();
 				}
 			}

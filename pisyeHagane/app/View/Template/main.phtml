@@ -15,10 +15,10 @@
 	<title>PISYE Alpha</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<script src="js/angularlib/angular.min.js"></script>
-	<script src="js/angularlib/angular-animate.min.js"></script>
-	<script src="js/angularlib/angular-aria.min.js"></script>
-	<script src="js/angularlib/angular-material-1-rc1.min.js"></script>
+	<script type="text/javascript" src="js/angularlib/angular.min.js"></script>
+	<script type="text/javascript" src="js/angularlib/angular-animate.min.js"></script>
+	<script type="text/javascript" src="js/angularlib/angular-aria.min.js"></script>
+	<script type="text/javascript" src="js/angularlib/angular-material-1-rc1.min.js"></script>
 	<script type="text/javascript" src="js/angular/haganeApp.js"></script>
 	<script type="text/javascript" src="js/angular/appConfig.js"></script>
 	<script type="text/javascript" src="js/angular/appMainController.js"></script>
@@ -37,20 +37,20 @@
 				if ($this->user->getUserType() == 'Maestro'): ?>
 					<img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
 					<p class="nombre-sidebar"> Maestro <?=$this->user->getNombreCompleto()?> </p>
-						<md-list-item ng-href="Maestro/index">Inicio</md-list-item>
+						<md-list-item ng-class="{active : isActive('/Maestro/index')}" ng-href="Maestro/index">Inicio</md-list-item>
 				<?php elseif ($this->user->getUserType() == 'Administrador'): ?>
 					<img class="img-sidebar" src="<?=$this->getSecureImage($this->user->getImgPath()); ?>">
 					<p> Administrador <br><br> <?=$this->user->getNombreCompleto()?> </p>
-						<md-list-item ng-href="Admin/index">Inicio</md-list-item>
-						<md-list-item ng-href="Admin/users">Gesti&oacute;n de usuarios</md-list-item>
-						<md-list-item ng-href="Admin/clases">Clases</md-list-item>
-						<md-list-item ng-href="Admin/alumnos">Alumnos</md-list-item>
+						<md-list-item ng-class="{active : isActive('/Admin/index')}" ng-href="Admin/index">Inicio</md-list-item>
+						<md-list-item ng-class="{active : isActive('/Admin/users')}" ng-href="Admin/users">Gesti&oacute;n de usuarios</md-list-item>
+						<md-list-item ng-class="{active : isActive('/Admin/clases')}" ng-href="Admin/clases">Clases</md-list-item>
+						<md-list-item ng-class="{active : isActive('/Admin/alumnos')}" ng-href="Admin/alumnos">Alumnos</md-list-item>
 				<?php elseif ($this->user->getUserType() == 'Alumno'): ?>
 				<?php endif; ?>
 						<md-divider></md-divider>
-						<md-list-item ng-href="logout">Cerrar Sesion</md-list-item>
+						<md-list-item ng-class="{active : isActive('/User/logout')}" ng-href="logout">Cerrar Sesion</md-list-item>
 				<?php else : ?>
-						<md-list-item ng-href="User" class="md-primary">Login</md-list-item>
+						<md-list-item ng-class="{active : isActive('/User/index')}" ng-href="User/index" class="md-primary">Login</md-list-item>
 				<?php endif; ?>
 			</md-list>
 		</md-content>

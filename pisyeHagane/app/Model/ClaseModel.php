@@ -35,6 +35,7 @@ class Clase {
 
 	function getClase() {
 		$claseArray = array();
+		$data = array();
 
 		//queries que traen las clases inscritas para el maestro o el alumno
 		if ($this->maestroID != null) {
@@ -44,7 +45,7 @@ class Clase {
 			$data = array('id' => $this->alumnoID);
 			$claseArray = $this->db->query('SELECT * FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal WHERE  c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = :id', $data);
 		} elseif ($this->admin) {
-			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.* FROM PeriodoClase AS pc JOIN Clase AS c WHERE  c.id = pc.idClase ORDER BY c.descripcion', $data);
+			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.* FROM PeriodoClase AS pc JOIN Clase AS c WHERE  c.id = pc.idClase ORDER BY c.tipo', $data);
 		}
 
 		return $claseArray;
@@ -71,6 +72,23 @@ class Clase {
 			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.nombre as cnombre, c.*, a.nombre as anombre, a.id as aid, a.*, cal.*
 				FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal JOIN Alumno as a
 				WHERE c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = a.id AND pc.id = :claseid', $data);
+		}
+
+		return $claseArray;
+	}
+
+	function getClaseByType($claseType) {
+		$data = array('clasetype' => $claseType);
+
+		//queries que traen las clases inscritas para el maestro o el alumno
+		if ($this->maestroID != null) {
+			$data = array('id' => $this->maestroID);
+			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.* FROM PeriodoClase AS pc JOIN Clase AS c WHERE  c.id = pc.idClase AND pc.idMaestro = :id', $data);
+		} elseif ($this->alumnoID != null) {
+			$data = array('id' => $this->alumnoID);
+			$claseArray = $this->db->query('SELECT * FROM PeriodoClase AS pc JOIN Clase AS c JOIN Calificacion as cal WHERE  c.id = pc.idClase AND cal.idPeriodoClase = pc.id AND cal.idAlumno = :id', $data);
+		} elseif ($this->admin) {
+			$claseArray = $this->db->query('SELECT pc.id as pcid, pc.*, c.* FROM PeriodoClase AS pc JOIN Clase AS c WHERE  c.id = pc.idClase AND c.tipo=:clasetype ORDER BY c.tipo', $data);
 		}
 
 		return $claseArray;

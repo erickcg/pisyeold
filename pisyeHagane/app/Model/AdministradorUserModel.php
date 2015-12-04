@@ -22,9 +22,13 @@ class Administrador {
 		}
 	}
 
-	function getMyClass($id = 0) {
+	function getMyClass($id = 0, $type) {
 		if ($id == 0) {
-			return $this->classModel->getClase();
+			if (isset($type)) {
+				return $this->classModel->getClaseByType($type);
+			} else {
+				return $this->classModel->getClase();
+			}
 		} else {
 			return $this->classModel->getClaseById($id);
 		}

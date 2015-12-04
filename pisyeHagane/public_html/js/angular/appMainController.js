@@ -11,6 +11,13 @@ app.controller('MainController', function ($scope, $timeout, $mdSidenav, $log, $
 	$scope.loading = null;
 	$scope.toolbar_title = 'MAS Alpha';
 
+	/**
+	* Checks the current path and assigns an 'active' class to the
+	* element if it matches the argument
+	*/
+	$scope.isActive = function (path) {
+	  return window.location.pathname.search(path) >= 0;
+	};
 
 	/**
 	* Supplies a function that will continue to operate until the

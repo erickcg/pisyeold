@@ -1,17 +1,62 @@
-<div class="container">
-	<div class="row">
-	<?php foreach ($this->clases as $clase) : ?>
-		<div class="col s12 m3">
-			<div class="card deep-orange darken-4">
-				<div class="card-content white-text">
-					<span class="card-title"><?=$clase['nombre']?></span>
-					<p><?=$clase['descripcion']?></p>
-				</div>
-				<div class="card-action">
-					<a href="/Admin/lista?claseid=<?=$clase['pcid']?>">Ver Alumnos</a>
-				</div>
-			</div>
-		</div>
-		<?php endforeach; ?>
-	</div>
+<md-content ng-controller="AdmiClasesController">
+		<md-tabs md-dynamic-height md-border-bottom>
+			<md-tab label="Nivel A">
+				<md-content class="md-padding">
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="claseA in clasesA">
+							<div class="md-list-item-text" layout="column">
+								<h3>{{ claseA.nombre }}</h3>
+								<h4>Nivel {{ claseA.tipo }}</h4>
+							</div>
+							<md-button class="md-secondary" ng-click="modAlumnoDialog($event, $index)">Modificar</md-button>
+							<md-divider ></md-divider>
+						</md-list-item>
+					</md-list>
+				</md-content>
+			</md-tab>
+			<md-tab label="Nivel B">
+				<md-content class="md-padding">
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="claseB in clasesB">
+							<div class="md-list-item-text" layout="column">
+								<h3>{{ claseB.nombre }}</h3>
+								<h4>Nivel {{ claseB.tipo }}</h4>
+							</div>
+							<md-button class="md-secondary" ng-click="modAlumnoDialog($event, $index)">Modificar</md-button>
+							<md-divider ></md-divider>
+						</md-list-item>
+					</md-list>
+				</md-content>
+			</md-tab>
+			<md-tab label="Nivel C">
+				<md-content class="md-padding">
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="claseC in clasesC">
+							<div class="md-list-item-text" layout="column">
+								<h3>{{ claseC.nombre }}</h3>
+								<h4>Nivel {{ claseC.tipo }}</h4>
+							</div>
+							<md-button class="md-secondary" ng-click="modAlumnoDialog($event, $index)">Modificar</md-button>
+							<md-divider ></md-divider>
+						</md-list-item>
+					</md-list>
+				</md-content>
+			</md-tab>
+			<md-tab label="Nivel D">
+				<md-content class="md-padding">
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="claseD in clasesD">
+							<div class="md-list-item-text" layout="column">
+								<h3>{{ claseD.nombre }}</h3>
+								<h4>Nivel {{ claseD.tipo }}</h4>
+							</div>
+							<md-button class="md-secondary" ng-click="modAlumnoDialog($event, $index)">Modificar</md-button>
+							<md-divider ></md-divider>
+						</md-list-item>
+					</md-list>
+				</md-content>
+			</md-tab>
+	</md-tabs>
+	</md-content>
 </div>
+</section>

@@ -5,7 +5,7 @@ class Alumno extends AbstractController{
 	function _init() {
 		echo $this->db->database_log['error'];
 		if (!$this->auth->isAuth()) {
-			 header("Location: http://pisye.com/User");
+			 header("Location: /User");
 			 die();
 		}
 	}
